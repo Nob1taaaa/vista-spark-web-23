@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -12,6 +11,8 @@ import {
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import TestimonialsSlider from '@/components/TestimonialsSlider';
+import BookConsultation from '@/components/BookConsultation';
 
 const Index = () => {
   // References for scroll animations
@@ -74,11 +75,7 @@ const Index = () => {
                     <ArrowRight size={16} className="ml-2" />
                   </Button>
                 </Link>
-                <Link to="/services">
-                  <Button variant="outline" className="border-white text-white hover:bg-white/10 button-hover">
-                    Explore Our Services
-                  </Button>
-                </Link>
+                <BookConsultation />
               </div>
             </div>
             <div className="flex-1 flex justify-center md:justify-end animate-fade-in" style={{ animationDelay: '0.2s' }}>
@@ -266,6 +263,22 @@ const Index = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Testimonials Section - NEW */}
+      <section className="py-20 bg-white" ref={addToRefs}>
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-brand-purple mb-4">
+            What Our Clients Say
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            Hear from businesses that have partnered with TruTalenza for their workforce solutions
+          </p>
+          
+          <div className="max-w-4xl mx-auto">
+            <TestimonialsSlider />
           </div>
         </div>
       </section>
@@ -464,25 +477,34 @@ const Index = () => {
         </div>
       </section>
       
-      {/* CTA Section */}
+      {/* CTA Section - UPDATED */}
       <section className="py-20" ref={addToRefs}>
         <div className="container mx-auto px-4">
-          <div className="bg-gradient-to-r from-brand-purple to-brand-lightPurple rounded-xl p-8 md:p-12 text-white text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Workforce?</h2>
-            <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-              Partner with TruTalenza for innovative HR solutions that drive growth and success.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/contact">
-                <Button className="bg-white text-brand-purple hover:bg-gray-100 button-hover">
-                  Get Started Today
-                </Button>
-              </Link>
-              <Link to="/services">
-                <Button variant="outline" className="border-white text-white hover:bg-white/10 button-hover">
-                  Learn More About Our Services
-                </Button>
-              </Link>
+          <div className="bg-gradient-to-r from-brand-purple to-brand-lightPurple rounded-xl p-8 md:p-12 text-white">
+            <div className="md:flex md:items-center md:justify-between">
+              <div className="md:max-w-2xl">
+                <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Workforce?</h2>
+                <p className="text-lg opacity-90 mb-8 md:mb-0">
+                  Partner with TruTalenza for innovative HR solutions that drive growth and success.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/contact">
+                  <Button className="bg-white text-brand-purple hover:bg-gray-100 button-hover">
+                    Contact Us
+                  </Button>
+                </Link>
+                <Link to="/blog">
+                  <Button variant="outline" className="border-white text-white hover:bg-white/10 button-hover">
+                    Read Our Blog
+                  </Button>
+                </Link>
+                <Link to="/faq">
+                  <Button variant="outline" className="border-white text-white hover:bg-white/10 button-hover">
+                    View FAQs
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
