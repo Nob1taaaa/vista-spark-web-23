@@ -13,6 +13,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
 import BookConsultation from '@/components/BookConsultation';
+import LoginModal from "@/components/LoginModal";
 
 const Index = () => {
   // References for scroll animations
@@ -84,6 +85,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+      <LoginModal />
       
       {/* Hero Section - Ensure it's always visible */}
       <section className="pt-28 pb-16 bg-brand-purple text-white">
