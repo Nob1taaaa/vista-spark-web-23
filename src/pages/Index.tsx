@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
@@ -17,6 +17,8 @@ import BookConsultation from '@/components/BookConsultation';
 const Index = () => {
   // References for scroll animations
   const sectionsRef = useRef<HTMLElement[]>([]);
+  // Track if page has been mounted to prevent refresh issues
+  const [isMounted, setIsMounted] = useState(false);
   
   const addToRefs = (el: HTMLElement | null) => {
     if (el && !sectionsRef.current.includes(el)) {
@@ -25,6 +27,8 @@ const Index = () => {
   };
   
   useEffect(() => {
+    setIsMounted(true);
+    
     const observerOptions = {
       root: null,
       rootMargin: '0px',
@@ -41,23 +45,47 @@ const Index = () => {
       });
     }, observerOptions);
     
-    sectionsRef.current.forEach((section) => {
-      section.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
-      observer.observe(section);
-    });
+    // Only add observers if page is mounted
+    if (isMounted) {
+      sectionsRef.current.forEach((section) => {
+        section.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+        observer.observe(section);
+      });
+    }
     
     return () => {
-      sectionsRef.current.forEach((section) => {
-        observer.unobserve(section);
-      });
+      if (sectionsRef.current.length > 0) {
+        sectionsRef.current.forEach((section) => {
+          if (section) observer.unobserve(section);
+        });
+      }
     };
+  }, [isMounted]);
+
+  // Show all content immediately on mobile to avoid hover dependency
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        // Make all cards visible on mobile without needing hover
+        document.querySelectorAll('.card-hover').forEach(card => {
+          card.classList.add('mobile-visible');
+        });
+      }
+    };
+    
+    // Run once on mount and on resize
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      {/* Hero Section */}
+      {/* Hero Section - Ensure it's always visible */}
       <section className="pt-28 pb-16 bg-brand-purple text-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
@@ -90,8 +118,8 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Mission & Vision */}
-      <section className="py-20" ref={addToRefs}>
+      {/* Ensure all sections have proper visibility */}
+      <section className="py-20 opacity-100" ref={addToRefs}>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-brand-purple mb-12">
             Our Mission & Vision
@@ -115,8 +143,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Services Section */}
-      <section className="py-20 bg-gray-50" ref={addToRefs}>
+      <section className="py-20 bg-gray-50 opacity-100" ref={addToRefs}>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-brand-purple mb-4">
             Our Services
@@ -126,7 +153,8 @@ const Index = () => {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all card-hover">
+            {/* Make all service cards explicitly visible on mobile */}
+            <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all card-hover mobile-visible">
               <div className="p-6">
                 <div className="w-12 h-12 bg-brand-purple/10 rounded-full flex items-center justify-center text-brand-purple mb-4">
                   <Users size={24} />
@@ -140,7 +168,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all card-hover">
+            <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all card-hover mobile-visible">
               <div className="p-6">
                 <div className="w-12 h-12 bg-brand-purple/10 rounded-full flex items-center justify-center text-brand-purple mb-4">
                   <LineChart size={24} />
@@ -154,7 +182,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all card-hover">
+            <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all card-hover mobile-visible">
               <div className="p-6">
                 <div className="w-12 h-12 bg-brand-purple/10 rounded-full flex items-center justify-center text-brand-purple mb-4">
                   <Target size={24} />
@@ -168,7 +196,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all card-hover">
+            <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all card-hover mobile-visible">
               <div className="p-6">
                 <div className="w-12 h-12 bg-brand-purple/10 rounded-full flex items-center justify-center text-brand-purple mb-4">
                   <Clock size={24} />
@@ -193,8 +221,8 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Our Process Section */}
-      <section className="py-20" ref={addToRefs}>
+      {/* Continue with the rest of the sections with improved visibility */}
+      <section className="py-20 opacity-100" ref={addToRefs}>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-brand-purple mb-4">
             Our Process
@@ -267,8 +295,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Testimonials Section - NEW */}
-      <section className="py-20 bg-white" ref={addToRefs}>
+      <section className="py-20 bg-white opacity-100" ref={addToRefs}>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-brand-purple mb-4">
             What Our Clients Say
@@ -283,8 +310,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Values Section */}
-      <section className="py-20 bg-gray-50" ref={addToRefs}>
+      <section className="py-20 bg-gray-50 opacity-100" ref={addToRefs}>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-brand-purple mb-12">
             Our Values
@@ -342,8 +368,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Industries We Serve */}
-      <section className="py-20" ref={addToRefs}>
+      <section className="py-20 opacity-100" ref={addToRefs}>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-brand-purple mb-4">
             Industries We Serve
@@ -428,8 +453,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Testimonials/Why Choose Us Section */}
-      <section className="py-20 bg-brand-purple text-white" ref={addToRefs}>
+      <section className="py-20 bg-brand-purple text-white opacity-100" ref={addToRefs}>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
             Why Choose Us?
@@ -477,8 +501,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* CTA Section - UPDATED */}
-      <section className="py-20" ref={addToRefs}>
+      <section className="py-20 opacity-100" ref={addToRefs}>
         <div className="container mx-auto px-4">
           <div className="bg-gradient-to-r from-brand-purple to-brand-lightPurple rounded-xl p-8 md:p-12 text-white">
             <div className="md:flex md:items-center md:justify-between">

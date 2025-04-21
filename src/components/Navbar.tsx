@@ -20,6 +20,10 @@ const Navbar = () => {
     };
     
     window.addEventListener('scroll', handleScroll);
+    
+    // Set initial scroll state on page load/refresh
+    setIsScrolled(window.scrollY > 10);
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -43,7 +47,7 @@ const Navbar = () => {
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white shadow-md py-2' 
-          : 'bg-transparent py-4'
+          : 'bg-white md:bg-transparent py-4 shadow-md md:shadow-none'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
