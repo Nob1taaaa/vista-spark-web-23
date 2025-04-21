@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -9,38 +9,45 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
   const { toast } = useToast();
-
-  // Auth mock
+  
+  // Check if user is authenticated (mock for now, will be replaced with actual auth)
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    
     window.addEventListener('scroll', handleScroll);
-    setIsScrolled(window.scrollY > 10); // Init state
+    
+    // Set initial scroll state on page load/refresh
+    setIsScrolled(window.scrollY > 10);
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
     localStorage.removeItem('user');
+    
     toast({
       title: "Logged out successfully",
       description: "You have been logged out of your account",
       duration: 3000,
     });
+    
     setTimeout(() => {
       window.location.href = '/';
     }, 500);
   };
 
-  // Fix: Always show navbar (header) on all pages
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' 
-        : 'bg-white md:bg-transparent py-4 shadow-md md:shadow-none'
+        isScrolled 
+          ? 'bg-white shadow-md py-2' 
+          : 'bg-white md:bg-transparent py-4 shadow-md md:shadow-none'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
@@ -49,6 +56,7 @@ const Navbar = () => {
             TruTalenza
           </h1>
         </Link>
+
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
           <Link 
@@ -108,15 +116,16 @@ const Navbar = () => {
             </Link>
           )}
         </div>
+
         {/* Mobile Menu Button */}
         <button 
           className="md:hidden text-gray-700"
-          aria-label="Open menu"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden bg-white animate-fade-in border-t">
@@ -149,6 +158,7 @@ const Navbar = () => {
             >
               Contact
             </Link>
+            
             {isAuthenticated ? (
               <div className="space-y-2 pt-2 border-t">
                 <Link 
