@@ -1,6 +1,6 @@
 
-import { useEffect, useState } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import React, { useEffect, useState } from "react";
+import { Dialog, DialogTitle, DialogContent, DialogDescription } from "@/components/ui/dialog";
 import { useForm } from "react-hook-form";
 import { Eye, EyeOff, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -45,6 +45,11 @@ const LoginModal = () => {
   return (
     <Dialog open={open}>
       <DialogContent className="max-w-2xl w-full p-0 rounded-2xl overflow-hidden bg-transparent shadow-xl">
+        {/* Hidden DialogTitle and DialogDescription for accessibility */}
+        <DialogTitle className="sr-only">Login</DialogTitle>
+        <DialogDescription className="sr-only">
+          Login to access your account
+        </DialogDescription>
         <div className="flex flex-col md:flex-row w-full">
           {/* Left: Branding / Image */}
           <div className="hidden md:flex flex-col justify-center items-center bg-[#232A5D] text-white p-8 w-1/2 min-h-[520px] ">
