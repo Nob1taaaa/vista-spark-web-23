@@ -1,9 +1,17 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, User } from 'lucide-react';
+import { Menu, X, User, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +19,6 @@ const Navbar = () => {
   const location = useLocation();
   const { toast } = useToast();
   
-  // Check if user is authenticated (mock for now, will be replaced with actual auth)
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
 
   useEffect(() => {
@@ -20,8 +27,6 @@ const Navbar = () => {
     };
     
     window.addEventListener('scroll', handleScroll);
-    
-    // Set initial scroll state on page load/refresh
     setIsScrolled(window.scrollY > 10);
     
     return () => window.removeEventListener('scroll', handleScroll);
@@ -42,17 +47,33 @@ const Navbar = () => {
     }, 500);
   };
 
+  const services = [
+    { title: 'Talent Acquisition', description: 'Recruitment services across multiple industries' },
+    { title: 'HR Consulting', description: 'Creating tailored HR strategies' },
+    { title: 'Workforce Management', description: 'Solutions for managing large-scale workforces' },
+    { title: 'Training & Development', description: 'Customized programs to upskill employees' },
+  ];
+
+  const industries = [
+    { title: 'IT & ITES', description: 'Recruitment and compliance solutions' },
+    { title: 'BFSI', description: 'HR services for banking and finance' },
+    { title: 'Healthcare', description: 'Regulatory & staffing compliance' },
+    { title: 'Manufacturing', description: 'Support for workforce management' },
+    { title: 'Retail', description: 'High-volume workforce solutions' },
+    { title: 'Education', description: 'Complete HR outsourcing' },
+  ];
+
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white shadow-md py-2' 
-          : 'bg-white md:bg-transparent py-4 shadow-md md:shadow-none'
+          ? 'bg-white/95 backdrop-blur-md shadow-md py-2' 
+          : 'bg-white/80 backdrop-blur-sm md:bg-transparent py-4'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <h1 className="text-xl md:text-2xl font-bold text-brand-purple">
+          <h1 className="text-xl md:text-2xl font-bold text-brand-purple hover:text-brand-lightPurple transition-colors">
             TruTalenza
           </h1>
         </Link>
@@ -61,31 +82,76 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-6">
           <Link 
             to="/" 
-            className={`hover-effect hover:text-brand-purple ${
+            className={`hover:text-brand-purple transition-colors ${
               location.pathname === '/' ? 'text-brand-purple font-medium' : 'text-gray-700'
             }`}
           >
             Home
           </Link>
-          <Link 
-            to="/services" 
-            className={`hover-effect hover:text-brand-purple ${
-              location.pathname === '/services' ? 'text-brand-purple font-medium' : 'text-gray-700'
-            }`}
-          >
-            Services
-          </Link>
-          <Link 
-            to="/industries" 
-            className={`hover-effect hover:text-brand-purple ${
-              location.pathname === '/industries' ? 'text-brand-purple font-medium' : 'text-gray-700'
-            }`}
-          >
-            Industries
-          </Link>
+          
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger 
+                  className={`${
+                    location.pathname === '/services' ? 'text-brand-purple' : 'text-gray-700'
+                  } hover:text-brand-purple transition-colors`}
+                >
+                  Services
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="min-w-[450px] p-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    {services.map((service) => (
+                      <Link
+                        key={service.title}
+                        to="/services"
+                        className="block p-4 rounded-lg hover:bg-brand-purple/5 transition-colors group"
+                      >
+                        <h3 className="text-sm font-medium text-brand-purple group-hover:text-brand-lightPurple transition-colors">
+                          {service.title}
+                        </h3>
+                        <p className="text-sm text-gray-500 mt-1 group-hover:text-gray-700 transition-colors">
+                          {service.description}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger 
+                  className={`${
+                    location.pathname === '/industries' ? 'text-brand-purple' : 'text-gray-700'
+                  } hover:text-brand-purple transition-colors`}
+                >
+                  Industries
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="min-w-[500px] p-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    {industries.map((industry) => (
+                      <Link
+                        key={industry.title}
+                        to="/industries"
+                        className="block p-4 rounded-lg hover:bg-brand-purple/5 transition-colors group"
+                      >
+                        <h3 className="text-sm font-medium text-brand-purple group-hover:text-brand-lightPurple transition-colors">
+                          {industry.title}
+                        </h3>
+                        <p className="text-sm text-gray-500 mt-1 group-hover:text-gray-700 transition-colors">
+                          {industry.description}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+
           <Link 
             to="/contact" 
-            className={`hover-effect hover:text-brand-purple ${
+            className={`hover:text-brand-purple transition-colors ${
               location.pathname === '/contact' ? 'text-brand-purple font-medium' : 'text-gray-700'
             }`}
           >
@@ -95,7 +161,10 @@ const Navbar = () => {
           {isAuthenticated ? (
             <div className="flex items-center space-x-2">
               <Link to="/dashboard">
-                <Button variant="ghost" className="flex items-center gap-2 hover-effect">
+                <Button 
+                  variant="ghost" 
+                  className="flex items-center gap-2 hover:bg-brand-purple/10 transition-colors"
+                >
                   <User size={18} />
                   <span>Dashboard</span>
                 </Button>
@@ -103,14 +172,14 @@ const Navbar = () => {
               <Button 
                 onClick={handleLogout} 
                 variant="outline" 
-                className="hover-effect"
+                className="hover:bg-brand-purple/10 hover:text-brand-purple transition-colors"
               >
                 Logout
               </Button>
             </div>
           ) : (
             <Link to="/login">
-              <Button className="bg-brand-purple hover:bg-brand-lightPurple button-hover">
+              <Button className="bg-brand-purple hover:bg-brand-lightPurple transition-colors">
                 Login
               </Button>
             </Link>
@@ -119,7 +188,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-gray-700"
+          className="md:hidden text-gray-700 hover:text-brand-purple transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -128,32 +197,51 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white animate-fade-in border-t">
-          <div className="container mx-auto px-4 py-3 space-y-3">
+        <div className="md:hidden bg-white/95 backdrop-blur-md animate-fade-in border-t">
+          <div className="container mx-auto px-4 py-4 space-y-4">
             <Link 
               to="/" 
-              className="block py-2 hover:text-brand-purple"
+              className="block py-2 hover:text-brand-purple transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
-            <Link 
-              to="/services" 
-              className="block py-2 hover:text-brand-purple"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Services
-            </Link>
-            <Link 
-              to="/industries" 
-              className="block py-2 hover:text-brand-purple"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Industries
-            </Link>
+            
+            <div className="space-y-2">
+              <div className="font-medium text-brand-purple">Services</div>
+              <div className="pl-4 space-y-2">
+                {services.map((service) => (
+                  <Link
+                    key={service.title}
+                    to="/services"
+                    className="block py-1 text-sm text-gray-600 hover:text-brand-purple transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {service.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="font-medium text-brand-purple">Industries</div>
+              <div className="pl-4 space-y-2">
+                {industries.map((industry) => (
+                  <Link
+                    key={industry.title}
+                    to="/industries"
+                    className="block py-1 text-sm text-gray-600 hover:text-brand-purple transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {industry.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             <Link 
               to="/contact" 
-              className="block py-2 hover:text-brand-purple"
+              className="block py-2 hover:text-brand-purple transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
@@ -163,7 +251,7 @@ const Navbar = () => {
               <div className="space-y-2 pt-2 border-t">
                 <Link 
                   to="/dashboard" 
-                  className="block py-2 hover:text-brand-purple"
+                  className="block py-2 hover:text-brand-purple transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Dashboard
@@ -173,7 +261,7 @@ const Navbar = () => {
                     handleLogout();
                     setIsMenuOpen(false);
                   }} 
-                  className="w-full text-left py-2 text-red-600 hover:text-red-800"
+                  className="w-full text-left py-2 text-red-600 hover:text-red-800 transition-colors"
                 >
                   Logout
                 </button>
@@ -184,7 +272,7 @@ const Navbar = () => {
                   to="/login"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <Button className="w-full bg-brand-purple hover:bg-brand-lightPurple">
+                  <Button className="w-full bg-brand-purple hover:bg-brand-lightPurple transition-colors">
                     Login
                   </Button>
                 </Link>
