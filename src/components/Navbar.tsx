@@ -1,6 +1,7 @@
+
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, User, Shield, Award, Verified, HandShake } from 'lucide-react';
+import { Menu, X, User, Shield, Award, Verified, Handshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import {
