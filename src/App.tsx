@@ -11,6 +11,8 @@ import Dashboard from "./pages/Dashboard";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog"; 
 import FAQ from "./pages/FAQ";
+import Services from "./pages/Services";
+import Industries from "./pages/Industries";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -29,6 +31,8 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/industries" element={<Industries />} />
           <Route 
             path="/dashboard" 
             element={
