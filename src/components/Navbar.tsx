@@ -1,7 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, User, ChevronDown } from 'lucide-react';
+import { Menu, X, User, Shield, Award, Verified, HandShake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import {
@@ -72,8 +71,9 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center">
-          <h1 className="text-xl md:text-2xl font-bold text-brand-purple hover:text-brand-lightPurple transition-colors">
+        <Link to="/" className="flex items-center space-x-2 group">
+          <Shield className="h-6 w-6 text-brand-purple group-hover:text-brand-lightPurple transition-colors" />
+          <h1 className="text-xl md:text-2xl font-bold text-brand-purple group-hover:text-brand-lightPurple transition-colors">
             TruTalenza
           </h1>
         </Link>
@@ -82,11 +82,12 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-6">
           <Link 
             to="/" 
-            className={`hover:text-brand-purple transition-colors ${
+            className={`flex items-center space-x-1 hover:text-brand-purple transition-all duration-300 transform hover:scale-105 ${
               location.pathname === '/' ? 'text-brand-purple font-medium' : 'text-gray-700'
             }`}
           >
-            Home
+            <Award className="h-4 w-4" />
+            <span>Home</span>
           </Link>
           
           <NavigationMenu>
@@ -95,9 +96,12 @@ const Navbar = () => {
                 <NavigationMenuTrigger 
                   className={`${
                     location.pathname === '/services' ? 'text-brand-purple' : 'text-gray-700'
-                  } hover:text-brand-purple transition-colors`}
+                  } hover:text-brand-purple transition-all duration-300 transform hover:scale-105 group`}
                 >
-                  Services
+                  <div className="flex items-center space-x-1">
+                    <HandShake className="h-4 w-4" />
+                    <span>Services</span>
+                  </div>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="min-w-[450px] p-4">
                   <div className="grid grid-cols-2 gap-4">
@@ -105,12 +109,13 @@ const Navbar = () => {
                       <Link
                         key={service.title}
                         to="/services"
-                        className="block p-4 rounded-lg hover:bg-brand-purple/5 transition-colors group"
+                        className="block p-4 rounded-lg hover:bg-brand-purple/5 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg group"
                       >
-                        <h3 className="text-sm font-medium text-brand-purple group-hover:text-brand-lightPurple transition-colors">
-                          {service.title}
+                        <h3 className="text-sm font-medium text-brand-purple group-hover:text-brand-lightPurple transition-colors flex items-center space-x-2">
+                          <Verified className="h-4 w-4" />
+                          <span>{service.title}</span>
                         </h3>
-                        <p className="text-sm text-gray-500 mt-1 group-hover:text-gray-700 transition-colors">
+                        <p className="text-sm text-gray-500 mt-1 group-hover:text-gray-700 transition-colors pl-6">
                           {service.description}
                         </p>
                       </Link>
@@ -123,9 +128,12 @@ const Navbar = () => {
                 <NavigationMenuTrigger 
                   className={`${
                     location.pathname === '/industries' ? 'text-brand-purple' : 'text-gray-700'
-                  } hover:text-brand-purple transition-colors`}
+                  } hover:text-brand-purple transition-all duration-300 transform hover:scale-105 group`}
                 >
-                  Industries
+                  <div className="flex items-center space-x-1">
+                    <Shield className="h-4 w-4" />
+                    <span>Industries</span>
+                  </div>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="min-w-[500px] p-4">
                   <div className="grid grid-cols-2 gap-4">
@@ -133,12 +141,13 @@ const Navbar = () => {
                       <Link
                         key={industry.title}
                         to="/industries"
-                        className="block p-4 rounded-lg hover:bg-brand-purple/5 transition-colors group"
+                        className="block p-4 rounded-lg hover:bg-brand-purple/5 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg group"
                       >
-                        <h3 className="text-sm font-medium text-brand-purple group-hover:text-brand-lightPurple transition-colors">
-                          {industry.title}
+                        <h3 className="text-sm font-medium text-brand-purple group-hover:text-brand-lightPurple transition-colors flex items-center space-x-2">
+                          <Award className="h-4 w-4" />
+                          <span>{industry.title}</span>
                         </h3>
-                        <p className="text-sm text-gray-500 mt-1 group-hover:text-gray-700 transition-colors">
+                        <p className="text-sm text-gray-500 mt-1 group-hover:text-gray-700 transition-colors pl-6">
                           {industry.description}
                         </p>
                       </Link>
@@ -151,11 +160,12 @@ const Navbar = () => {
 
           <Link 
             to="/contact" 
-            className={`hover:text-brand-purple transition-colors ${
+            className={`flex items-center space-x-1 hover:text-brand-purple transition-all duration-300 transform hover:scale-105 ${
               location.pathname === '/contact' ? 'text-brand-purple font-medium' : 'text-gray-700'
             }`}
           >
-            Contact
+            <HandShake className="h-4 w-4" />
+            <span>Contact</span>
           </Link>
           
           {isAuthenticated ? (
@@ -163,23 +173,23 @@ const Navbar = () => {
               <Link to="/dashboard">
                 <Button 
                   variant="ghost" 
-                  className="flex items-center gap-2 hover:bg-brand-purple/10 transition-colors"
+                  className="flex items-center gap-2 hover:bg-brand-purple/10 transition-all duration-300 transform hover:scale-105 group"
                 >
-                  <User size={18} />
-                  <span>Dashboard</span>
+                  <User size={18} className="group-hover:text-brand-purple transition-colors" />
+                  <span className="group-hover:text-brand-purple">Dashboard</span>
                 </Button>
               </Link>
               <Button 
                 onClick={handleLogout} 
                 variant="outline" 
-                className="hover:bg-brand-purple/10 hover:text-brand-purple transition-colors"
+                className="hover:bg-brand-purple/10 hover:text-brand-purple transition-all duration-300 transform hover:scale-105"
               >
                 Logout
               </Button>
             </div>
           ) : (
             <Link to="/login">
-              <Button className="bg-brand-purple hover:bg-brand-lightPurple transition-colors">
+              <Button className="bg-brand-purple hover:bg-brand-lightPurple transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
                 Login
               </Button>
             </Link>
