@@ -100,7 +100,7 @@ const Navbar = () => {
                   } hover:text-brand-purple transition-all duration-300 transform hover:scale-105 group`}
                 >
                   <div className="flex items-center space-x-1">
-                    <HandShake className="h-4 w-4" />
+                    <Handshake className="h-4 w-4" />
                     <span>Services</span>
                   </div>
                 </NavigationMenuTrigger>
@@ -165,7 +165,7 @@ const Navbar = () => {
               location.pathname === '/contact' ? 'text-brand-purple font-medium' : 'text-gray-700'
             }`}
           >
-            <HandShake className="h-4 w-4" />
+            <Handshake className="h-4 w-4" />
             <span>Contact</span>
           </Link>
           
@@ -297,3 +297,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
