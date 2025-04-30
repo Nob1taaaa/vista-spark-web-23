@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -338,6 +339,230 @@ const Index = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Passion</h3>
                   <p className="text-gray-600">We are passionate about connecting talent with opportunity.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* New TruVisory HR Services Sections */}
+          <div className="mt-20">
+            <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">TruVisory HR Services</h2>
+            
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              {/* Training & Development */}
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
+                    <span className="text-[#2c3e74] text-2xl font-bold">5</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#2c3e74]">Training & Development</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">Leadership & soft skills training</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">Compliance & regulatory training</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">Customized learning & development programs</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">HR workshops & industry best practices</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">E-learning solutions & virtual training</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">Performance coaching & mentoring programs</span>
+                  </li>
+                </ul>
+              </div>
+              
+              {/* HR Technology Solutions */}
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
+                    <span className="text-[#2c3e74] text-2xl font-bold">6</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#2c3e74]">HR Technology Solutions</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">HRMS & attendance management system</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">Automated leave & payroll management</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">Employee self-service portals</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">Analytics & HR dashboards for data-driven decision-making</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">AI-driven workforce management solutions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">Cloud-based HR integrations</span>
+                  </li>
+                </ul>
+              </div>
+              
+              {/* Benefits Administration */}
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
+                    <span className="text-[#2c3e74] text-2xl font-bold">7</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#2c3e74]">Benefits Administration</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">Provident fund & gratuity management</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">Medical & health insurance facilitation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">Employee wellness programs</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">Leave & holiday policy management</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">Employee assistance programs (EAP)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#2c3e74] mr-2">•</span>
+                    <span className="text-gray-700">Flexible benefits plan administration</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Why Choose Us Section */}
+            <div className="mt-20">
+              <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Why Choose Us?</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="bg-white rounded-xl p-6 shadow-md">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
+                      <span className="text-[#2c3e74] text-2xl font-bold">1</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-[#2c3e74]">Expertise & Experience</h3>
+                  </div>
+                  <p className="text-gray-700">Industry leaders with in-depth HR knowledge</p>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6 shadow-md">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
+                      <span className="text-[#2c3e74] text-2xl font-bold">2</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-[#2c3e74]">Compliance-Driven Approach</h3>
+                  </div>
+                  <p className="text-gray-700">100% statutory compliance and risk mitigation</p>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6 shadow-md">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
+                      <span className="text-[#2c3e74] text-2xl font-bold">3</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-[#2c3e74]">Customized Solutions</h3>
+                  </div>
+                  <p className="text-gray-700">Tailored HR outsourcing for startups, SMEs, and enterprises</p>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6 shadow-md">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
+                      <span className="text-[#2c3e74] text-2xl font-bold">4</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-[#2c3e74]">Cost & Time Efficiency</h3>
+                  </div>
+                  <p className="text-gray-700">Reduce HR overheads and administrative burdens</p>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6 shadow-md">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
+                      <span className="text-[#2c3e74] text-2xl font-bold">5</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-[#2c3e74]">Technology-Enabled HR</h3>
+                  </div>
+                  <p className="text-gray-700">AI, HRMS, and automation for digital transformation</p>
+                </div>
+                
+                <div className="bg-white rounded-xl p-6 shadow-md">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
+                      <span className="text-[#2c3e74] text-2xl font-bold">6</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-[#2c3e74]">Scalability & Flexibility</h3>
+                  </div>
+                  <p className="text-gray-700">Solutions adaptable for businesses of all sizes</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Timeline and Payment Terms */}
+            <div className="mt-20">
+              <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Timeline and Payment Terms</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="bg-white rounded-xl p-8 shadow-md">
+                  <h3 className="text-2xl font-bold text-[#2c3e74] mb-6">Timeline</h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <span className="text-[#2c3e74] mr-2">•</span>
+                      <span className="text-gray-700">Week 1: Initial consultation and planning</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#2c3e74] mr-2">•</span>
+                      <span className="text-gray-700">Week 2-4: Implementation of HR & accounting services</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#2c3e74] mr-2">•</span>
+                      <span className="text-gray-700">Ongoing: Monthly and quarterly support</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white rounded-xl p-8 shadow-md">
+                  <h3 className="text-2xl font-bold text-[#2c3e74] mb-6">Payment Terms</h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <span className="text-[#2c3e74] mr-2">•</span>
+                      <span className="text-gray-700">No advance payment required</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#2c3e74] mr-2">•</span>
+                      <span className="text-gray-700">100% payment upon completion of service month</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#2c3e74] mr-2">•</span>
+                      <span className="text-gray-700">Payment via bank transfer; monthly invoices provided</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
