@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -14,8 +13,8 @@ import {
   Hospital,
   Banknote,
   Store,
-  Speed,
-  Passion
+  Zap,
+  Heart
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
@@ -324,7 +323,7 @@ const Index = () => {
               
               <div className="flex bg-white p-6 rounded-lg shadow-sm">
                 <div className="w-12 h-12 rounded-md bg-[#2c3e74]/10 flex items-center justify-center mr-4">
-                  <Speed className="text-[#2c3e74]" />
+                  <Zap className="text-[#2c3e74]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Speed</h3>
@@ -334,7 +333,7 @@ const Index = () => {
               
               <div className="flex bg-white p-6 rounded-lg shadow-sm">
                 <div className="w-12 h-12 rounded-md bg-[#2c3e74]/10 flex items-center justify-center mr-4">
-                  <Passion className="text-[#2c3e74]" />
+                  <Heart className="text-[#2c3e74]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Passion</h3>

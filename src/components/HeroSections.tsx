@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { ArrowRight, Brain, Target, Trophy, Building, Hospital, Banknote, Store, Check, Speed, Passion } from 'lucide-react';
+import { ArrowRight, Brain, Target, Trophy, Building, Hospital, Banknote, Store, Check, Zap, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import BookConsultation from '@/components/BookConsultation';
 
