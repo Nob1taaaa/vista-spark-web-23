@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -21,8 +20,6 @@ const Index = () => {
   const sectionsRef = useRef<HTMLElement[]>([]);
   // Track if page has been mounted to prevent refresh issues
   const [isMounted, setIsMounted] = useState(false);
-  // Track active section
-  const [activeSection, setActiveSection] = useState('trutalenza');
   
   const addToRefs = (el: HTMLElement | null) => {
     if (el && !sectionsRef.current.includes(el)) {
@@ -85,33 +82,24 @@ const Index = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Handle section change
-  const handleSectionChange = (section: string) => {
-    setActiveSection(section);
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      {/* Hero Sections */}
-      <div className="relative">
+      {/* Split Hero Sections */}
+      <div className="flex flex-col md:flex-row w-full">
         <HeroSection
           id="trutalenza"
           title="TruTalenza Workforce Solutions"
           subtitle="Innovative HR Solutions"
           description="A dynamic and comprehensive talent management and workforce solutions firm. We specialize in providing innovative staffing, recruitment, and HR consulting services to businesses across various sectors."
-          isActive={activeSection === 'trutalenza'}
-          onSectionChange={handleSectionChange}
         />
         
         <HeroSection
           id="truvisory"
-          title="TruVisory HR Servics: Empowering Businesses"
+          title="TruVisory HR Services"
           subtitle="End-to-End HR Solutions"
-          description="TruVisory HR Services provides end-to-end HR outsourcing solutions designed to streamline HR functions, reduce costs, and enhance business efficiency. Our expertise covers payroll processing, compliance management, talent acquisition, employee engagement, and strategic HR planning. We enable businesses to focus on their core competencies while we handle their HR needs with precision and professionalism."
-          isActive={activeSection === 'truvisory'}
-          onSectionChange={handleSectionChange}
+          description="TruVisory HR Services provides end-to-end HR outsourcing solutions designed to streamline HR functions, reduce costs, and enhance business efficiency."
         />
       </div>
       
