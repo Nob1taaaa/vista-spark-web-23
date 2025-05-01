@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -272,46 +273,6 @@
   .tilt-card:hover {
     transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
   }
-  
-  /* Enhanced card styles with glassmorphism effect */
-  .glass-card {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg transition-all duration-300;
-    @apply hover:bg-white/15 hover:border-white/30 hover:shadow-xl;
-  }
-  
-  /* Enhanced hover card effect */
-  .hover-card-content {
-    @apply bg-gradient-to-br from-white/90 to-white/80 backdrop-blur-xl border-none shadow-2xl;
-    @apply dark:from-gray-800/90 dark:to-gray-900/80;
-  }
-  
-  /* Enhanced icon pulse */
-  .icon-pulse {
-    animation: icon-pulse 2s infinite;
-  }
-  
-  /* Service card with beautiful interaction */
-  .service-card-enhanced {
-    @apply relative overflow-hidden rounded-xl transition-all duration-500;
-    @apply hover:shadow-lg hover:-translate-y-1;
-    @apply before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:to-black/5 before:opacity-0 before:transition-opacity before:duration-300;
-    @apply hover:before:opacity-100;
-  }
-  
-  /* Glow effects for premium UI */
-  .glow-effect {
-    @apply relative;
-  }
-  
-  .glow-effect::after {
-    content: '';
-    @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300;
-    box-shadow: 0 0 25px 3px rgba(255, 255, 255, 0.2);
-  }
-  
-  .glow-effect:hover::after {
-    @apply opacity-100;
-  }
 }
 
 @keyframes pulse {
@@ -380,17 +341,6 @@
   }
 }
 
-@keyframes icon-pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-}
-
 @layer utilities {
   .animate-pulse-border {
     animation: pulse-border 2s infinite;
@@ -434,18 +384,6 @@
       rgba(255,255,255,0) 100%);
     background-size: 200% auto;
     animation: shine 3s linear infinite;
-  }
-  
-  .text-gradient-white {
-    @apply bg-gradient-to-r from-white/70 via-white to-white/70 bg-clip-text text-transparent;
-  }
-  
-  .animate-float-slow {
-    animation: float-slow 6s ease-in-out infinite;
-  }
-  
-  .bg-glass {
-    @apply backdrop-blur-lg bg-white/10 border border-white/20;
   }
 }
 

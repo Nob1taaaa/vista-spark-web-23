@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { ArrowRight, Brain, Target, Trophy, Building, Hospital, Banknote, Store, Check, Zap, Heart, Shield, BarChart, Users, CalendarDays } from 'lucide-react';
+import { ArrowRight, Brain, Target, Trophy, Building, Hospital, Banknote, Store, Check, Zap, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import BookConsultation from '@/components/BookConsultation';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
@@ -55,7 +55,7 @@ const HeroSection = ({
         </div>
       </div>
       
-      {/* HR Services section with enhanced styling */}
+      {/* Functionality section moved below */}
       <div className="w-full bg-white/10 backdrop-blur-sm py-10 px-6">
         <div className="max-w-xl mx-auto">
           {isPurple ? (
@@ -67,111 +67,40 @@ const HeroSection = ({
               />
             </div>
           ) : (
-            <div className="bg-white/10 rounded-xl p-6 backdrop-blur-lg shadow-lg transform transition-all duration-300 hover:bg-white/15 overflow-hidden relative">
-              {/* Decorative background element */}
-              <div className="absolute -right-24 -bottom-24 w-48 h-48 bg-white/5 rounded-full blur-3xl"></div>
-              <div className="absolute -left-24 -top-24 w-48 h-48 bg-white/5 rounded-full blur-3xl"></div>
-              
-              <div className="relative z-10">
-                <h2 className="text-2xl font-bold text-white mb-6 text-center">
-                  <span className="relative inline-block animate-shine">
-                    Our HR Services
-                    <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-white/0 via-white/70 to-white/0"></span>
-                  </span>
-                </h2>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  {[
-                    {
-                      title: 'Payroll Processing',
-                      desc: 'Streamlined and accurate payroll management',
-                      fullDesc: 'Our payroll processing services ensure timely and accurate payment processing while maintaining compliance with tax regulations.',
-                      icon: <BarChart className="h-5 w-5 text-[#9b87f5]" />
-                    },
-                    {
-                      title: 'Compliance Management',
-                      desc: 'Stay updated with all regulatory requirements',
-                      fullDesc: 'We help you navigate complex regulatory landscapes to ensure your business remains fully compliant with all applicable laws.',
-                      icon: <Shield className="h-5 w-5 text-[#9b87f5]" />
-                    },
-                    {
-                      title: 'Employee Engagement',
-                      desc: 'Boost workplace morale and productivity',
-                      fullDesc: 'Create a positive work environment that fosters employee satisfaction, productivity, and long-term retention.',
-                      icon: <Users className="h-5 w-5 text-[#9b87f5]" />
-                    },
-                    {
-                      title: 'Strategic HR Planning',
-                      desc: 'Align HR initiatives with business goals',
-                      fullDesc: 'Develop HR strategies that directly support and enhance your overall business objectives and growth plans.',
-                      icon: <CalendarDays className="h-5 w-5 text-[#9b87f5]" />
-                    }
-                  ].map((service, index) => (
-                    <HoverCard key={index} openDelay={100} closeDelay={200}>
-                      <HoverCardTrigger asChild>
-                        <Card 
-                          className="group bg-gradient-to-br from-white/15 to-white/5 border-white/10 hover:border-white/30 p-4 rounded-lg overflow-hidden relative transition-all duration-500 hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:translate-y-[-5px] cursor-pointer"
-                        >
-                          <CardContent className="p-0">
-                            {/* Animated gradient overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-                            
-                            <div className="flex items-center space-x-3 mb-2">
-                              <div className="bg-white/10 rounded-full p-1.5 backdrop-blur-sm">
-                                {service.icon}
-                              </div>
-                              <h3 className="font-semibold text-white text-lg group-hover:text-white/95">
-                                {service.title}
-                              </h3>
-                            </div>
-                            <p className="text-sm text-white/75 group-hover:text-white/90 transition-colors duration-300">
-                              {service.desc}
-                            </p>
-                            
-                            {/* Subtle indicator */}
-                            <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <div className="text-xs text-white/50 flex items-center">
-                                <span>Learn more</span>
-                                <ArrowRight className="ml-1 h-3 w-3" />
-                              </div>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </HoverCardTrigger>
-                      <HoverCardContent 
-                        className="w-80 bg-gradient-to-br from-[#4a3c8a] to-[#382c74] text-white border-white/10 backdrop-blur-lg shadow-xl animate-scale-in p-5"
-                      >
-                        <div className="space-y-3">
-                          <div className="flex items-center space-x-3">
-                            <div className="bg-white/15 rounded-full p-2">
-                              {service.icon}
-                            </div>
-                            <h4 className="text-lg font-semibold">{service.title}</h4>
-                          </div>
-                          <p className="text-sm text-white/90 leading-relaxed">
-                            {service.fullDesc}
+            <div className="bg-white/5 rounded-xl p-6 backdrop-blur-sm shadow-lg transform transition-all duration-300 hover:bg-white/10">
+              <h2 className="text-2xl font-bold text-white mb-4 text-center animate-shine">Our HR Services</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {['Payroll Processing', 'Compliance Management', 'Employee Engagement', 'Strategic HR Planning'].map((service, index) => (
+                  <HoverCard key={index}>
+                    <HoverCardTrigger asChild>
+                      <Card className="bg-white/20 p-4 rounded-lg transform transition-all duration-300 hover:translate-y-[-5px] hover:bg-white/30 hover:shadow-lg cursor-pointer group overflow-hidden">
+                        <CardContent className="p-0">
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                          <h3 className="font-medium text-white text-lg group-hover:text-white/95">{service}</h3>
+                          <p className="text-sm text-white/90 group-hover:text-white/95">
+                            {index === 0 && "Streamlined and accurate payroll management"}
+                            {index === 1 && "Stay updated with all regulatory requirements"}
+                            {index === 2 && "Boost workplace morale and productivity"}
+                            {index === 3 && "Align HR initiatives with business goals"}
                           </p>
-                          <div className="pt-2 border-t border-white/10">
-                            <div className="flex justify-between items-center">
-                              <span className="text-xs text-white/75">Trusted by 500+ businesses</span>
-                              <Button variant="ghost" size="sm" className="text-xs text-white/90 hover:text-white hover:bg-white/10">
-                                Learn more
-                              </Button>
-                            </div>
-                          </div>
+                        </CardContent>
+                      </Card>
+                    </HoverCardTrigger>
+                    <HoverCardContent className="w-80 bg-white/90 backdrop-blur-md border-none shadow-xl animate-scale-in">
+                      <div className="flex justify-between space-x-4">
+                        <div>
+                          <h4 className="text-sm font-semibold">{service}</h4>
+                          <p className="text-sm">
+                            {index === 0 && "Our payroll processing services ensure timely and accurate payment processing while maintaining compliance with tax regulations."}
+                            {index === 1 && "We help you navigate complex regulatory landscapes to ensure your business remains fully compliant with all applicable laws."}
+                            {index === 2 && "Create a positive work environment that fosters employee satisfaction, productivity, and long-term retention."}
+                            {index === 3 && "Develop HR strategies that directly support and enhance your overall business objectives and growth plans."}
+                          </p>
                         </div>
-                      </HoverCardContent>
-                    </HoverCard>
-                  ))}
-                </div>
-                
-                {/* Trust indicators */}
-                <div className="mt-8 pt-4 border-t border-white/10 text-center">
-                  <p className="text-xs text-white/70">
-                    <span className="inline-block animate-pulse-slow">★★★★★</span> 
-                    <span className="ml-2">Trusted by 500+ companies worldwide</span>
-                  </p>
-                </div>
+                      </div>
+                    </HoverCardContent>
+                  </HoverCard>
+                ))}
               </div>
             </div>
           )}
