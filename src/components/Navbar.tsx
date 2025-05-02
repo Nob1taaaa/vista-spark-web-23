@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, User, Shield, Award, Verified, Handshake } from 'lucide-react';
@@ -83,7 +84,7 @@ const Navbar = () => {
           <Link 
             to="/" 
             className={`flex items-center space-x-1 hover:text-brand-purple transition-all duration-300 transform hover:scale-105 ${
-              location.pathname === '/' ? 'text-brand-purple font-medium' : 'text-white font-medium'
+              location.pathname === '/' ? 'text-brand-purple font-medium' : 'text-brand-blue font-medium'
             }`}
           >
             <Award className="h-4 w-4" />
@@ -93,7 +94,7 @@ const Navbar = () => {
           <Link 
             to="/services" 
             className={`flex items-center space-x-1 hover:text-brand-purple transition-all duration-300 transform hover:scale-105 ${
-              location.pathname === '/services' ? 'text-brand-purple font-medium' : 'text-white font-medium'
+              location.pathname === '/services' ? 'text-brand-purple font-medium' : 'text-brand-blue font-medium'
             }`}
           >
             <Handshake className="h-4 w-4" />
@@ -103,7 +104,7 @@ const Navbar = () => {
           <Link 
             to="/industries" 
             className={`flex items-center space-x-1 hover:text-brand-purple transition-all duration-300 transform hover:scale-105 ${
-              location.pathname === '/industries' ? 'text-brand-purple font-medium' : 'text-white font-medium'
+              location.pathname === '/industries' ? 'text-brand-purple font-medium' : 'text-brand-blue font-medium'
             }`}
           >
             <Shield className="h-4 w-4" />
@@ -113,7 +114,7 @@ const Navbar = () => {
           <Link 
             to="/contact" 
             className={`flex items-center space-x-1 hover:text-brand-purple transition-all duration-300 transform hover:scale-105 ${
-              location.pathname === '/contact' ? 'text-brand-purple font-medium' : 'text-white font-medium'
+              location.pathname === '/contact' ? 'text-brand-purple font-medium' : 'text-brand-blue font-medium'
             }`}
           >
             <Handshake className="h-4 w-4" />
