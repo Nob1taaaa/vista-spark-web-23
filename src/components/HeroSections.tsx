@@ -59,12 +59,64 @@ const HeroSection = ({
       <div className="w-full bg-white/10 backdrop-blur-sm py-10 px-6">
         <div className="max-w-xl mx-auto">
           {isPurple ? (
-            <div className="rounded-xl overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:rotate-1 cursor-pointer">
-              <img 
-                src="/lovable-uploads/0b1d6e0f-09aa-4a04-aa95-baab9945de9e.png" 
-                alt="TruTalenza Services" 
-                className="w-full h-auto rounded shadow-lg"
-              />
+            <div className="bg-white/5 rounded-xl p-6 backdrop-blur-sm shadow-lg transform transition-all duration-300 hover:bg-white/10">
+              <h2 className="text-2xl font-bold text-white mb-4 text-center animate-shine">Our Workforce Solutions</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  {
+                    title: 'Talent Acquisition',
+                    description: 'Strategic recruitment for top talent',
+                    icon: <Brain className="h-5 w-5" />
+                  },
+                  {
+                    title: 'Executive Search',
+                    description: 'Specialized C-suite & leadership hiring',
+                    icon: <Trophy className="h-5 w-5" />
+                  },
+                  {
+                    title: 'Corporate Staffing',
+                    description: 'Streamlined workforce management',
+                    icon: <Building className="h-5 w-5" />
+                  },
+                  {
+                    title: 'Industry Expertise',
+                    description: 'Specialized recruitment solutions',
+                    icon: <Store className="h-5 w-5" />
+                  }
+                ].map((service, index) => (
+                  <HoverCard key={index}>
+                    <HoverCardTrigger asChild>
+                      <Card className="bg-white/20 p-4 rounded-lg transform transition-all duration-300 hover:translate-y-[-5px] hover:bg-white/30 hover:shadow-lg cursor-pointer group overflow-hidden">
+                        <CardContent className="p-0">
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                          <div className="flex items-center mb-2">
+                            <div className="mr-2 text-white/90 group-hover:text-white">
+                              {service.icon}
+                            </div>
+                            <h3 className="font-medium text-white text-lg group-hover:text-white/95">{service.title}</h3>
+                          </div>
+                          <p className="text-sm text-white/90 group-hover:text-white/95">
+                            {service.description}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </HoverCardTrigger>
+                    <HoverCardContent className="w-80 bg-white/90 backdrop-blur-md border-none shadow-xl animate-scale-in">
+                      <div className="flex justify-between space-x-4">
+                        <div>
+                          <h4 className="text-sm font-semibold">{service.title}</h4>
+                          <p className="text-sm">
+                            {index === 0 && "Find the right talent with our comprehensive recruitment strategies tailored to your organizational needs."}
+                            {index === 1 && "Our executive search services identify and attract top leadership talent to drive your business forward."}
+                            {index === 2 && "Optimize your workforce with flexible staffing solutions designed for maximum efficiency."}
+                            {index === 3 && "Benefit from our specialized knowledge in healthcare, finance, retail, and technology sectors."}
+                          </p>
+                        </div>
+                      </div>
+                    </HoverCardContent>
+                  </HoverCard>
+                ))}
+              </div>
             </div>
           ) : (
             <div className="bg-white/5 rounded-xl p-6 backdrop-blur-sm shadow-lg transform transition-all duration-300 hover:bg-white/10">
