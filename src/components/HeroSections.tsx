@@ -23,7 +23,7 @@ const HeroSection = ({
   
   return (
     <div 
-      className="min-h-screen flex flex-col"
+      className="min-h-screen flex flex-col pt-20"
       style={{ 
         background: isPurple ? '#382c74' : '#2c3e74',
         backgroundImage: isPurple ? 

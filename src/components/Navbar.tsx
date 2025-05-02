@@ -67,7 +67,7 @@ const Navbar = () => {
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-md py-2' 
-          : 'bg-white/80 backdrop-blur-sm md:bg-transparent py-4'
+          : 'bg-white/80 backdrop-blur-sm py-4'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
@@ -83,7 +83,7 @@ const Navbar = () => {
           <Link 
             to="/" 
             className={`flex items-center space-x-1 hover:text-brand-purple transition-all duration-300 transform hover:scale-105 ${
-              location.pathname === '/' ? 'text-brand-purple font-medium' : 'text-gray-700'
+              location.pathname === '/' ? 'text-brand-purple font-medium' : 'text-white font-medium'
             }`}
           >
             <Award className="h-4 w-4" />
@@ -95,7 +95,7 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger 
                   className={`${
-                    location.pathname === '/services' ? 'text-brand-purple' : 'text-gray-700'
+                    location.pathname === '/services' ? 'text-brand-purple' : 'text-white font-medium'
                   } hover:text-brand-purple transition-all duration-300 transform hover:scale-105 group`}
                 >
                   <div className="flex items-center space-x-1">
@@ -127,7 +127,7 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger 
                   className={`${
-                    location.pathname === '/industries' ? 'text-brand-purple' : 'text-gray-700'
+                    location.pathname === '/industries' ? 'text-brand-purple' : 'text-white font-medium'
                   } hover:text-brand-purple transition-all duration-300 transform hover:scale-105 group`}
                 >
                   <div className="flex items-center space-x-1">
@@ -161,7 +161,7 @@ const Navbar = () => {
           <Link 
             to="/contact" 
             className={`flex items-center space-x-1 hover:text-brand-purple transition-all duration-300 transform hover:scale-105 ${
-              location.pathname === '/contact' ? 'text-brand-purple font-medium' : 'text-gray-700'
+              location.pathname === '/contact' ? 'text-brand-purple font-medium' : 'text-white font-medium'
             }`}
           >
             <Handshake className="h-4 w-4" />
@@ -173,7 +173,7 @@ const Navbar = () => {
               <Link to="/dashboard">
                 <Button 
                   variant="ghost" 
-                  className="flex items-center gap-2 hover:bg-brand-purple/10 transition-all duration-300 transform hover:scale-105 group"
+                  className="flex items-center gap-2 text-white hover:bg-brand-purple/10 transition-all duration-300 transform hover:scale-105 group"
                 >
                   <User size={18} className="group-hover:text-brand-purple transition-colors" />
                   <span className="group-hover:text-brand-purple">Dashboard</span>
@@ -182,7 +182,7 @@ const Navbar = () => {
               <Button 
                 onClick={handleLogout} 
                 variant="outline" 
-                className="hover:bg-brand-purple/10 hover:text-brand-purple transition-all duration-300 transform hover:scale-105"
+                className="text-white border-white hover:bg-brand-purple/10 hover:text-brand-purple transition-all duration-300 transform hover:scale-105"
               >
                 Logout
               </Button>
@@ -198,7 +198,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-gray-700 hover:text-brand-purple transition-colors"
+          className="md:hidden text-white hover:text-brand-purple transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
