@@ -90,73 +90,25 @@ const Navbar = () => {
             <span>Home</span>
           </Link>
           
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger 
-                  className={`${
-                    location.pathname === '/services' ? 'text-brand-purple' : 'text-white font-medium'
-                  } hover:text-brand-purple transition-all duration-300 transform hover:scale-105 group`}
-                >
-                  <div className="flex items-center space-x-1">
-                    <Handshake className="h-4 w-4" />
-                    <span>Services</span>
-                  </div>
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="min-w-[450px] p-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    {services.map((service) => (
-                      <Link
-                        key={service.title}
-                        to="/services"
-                        className="block p-4 rounded-lg hover:bg-brand-purple/5 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg group"
-                      >
-                        <h3 className="text-sm font-medium text-brand-purple group-hover:text-brand-lightPurple transition-colors flex items-center space-x-2">
-                          <Verified className="h-4 w-4" />
-                          <span>{service.title}</span>
-                        </h3>
-                        <p className="text-sm text-gray-500 mt-1 group-hover:text-gray-700 transition-colors pl-6">
-                          {service.description}
-                        </p>
-                      </Link>
-                    ))}
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+          <Link 
+            to="/services" 
+            className={`flex items-center space-x-1 hover:text-brand-purple transition-all duration-300 transform hover:scale-105 ${
+              location.pathname === '/services' ? 'text-brand-purple font-medium' : 'text-white font-medium'
+            }`}
+          >
+            <Handshake className="h-4 w-4" />
+            <span>Services</span>
+          </Link>
 
-              <NavigationMenuItem>
-                <NavigationMenuTrigger 
-                  className={`${
-                    location.pathname === '/industries' ? 'text-brand-purple' : 'text-white font-medium'
-                  } hover:text-brand-purple transition-all duration-300 transform hover:scale-105 group`}
-                >
-                  <div className="flex items-center space-x-1">
-                    <Shield className="h-4 w-4" />
-                    <span>Industries</span>
-                  </div>
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="min-w-[500px] p-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    {industries.map((industry) => (
-                      <Link
-                        key={industry.title}
-                        to="/industries"
-                        className="block p-4 rounded-lg hover:bg-brand-purple/5 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg group"
-                      >
-                        <h3 className="text-sm font-medium text-brand-purple group-hover:text-brand-lightPurple transition-colors flex items-center space-x-2">
-                          <Award className="h-4 w-4" />
-                          <span>{industry.title}</span>
-                        </h3>
-                        <p className="text-sm text-gray-500 mt-1 group-hover:text-gray-700 transition-colors pl-6">
-                          {industry.description}
-                        </p>
-                      </Link>
-                    ))}
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+          <Link 
+            to="/industries" 
+            className={`flex items-center space-x-1 hover:text-brand-purple transition-all duration-300 transform hover:scale-105 ${
+              location.pathname === '/industries' ? 'text-brand-purple font-medium' : 'text-white font-medium'
+            }`}
+          >
+            <Shield className="h-4 w-4" />
+            <span>Industries</span>
+          </Link>
 
           <Link 
             to="/contact" 
@@ -217,36 +169,46 @@ const Navbar = () => {
               Home
             </Link>
             
-            <div className="space-y-2">
-              <div className="font-medium text-brand-purple">Services</div>
-              <div className="pl-4 space-y-2">
-                {services.map((service) => (
-                  <Link
-                    key={service.title}
-                    to="/services"
-                    className="block py-1 text-sm text-gray-600 hover:text-brand-purple transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {service.title}
-                  </Link>
-                ))}
-              </div>
+            <Link
+              to="/services"
+              className="block py-2 hover:text-brand-purple transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Services
+            </Link>
+            
+            <div className="pl-4 space-y-2">
+              {services.map((service) => (
+                <Link
+                  key={service.title}
+                  to="/services"
+                  className="block py-1 text-sm text-gray-600 hover:text-brand-purple transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {service.title}
+                </Link>
+              ))}
             </div>
 
-            <div className="space-y-2">
-              <div className="font-medium text-brand-purple">Industries</div>
-              <div className="pl-4 space-y-2">
-                {industries.map((industry) => (
-                  <Link
-                    key={industry.title}
-                    to="/industries"
-                    className="block py-1 text-sm text-gray-600 hover:text-brand-purple transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {industry.title}
-                  </Link>
-                ))}
-              </div>
+            <Link
+              to="/industries"
+              className="block py-2 hover:text-brand-purple transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Industries
+            </Link>
+            
+            <div className="pl-4 space-y-2">
+              {industries.map((industry) => (
+                <Link
+                  key={industry.title}
+                  to="/industries"
+                  className="block py-1 text-sm text-gray-600 hover:text-brand-purple transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {industry.title}
+                </Link>
+              ))}
             </div>
 
             <Link 
