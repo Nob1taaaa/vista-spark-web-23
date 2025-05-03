@@ -23,7 +23,7 @@ const HeroSection = ({
   
   return (
     <div 
-      className="min-h-screen flex flex-col pt-20"
+      className="min-h-[100vh] w-full flex flex-col pt-20"
       style={{ 
         background: isPurple ? '#382c74' : '#2c3e74',
         backgroundImage: isPurple ? 
@@ -31,10 +31,10 @@ const HeroSection = ({
           'linear-gradient(135deg, #2c3e74 0%, #3c508a 100%)'
       }}
     >
-      <div className="py-16 px-6 flex-grow flex items-center justify-center">
-        <div className="max-w-xl mx-auto">
+      <div className="py-16 px-4 md:px-6 flex-grow flex items-center justify-center">
+        <div className="w-full max-w-xl mx-auto">
           <div className="flex flex-col items-center">
-            <div className="animate-fade-in text-center mb-12">
+            <div className="animate-fade-in text-center mb-12 w-full">
               <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white drop-shadow-md animate-pulse-slow">
                 {title}
               </h1>
@@ -56,12 +56,12 @@ const HeroSection = ({
       </div>
       
       {/* Functionality section moved below */}
-      <div className="w-full bg-white/10 backdrop-blur-sm py-10 px-6">
-        <div className="max-w-xl mx-auto">
+      <div className="w-full bg-white/10 backdrop-blur-sm py-10 px-4 md:px-6">
+        <div className="w-full max-w-xl mx-auto">
           {isPurple ? (
-            <div className="bg-white/5 rounded-xl p-6 backdrop-blur-sm shadow-lg transform transition-all duration-300 hover:bg-white/10">
+            <div className="bg-white/5 rounded-xl p-4 md:p-6 backdrop-blur-sm shadow-lg transform transition-all duration-300 hover:bg-white/10">
               <h2 className="text-2xl font-bold text-white mb-4 text-center animate-shine">Our Workforce Solutions</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 {[
                   {
                     title: 'Talent Acquisition',
@@ -86,7 +86,7 @@ const HeroSection = ({
                 ].map((service, index) => (
                   <HoverCard key={index}>
                     <HoverCardTrigger asChild>
-                      <Card className="bg-white/20 p-4 rounded-lg transform transition-all duration-300 hover:translate-y-[-5px] hover:bg-white/30 hover:shadow-lg cursor-pointer group overflow-hidden">
+                      <Card className="bg-white/20 p-3 md:p-4 rounded-lg transform transition-all duration-300 hover:translate-y-[-5px] hover:bg-white/30 hover:shadow-lg cursor-pointer group overflow-hidden">
                         <CardContent className="p-0">
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                           <div className="flex items-center mb-2">
@@ -119,13 +119,13 @@ const HeroSection = ({
               </div>
             </div>
           ) : (
-            <div className="bg-white/5 rounded-xl p-6 backdrop-blur-sm shadow-lg transform transition-all duration-300 hover:bg-white/10">
+            <div className="bg-white/5 rounded-xl p-4 md:p-6 backdrop-blur-sm shadow-lg transform transition-all duration-300 hover:bg-white/10">
               <h2 className="text-2xl font-bold text-white mb-4 text-center animate-shine">Our HR Services</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 {['Payroll Processing', 'Compliance Management', 'Employee Engagement', 'Strategic HR Planning'].map((service, index) => (
                   <HoverCard key={index}>
                     <HoverCardTrigger asChild>
-                      <Card className="bg-white/20 p-4 rounded-lg transform transition-all duration-300 hover:translate-y-[-5px] hover:bg-white/30 hover:shadow-lg cursor-pointer group overflow-hidden">
+                      <Card className="bg-white/20 p-3 md:p-4 rounded-lg transform transition-all duration-300 hover:translate-y-[-5px] hover:bg-white/30 hover:shadow-lg cursor-pointer group overflow-hidden">
                         <CardContent className="p-0">
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                           <h3 className="font-medium text-white text-lg group-hover:text-white/95">{service}</h3>

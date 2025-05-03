@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, User, Shield, Award, Verified, Handshake } from 'lucide-react';
@@ -83,7 +84,7 @@ const Navbar = () => {
           <Link 
             to="/" 
             className={`flex items-center space-x-1 hover:text-brand-purple transition-all duration-300 transform hover:scale-105 ${
-              location.pathname === '/' ? 'text-brand-purple font-medium' : 'text-white font-medium'
+              location.pathname === '/' ? 'text-brand-purple font-medium' : 'text-brand-purple font-medium'
             }`}
           >
             <Award className="h-4 w-4" />
@@ -95,7 +96,7 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger 
                   className={`${
-                    location.pathname === '/services' ? 'text-brand-purple' : 'text-white font-medium'
+                    location.pathname === '/services' ? 'text-brand-purple' : 'text-brand-purple font-medium'
                   } hover:text-brand-purple transition-all duration-300 transform hover:scale-105 group`}
                 >
                   <div className="flex items-center space-x-1">
@@ -127,7 +128,7 @@ const Navbar = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger 
                   className={`${
-                    location.pathname === '/industries' ? 'text-brand-purple' : 'text-white font-medium'
+                    location.pathname === '/industries' ? 'text-brand-purple' : 'text-brand-purple font-medium'
                   } hover:text-brand-purple transition-all duration-300 transform hover:scale-105 group`}
                 >
                   <div className="flex items-center space-x-1">
@@ -161,7 +162,7 @@ const Navbar = () => {
           <Link 
             to="/contact" 
             className={`flex items-center space-x-1 hover:text-brand-purple transition-all duration-300 transform hover:scale-105 ${
-              location.pathname === '/contact' ? 'text-brand-purple font-medium' : 'text-white font-medium'
+              location.pathname === '/contact' ? 'text-brand-purple font-medium' : 'text-brand-purple font-medium'
             }`}
           >
             <Handshake className="h-4 w-4" />
@@ -198,7 +199,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-white hover:text-brand-purple transition-colors"
+          className="md:hidden text-brand-purple hover:text-brand-purple transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -211,7 +212,7 @@ const Navbar = () => {
           <div className="container mx-auto px-4 py-4 space-y-4">
             <Link 
               to="/" 
-              className="block py-2 hover:text-brand-purple transition-colors"
+              className="block py-2 text-brand-purple hover:text-brand-purple transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
@@ -251,7 +252,7 @@ const Navbar = () => {
 
             <Link 
               to="/contact" 
-              className="block py-2 hover:text-brand-purple transition-colors"
+              className="block py-2 text-brand-purple hover:text-brand-purple transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact

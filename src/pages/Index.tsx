@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -92,7 +91,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col w-full overflow-x-hidden">
       <Navbar />
       
       {/* Split Hero Sections */}
@@ -113,14 +112,14 @@ const Index = () => {
       </div>
       
       {/* TruTalenza detailed content sections */}
-      <section className="py-16 bg-white" ref={addToRefs}>
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-white w-full" ref={addToRefs}>
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#382c74] mb-4">Why Choose TruTalenza?</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6 bg-gray-50 rounded-lg shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+            <div className="text-center p-4 md:p-6 bg-gray-50 rounded-lg shadow-sm">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#382c74]/10 text-[#382c74] mb-4">
                 <h2 className="text-3xl font-bold">1</h2>
               </div>
@@ -130,7 +129,7 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="text-center p-6 bg-gray-50 rounded-lg shadow-sm">
+            <div className="text-center p-4 md:p-6 bg-gray-50 rounded-lg shadow-sm">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#382c74]/10 text-[#382c74] mb-4">
                 <h2 className="text-3xl font-bold">2</h2>
               </div>
@@ -140,7 +139,7 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="text-center p-6 bg-gray-50 rounded-lg shadow-sm">
+            <div className="text-center p-4 md:p-6 bg-gray-50 rounded-lg shadow-sm">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#382c74]/10 text-[#382c74] mb-4">
                 <h2 className="text-3xl font-bold">3</h2>
               </div>
@@ -150,7 +149,7 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="text-center p-6 bg-gray-50 rounded-lg shadow-sm">
+            <div className="text-center p-4 md:p-6 bg-gray-50 rounded-lg shadow-sm">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#382c74]/10 text-[#382c74] mb-4">
                 <h2 className="text-3xl font-bold">4</h2>
               </div>
@@ -163,29 +162,29 @@ const Index = () => {
           
           <div className="mt-16">
             <h2 className="text-3xl font-bold text-[#382c74] mb-8 text-center">Our Expertise</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="p-6 bg-[#F5F7FF] rounded-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+              <div className="p-4 md:p-6 bg-[#F5F7FF] rounded-lg">
                 <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Top Management</h3>
                 <p className="text-gray-600">
                   We specialize in recruiting top-level executives.
                 </p>
               </div>
               
-              <div className="p-6 bg-[#F5F7FF] rounded-lg">
+              <div className="p-4 md:p-6 bg-[#F5F7FF] rounded-lg">
                 <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Healthcare/Pharma</h3>
                 <p className="text-gray-600">
                   We have deep expertise in the healthcare and pharmaceutical industries.
                 </p>
               </div>
               
-              <div className="p-6 bg-[#F5F7FF] rounded-lg">
+              <div className="p-4 md:p-6 bg-[#F5F7FF] rounded-lg">
                 <h3 className="text-xl font-semibold mb-2 text-[#382c74]">BFSI</h3>
                 <p className="text-gray-600">
                   We provide recruitment solutions for the banking, financial services, and insurance sectors.
                 </p>
               </div>
               
-              <div className="p-6 bg-[#F5F7FF] rounded-lg">
+              <div className="p-4 md:p-6 bg-[#F5F7FF] rounded-lg">
                 <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Retail</h3>
                 <p className="text-gray-600">
                   We assist retailers in finding the best talent.
@@ -197,13 +196,13 @@ const Index = () => {
       </section>
       
       {/* TruVisory detailed content sections */}
-      <section className="py-16 bg-[#F5F7FF]" ref={addToRefs}>
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-[#F5F7FF] w-full" ref={addToRefs}>
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#2c3e74] mb-4">Our Approach</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             <div className="bg-white rounded-lg p-6 shadow-sm">
               <div className="flex justify-center mb-4">
                 <Brain size={48} className="text-[#7E69AB]" />
@@ -301,7 +300,7 @@ const Index = () => {
           
           <div className="mt-20">
             <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Our Values</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
               <div className="flex bg-white p-6 rounded-lg shadow-sm">
                 <div className="w-12 h-12 rounded-md bg-[#2c3e74]/10 flex items-center justify-center mr-4">
                   <Check className="text-[#2c3e74]" />
@@ -349,7 +348,7 @@ const Index = () => {
             <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">TruVisory HR Services</h2>
             
             {/* Services Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-16">
               {/* Training & Development */}
               <div className="bg-white rounded-xl p-6 shadow-md">
                 <div className="flex items-center mb-4">
@@ -462,7 +461,7 @@ const Index = () => {
             {/* Why Choose Us Section */}
             <div className="mt-20">
               <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Why Choose Us?</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
                 <div className="bg-white rounded-xl p-6 shadow-md">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
@@ -528,7 +527,7 @@ const Index = () => {
             {/* Timeline and Payment Terms */}
             <div className="mt-20">
               <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Timeline and Payment Terms</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
                 <div className="bg-white rounded-xl p-8 shadow-md">
                   <h3 className="text-2xl font-bold text-[#2c3e74] mb-6">Timeline</h3>
                   <ul className="space-y-4">
@@ -571,8 +570,8 @@ const Index = () => {
       </section>
       
       {/* Features Section - visible regardless of active section */}
-      <section className="py-16 bg-white" ref={addToRefs}>
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-white w-full" ref={addToRefs}>
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-purple mb-4">Why Choose Us</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -580,7 +579,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             <div className="feature-card">
               <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-purple/10 text-brand-purple">
                 <Users size={24} />
@@ -625,8 +624,8 @@ const Index = () => {
       </section>
       
       {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50" ref={addToRefs}>
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-gray-50 w-full" ref={addToRefs}>
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-brand-purple mb-4">What Our Clients Say</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -641,9 +640,9 @@ const Index = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 bg-brand-purple text-white" ref={addToRefs}>
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+      <section className="py-16 bg-brand-purple text-white w-full" ref={addToRefs}>
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-4">Ready to Elevate Your Workforce Management?</h2>
               <p className="text-lg opacity-90 mb-6">
@@ -660,7 +659,7 @@ const Index = () => {
             </div>
             
             <div className="flex justify-center md:justify-end">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-sm">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 md:p-6 max-w-sm">
                 <h3 className="text-xl font-semibold mb-4">Quick Consultation</h3>
                 <p className="mb-4">
                   Schedule a free 30-minute consultation with our HR experts to discuss your specific challenges.
