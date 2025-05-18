@@ -59,10 +59,10 @@ const HeroSection = ({
       <div className="w-full bg-white/10 backdrop-blur-sm py-10 px-4 md:px-6">
         <div className="w-full max-w-xl mx-auto">
           <div className="bg-white/5 rounded-xl p-4 md:p-6 backdrop-blur-sm shadow-lg transform transition-all duration-300 hover:bg-white/10">
-            <h2 className="text-2xl font-bold text-white mb-4 text-center animate-shine">
+            <h2 className="text-2xl font-bold text-white mb-6 text-center animate-shine">
               {isPurple ? "Our Workforce Solutions" : "Our HR Services"}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+            <div className="grid grid-cols-2 gap-3 md:gap-4">
               {isPurple ? (
                 // TruTalenza Services
                 [
@@ -89,7 +89,7 @@ const HeroSection = ({
                 ].map((service, index) => (
                   <HoverCard key={index}>
                     <HoverCardTrigger asChild>
-                      <Card className="bg-white/20 p-3 md:p-4 rounded-lg transform transition-all duration-300 hover:translate-y-[-5px] hover:bg-white/30 hover:shadow-lg cursor-pointer group overflow-hidden">
+                      <Card className="bg-white/20 p-3 md:p-4 rounded-lg transform transition-all duration-300 hover:translate-y-[-5px] hover:bg-white/30 hover:shadow-lg cursor-pointer group overflow-hidden h-full">
                         <CardContent className="p-0">
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                           <div className="flex items-center mb-2">
@@ -145,7 +145,7 @@ const HeroSection = ({
                 ].map((service, index) => (
                   <HoverCard key={index}>
                     <HoverCardTrigger asChild>
-                      <Card className="bg-white/20 p-3 md:p-4 rounded-lg transform transition-all duration-300 hover:translate-y-[-5px] hover:bg-white/30 hover:shadow-lg cursor-pointer group overflow-hidden">
+                      <Card className="bg-white/20 p-3 md:p-4 rounded-lg transform transition-all duration-300 hover:translate-y-[-5px] hover:bg-white/30 hover:shadow-lg cursor-pointer group overflow-hidden h-full">
                         <CardContent className="p-0">
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                           <div className="flex items-center mb-2">
