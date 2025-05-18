@@ -55,14 +55,17 @@ const HeroSection = ({
         </div>
       </div>
       
-      {/* Functionality section moved below */}
+      {/* Services section below */}
       <div className="w-full bg-white/10 backdrop-blur-sm py-10 px-4 md:px-6">
         <div className="w-full max-w-xl mx-auto">
-          {isPurple ? (
-            <div className="bg-white/5 rounded-xl p-4 md:p-6 backdrop-blur-sm shadow-lg transform transition-all duration-300 hover:bg-white/10">
-              <h2 className="text-2xl font-bold text-white mb-4 text-center animate-shine">Our Workforce Solutions</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-                {[
+          <div className="bg-white/5 rounded-xl p-4 md:p-6 backdrop-blur-sm shadow-lg transform transition-all duration-300 hover:bg-white/10">
+            <h2 className="text-2xl font-bold text-white mb-4 text-center animate-shine">
+              {isPurple ? "Our Workforce Solutions" : "Our HR Services"}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+              {isPurple ? (
+                // TruTalenza Services
+                [
                   {
                     title: 'Talent Acquisition',
                     description: 'Strategic recruitment for top talent',
@@ -115,25 +118,44 @@ const HeroSection = ({
                       </div>
                     </HoverCardContent>
                   </HoverCard>
-                ))}
-              </div>
-            </div>
-          ) : (
-            <div className="bg-white/5 rounded-xl p-4 md:p-6 backdrop-blur-sm shadow-lg transform transition-all duration-300 hover:bg-white/10">
-              <h2 className="text-2xl font-bold text-white mb-4 text-center animate-shine">Our HR Services</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-                {['Payroll Processing', 'Compliance Management', 'Employee Engagement', 'Strategic HR Planning'].map((service, index) => (
+                ))
+              ) : (
+                // TruVisory Services
+                [
+                  {
+                    title: 'Payroll Processing', 
+                    description: 'Streamlined and accurate payroll management',
+                    icon: <Banknote className="h-5 w-5" />
+                  },
+                  {
+                    title: 'Compliance Management', 
+                    description: 'Stay updated with all regulatory requirements',
+                    icon: <Check className="h-5 w-5" />
+                  },
+                  {
+                    title: 'Employee Engagement', 
+                    description: 'Boost workplace morale and productivity',
+                    icon: <Heart className="h-5 w-5" />
+                  },
+                  {
+                    title: 'Strategic HR Planning', 
+                    description: 'Align HR initiatives with business goals',
+                    icon: <Target className="h-5 w-5" />
+                  }
+                ].map((service, index) => (
                   <HoverCard key={index}>
                     <HoverCardTrigger asChild>
                       <Card className="bg-white/20 p-3 md:p-4 rounded-lg transform transition-all duration-300 hover:translate-y-[-5px] hover:bg-white/30 hover:shadow-lg cursor-pointer group overflow-hidden">
                         <CardContent className="p-0">
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                          <h3 className="font-medium text-white text-lg group-hover:text-white/95">{service}</h3>
+                          <div className="flex items-center mb-2">
+                            <div className="mr-2 text-white/90 group-hover:text-white">
+                              {service.icon}
+                            </div>
+                            <h3 className="font-medium text-white text-lg group-hover:text-white/95">{service.title}</h3>
+                          </div>
                           <p className="text-sm text-white/90 group-hover:text-white/95">
-                            {index === 0 && "Streamlined and accurate payroll management"}
-                            {index === 1 && "Stay updated with all regulatory requirements"}
-                            {index === 2 && "Boost workplace morale and productivity"}
-                            {index === 3 && "Align HR initiatives with business goals"}
+                            {service.description}
                           </p>
                         </CardContent>
                       </Card>
@@ -141,7 +163,7 @@ const HeroSection = ({
                     <HoverCardContent className="w-80 bg-white/90 backdrop-blur-md border-none shadow-xl animate-scale-in">
                       <div className="flex justify-between space-x-4">
                         <div>
-                          <h4 className="text-sm font-semibold">{service}</h4>
+                          <h4 className="text-sm font-semibold">{service.title}</h4>
                           <p className="text-sm">
                             {index === 0 && "Our payroll processing services ensure timely and accurate payment processing while maintaining compliance with tax regulations."}
                             {index === 1 && "We help you navigate complex regulatory landscapes to ensure your business remains fully compliant with all applicable laws."}
@@ -152,10 +174,10 @@ const HeroSection = ({
                       </div>
                     </HoverCardContent>
                   </HoverCard>
-                ))}
-              </div>
+                ))
+              )}
             </div>
-          )}
+          </div>
         </div>
       </div>
     </div>
