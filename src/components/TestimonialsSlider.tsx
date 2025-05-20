@@ -1,6 +1,6 @@
-
 import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 interface Testimonial {
   id: number;
@@ -10,6 +10,7 @@ interface Testimonial {
   content: string;
   rating: number;
   image?: string;
+  initials?: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -20,7 +21,8 @@ const testimonials: Testimonial[] = [
     position: "HR Director",
     content: "TruTalenza has been instrumental in helping us build our engineering team. Their understanding of the tech industry and talent market is exceptional. We've seen a 40% reduction in time-to-hire since partnering with them.",
     rating: 5,
-    image: "/lovable-uploads/5f0df653-072c-4026-bb24-2fdf6d2dacd8.png"
+    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
+    initials: "JL"
   },
   {
     id: 2,
@@ -29,7 +31,8 @@ const testimonials: Testimonial[] = [
     position: "COO",
     content: "Working with TruTalenza has transformed our recruitment process. Their team took the time to understand our company culture and has consistently delivered candidates who are not just qualified but also align with our values.",
     rating: 5,
-    image: "/lovable-uploads/5f0df653-072c-4026-bb24-2fdf6d2dacd8.png"
+    image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+    initials: "RM"
   },
   {
     id: 3,
@@ -38,7 +41,8 @@ const testimonials: Testimonial[] = [
     position: "Talent Acquisition Manager",
     content: "The compliance expertise that TruTalenza brings to the table has been invaluable for our healthcare organization. They've helped us navigate complex regulatory requirements while finding top talent in a competitive market.",
     rating: 4,
-    image: "/lovable-uploads/5f0df653-072c-4026-bb24-2fdf6d2dacd8.png"
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    initials: "SJ"
   },
   {
     id: 4,
@@ -47,7 +51,8 @@ const testimonials: Testimonial[] = [
     position: "CEO",
     content: "As we scaled our business from 50 to 200 employees, TruTalenza provided the HR infrastructure and talent pipeline we needed. Their workforce management solutions are comprehensive and tailored to our industry needs.",
     rating: 5,
-    image: "/lovable-uploads/5f0df653-072c-4026-bb24-2fdf6d2dacd8.png"
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    initials: "MR"
   },
 ];
 
@@ -113,15 +118,16 @@ const TestimonialsSlider = () => {
           
           {/* Author info */}
           <div className="flex items-center">
-            {testimonials[activeIndex].image && (
-              <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-brand-purple">
-                <img 
-                  src={testimonials[activeIndex].image} 
-                  alt={testimonials[activeIndex].name} 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            )}
+            <Avatar className="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-brand-purple">
+              <AvatarImage 
+                src={testimonials[activeIndex].image} 
+                alt={testimonials[activeIndex].name} 
+                className="w-full h-full object-cover"
+              />
+              <AvatarFallback className="bg-brand-purple text-white">
+                {testimonials[activeIndex].initials}
+              </AvatarFallback>
+            </Avatar>
             <div>
               <h4 className="font-bold text-gray-900">{testimonials[activeIndex].name}</h4>
               <p className="text-sm text-gray-600">
