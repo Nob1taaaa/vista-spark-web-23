@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -99,15 +100,15 @@ const Index = () => {
         <HeroSection
           id="trutalenza"
           title="TruTalenza Workforce Solutions"
-          subtitle="Innovative HR Solutions"
-          description="A dynamic and comprehensive talent management and workforce solutions firm. We specialize in providing innovative staffing, recruitment, and HR consulting services to businesses across various sectors."
+          subtitle="Strategic Talent Solutions"
+          description="Innovative workforce solutions and strategic talent acquisition services tailored to drive organizational growth and competitive advantage across diverse industries."
         />
         
         <HeroSection
           id="truvisory"
-          title="TruVisory HR Services"
-          subtitle="End-to-End HR Solutions"
-          description="TruVisory HR Services provides end-to-end HR outsourcing solutions designed to streamline HR functions, reduce costs, and enhance business efficiency."
+          title="TruVisory HR Excellence"
+          subtitle="Complete HR Outsourcing"
+          description="Comprehensive HR outsourcing solutions designed to optimize workforce management, ensure regulatory compliance, and enhance operational efficiency for sustainable business growth."
         />
       </div>
       
@@ -115,7 +116,7 @@ const Index = () => {
       <section className="py-16 bg-white w-full" ref={addToRefs}>
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#382c74] mb-4">Why Choose TruTalenza?</h2>
+            <h2 className="text-3xl font-bold text-[#382c74] mb-4">Why Partner with TruTalenza?</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
@@ -123,9 +124,9 @@ const Index = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#382c74]/10 text-[#382c74] mb-4">
                 <h2 className="text-3xl font-bold">1</h2>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Expertise</h3>
+              <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Industry Expertise</h3>
               <p className="text-gray-600">
-                A dedicated team of recruitment specialists with in-depth industry knowledge.
+                Specialized recruitment professionals with deep sector knowledge and proven track records in strategic talent acquisition.
               </p>
             </div>
             
@@ -133,9 +134,9 @@ const Index = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#382c74]/10 text-[#382c74] mb-4">
                 <h2 className="text-3xl font-bold">2</h2>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Customization</h3>
+              <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Tailored Solutions</h3>
               <p className="text-gray-600">
-                Tailored solutions to meet the specific needs of your business.
+                Customized workforce strategies designed to align with your unique business objectives and organizational culture.
               </p>
             </div>
             
@@ -143,9 +144,9 @@ const Index = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#382c74]/10 text-[#382c74] mb-4">
                 <h2 className="text-3xl font-bold">3</h2>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Efficiency</h3>
+              <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Advanced Technology</h3>
               <p className="text-gray-600">
-                Extensive candidate database and cutting-edge technology to streamline the hiring process.
+                AI-powered talent matching platform with comprehensive candidate databases and streamlined recruitment processes.
               </p>
             </div>
             
@@ -153,41 +154,41 @@ const Index = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#382c74]/10 text-[#382c74] mb-4">
                 <h2 className="text-3xl font-bold">4</h2>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Diversity</h3>
+              <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Inclusive Excellence</h3>
               <p className="text-gray-600">
-                Commitment to diversity and inclusion in the workforce.
+                Committed to building diverse, inclusive workforces that drive innovation and sustainable business success.
               </p>
             </div>
           </div>
           
           <div className="mt-16">
-            <h2 className="text-3xl font-bold text-[#382c74] mb-8 text-center">Our Expertise</h2>
+            <h2 className="text-3xl font-bold text-[#382c74] mb-8 text-center">Core Specializations</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
               <div className="p-4 md:p-6 bg-[#F5F7FF] rounded-lg">
-                <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Top Management</h3>
+                <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Executive Leadership</h3>
                 <p className="text-gray-600">
-                  We specialize in recruiting top-level executives.
+                  Strategic executive search and C-suite recruitment for transformational leadership roles.
                 </p>
               </div>
               
               <div className="p-4 md:p-6 bg-[#F5F7FF] rounded-lg">
-                <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Healthcare/Pharma</h3>
+                <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Healthcare & Life Sciences</h3>
                 <p className="text-gray-600">
-                  We have deep expertise in the healthcare and pharmaceutical industries.
+                  Specialized talent acquisition in healthcare, pharmaceuticals, and biotechnology sectors.
                 </p>
               </div>
               
               <div className="p-4 md:p-6 bg-[#F5F7FF] rounded-lg">
-                <h3 className="text-xl font-semibold mb-2 text-[#382c74]">BFSI</h3>
+                <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Financial Services</h3>
                 <p className="text-gray-600">
-                  We provide recruitment solutions for the banking, financial services, and insurance sectors.
+                  Expert recruitment solutions for banking, financial services, and insurance organizations.
                 </p>
               </div>
               
               <div className="p-4 md:p-6 bg-[#F5F7FF] rounded-lg">
-                <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Retail</h3>
+                <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Technology & Innovation</h3>
                 <p className="text-gray-600">
-                  We assist retailers in finding the best talent.
+                  Advanced talent solutions for technology companies and digital transformation initiatives.
                 </p>
               </div>
             </div>
@@ -199,7 +200,7 @@ const Index = () => {
       <section className="py-16 bg-[#F5F7FF] w-full" ref={addToRefs}>
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#2c3e74] mb-4">Our Approach</h2>
+            <h2 className="text-3xl font-bold text-[#2c3e74] mb-4">Our Strategic Methodology</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
@@ -207,9 +208,9 @@ const Index = () => {
               <div className="flex justify-center mb-4">
                 <Brain size={48} className="text-[#7E69AB]" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-center text-[#2c3e74]">Smart</h3>
+              <h3 className="text-xl font-semibold mb-4 text-center text-[#2c3e74]">Intelligent Sourcing</h3>
               <p className="text-gray-600">
-                We don't rely on job portals to search professionals. Our recruiters have extensive experience in the industries we serve. We have created a powerful database for all levels. Every candidate is thoroughly scrutinized by our professionals for best fitment.
+                Advanced AI-driven talent identification beyond traditional job portals. Our proprietary database and industry expertise ensure precision matching for optimal organizational fit.
               </p>
             </div>
             
@@ -217,9 +218,9 @@ const Index = () => {
               <div className="flex justify-center mb-4">
                 <Target size={48} className="text-[#7E69AB]" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-center text-[#2c3e74]">Tenacious</h3>
+              <h3 className="text-xl font-semibold mb-4 text-center text-[#2c3e74]">Relentless Pursuit</h3>
               <p className="text-gray-600">
-                We are focused in our approach to identify the best talent and never put the search on the back burner and leave no stone unturned to find the right talent to fit your organization. We do not stop till the mission is accomplished.
+                Unwavering commitment to excellence with focused approach to identifying exceptional talent. We persist until we deliver the perfect match for your organization's success.
               </p>
             </div>
             
@@ -227,24 +228,24 @@ const Index = () => {
               <div className="flex justify-center mb-4">
                 <Trophy size={48} className="text-[#7E69AB]" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-center text-[#2c3e74]">Result Oriented</h3>
+              <h3 className="text-xl font-semibold mb-4 text-center text-[#2c3e74]">Outcome Excellence</h3>
               <p className="text-gray-600">
-                We make best use of all the available resources viz. Portals, social media tools, excellent referral program, robust internal database to recruit the finest talents in the shortest possible time without compromising the quality of candidates.
+                Multi-channel talent acquisition leveraging cutting-edge technology, social media intelligence, and strategic partnerships to deliver superior results efficiently.
               </p>
             </div>
           </div>
           
           <div className="mt-20">
-            <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Our Process</h2>
+            <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Strategic Engagement Process</h2>
             <div className="relative max-w-4xl mx-auto">
               <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#7E69AB]/30"></div>
               
               <div className="relative z-10">
                 <div className="flex flex-col md:flex-row items-center mb-16">
                   <div className="md:w-1/2 px-4 mb-4 md:mb-0 md:text-right">
-                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Understanding Needs</h3>
+                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Strategic Discovery</h3>
                     <p className="text-gray-600">
-                      We carefully analyze your requirements and identify the ideal candidate profile.
+                      Comprehensive analysis of organizational requirements and strategic talent profile development for optimal alignment.
                     </p>
                   </div>
                   <div className="w-10 h-10 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold z-10 mx-4">1</div>
@@ -255,18 +256,18 @@ const Index = () => {
                   <div className="md:w-1/2 px-4 mb-4 md:mb-0 md:text-right"></div>
                   <div className="w-10 h-10 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold z-10 mx-4">2</div>
                   <div className="md:w-1/2 px-4 md:text-left">
-                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Candidate Sourcing</h3>
+                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Advanced Talent Intelligence</h3>
                     <p className="text-gray-600">
-                      We leverage our extensive network and advanced search techniques to find qualified candidates.
+                      Multi-channel talent acquisition utilizing proprietary networks, AI-powered search algorithms, and strategic market intelligence.
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex flex-col md:flex-row items-center mb-16">
                   <div className="md:w-1/2 px-4 mb-4 md:mb-0 md:text-right">
-                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Candidate Screening</h3>
+                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Rigorous Assessment</h3>
                     <p className="text-gray-600">
-                      We conduct thorough interviews and assessments to evaluate candidates' skills and experience.
+                      Comprehensive candidate evaluation through structured interviews, competency assessments, and cultural fit analysis.
                     </p>
                   </div>
                   <div className="w-10 h-10 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold z-10 mx-4">3</div>
@@ -277,18 +278,18 @@ const Index = () => {
                   <div className="md:w-1/2 px-4 mb-4 md:mb-0 md:text-right"></div>
                   <div className="w-10 h-10 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold z-10 mx-4">4</div>
                   <div className="md:w-1/2 px-4 md:text-left">
-                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Candidate Presentation</h3>
+                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Strategic Presentation</h3>
                     <p className="text-gray-600">
-                      We present a shortlist of highly qualified candidates who meet your specific needs.
+                      Curated presentation of premium candidates with detailed profiles and strategic recommendations for informed decision-making.
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex flex-col md:flex-row items-center">
                   <div className="md:w-1/2 px-4 mb-4 md:mb-0 md:text-right">
-                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Placement & Onboarding</h3>
+                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Seamless Integration</h3>
                     <p className="text-gray-600">
-                      We facilitate the hiring process and ensure a smooth transition for the new employee.
+                      Comprehensive onboarding support and transition management ensuring successful integration and immediate productivity.
                     </p>
                   </div>
                   <div className="w-10 h-10 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold z-10 mx-4">5</div>
@@ -299,15 +300,15 @@ const Index = () => {
           </div>
           
           <div className="mt-20">
-            <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Our Values</h2>
+            <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Core Values & Principles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
               <div className="flex bg-white p-6 rounded-lg shadow-sm">
                 <div className="w-12 h-12 rounded-md bg-[#2c3e74]/10 flex items-center justify-center mr-4">
                   <Check className="text-[#2c3e74]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Integrity</h3>
-                  <p className="text-gray-600">We uphold ethical standards in all our operations.</p>
+                  <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Uncompromising Integrity</h3>
+                  <p className="text-gray-600">Maintaining the highest ethical standards in all client engagements and candidate interactions.</p>
                 </div>
               </div>
               
@@ -316,8 +317,8 @@ const Index = () => {
                   <Check className="text-[#2c3e74]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Commitment</h3>
-                  <p className="text-gray-600">We are dedicated to delivering exceptional service.</p>
+                  <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Strategic Excellence</h3>
+                  <p className="text-gray-600">Delivering exceptional results through innovative approaches and unwavering commitment to success.</p>
                 </div>
               </div>
               
@@ -326,8 +327,8 @@ const Index = () => {
                   <Zap className="text-[#2c3e74]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Speed</h3>
-                  <p className="text-gray-600">We strive for efficiency and timely results.</p>
+                  <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Agile Efficiency</h3>
+                  <p className="text-gray-600">Rapid response capabilities with streamlined processes for accelerated time-to-market delivery.</p>
                 </div>
               </div>
               
@@ -336,8 +337,8 @@ const Index = () => {
                   <Heart className="text-[#2c3e74]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Passion</h3>
-                  <p className="text-gray-600">We are passionate about connecting talent with opportunity.</p>
+                  <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Purposeful Innovation</h3>
+                  <p className="text-gray-600">Passionate dedication to transforming careers and organizations through strategic talent solutions.</p>
                 </div>
               </div>
             </div>
@@ -345,7 +346,7 @@ const Index = () => {
 
           {/* New TruVisory HR Services Sections */}
           <div className="mt-20">
-            <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">TruVisory HR Services</h2>
+            <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">TruVisory HR Excellence Portfolio</h2>
             
             {/* Services Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-16">
@@ -355,32 +356,32 @@ const Index = () => {
                   <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
                     <span className="text-[#2c3e74] text-2xl font-bold">5</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#2c3e74]">Training & Development</h3>
+                  <h3 className="text-xl font-bold text-[#2c3e74]">Leadership Development</h3>
                 </div>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Leadership & soft skills training</span>
+                    <span className="text-gray-700">Executive leadership & strategic skills enhancement</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Compliance & regulatory training</span>
+                    <span className="text-gray-700">Regulatory compliance & risk management training</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Customized learning & development programs</span>
+                    <span className="text-gray-700">Customized organizational development programs</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">HR workshops & industry best practices</span>
+                    <span className="text-gray-700">Strategic HR workshops & excellence frameworks</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">E-learning solutions & virtual training</span>
+                    <span className="text-gray-700">Digital learning platforms & virtual excellence</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Performance coaching & mentoring programs</span>
+                    <span className="text-gray-700">Performance optimization & strategic mentoring</span>
                   </li>
                 </ul>
               </div>
@@ -391,32 +392,32 @@ const Index = () => {
                   <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
                     <span className="text-[#2c3e74] text-2xl font-bold">6</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#2c3e74]">HR Technology Solutions</h3>
+                  <h3 className="text-xl font-bold text-[#2c3e74]">Digital HR Innovation</h3>
                 </div>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">HRMS & attendance management system</span>
+                    <span className="text-gray-700">Advanced HRMS & intelligent workforce analytics</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Automated leave & payroll management</span>
+                    <span className="text-gray-700">Automated payroll & comprehensive leave management</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Employee self-service portals</span>
+                    <span className="text-gray-700">Employee self-service & engagement platforms</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Analytics & HR dashboards for data-driven decision-making</span>
+                    <span className="text-gray-700">Predictive analytics & strategic HR dashboards</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">AI-driven workforce management solutions</span>
+                    <span className="text-gray-700">AI-powered workforce optimization solutions</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Cloud-based HR integrations</span>
+                    <span className="text-gray-700">Cloud-native HR ecosystem integrations</span>
                   </li>
                 </ul>
               </div>
@@ -427,32 +428,32 @@ const Index = () => {
                   <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
                     <span className="text-[#2c3e74] text-2xl font-bold">7</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#2c3e74]">Benefits Administration</h3>
+                  <h3 className="text-xl font-bold text-[#2c3e74]">Comprehensive Benefits</h3>
                 </div>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Provident fund & gratuity management</span>
+                    <span className="text-gray-700">Strategic retirement & wealth management solutions</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Medical & health insurance facilitation</span>
+                    <span className="text-gray-700">Premium health insurance & wellness facilitation</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Employee wellness programs</span>
+                    <span className="text-gray-700">Holistic employee wellness & engagement programs</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Leave & holiday policy management</span>
+                    <span className="text-gray-700">Flexible leave & progressive policy management</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Employee assistance programs (EAP)</span>
+                    <span className="text-gray-700">Strategic employee assistance & support programs</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Flexible benefits plan administration</span>
+                    <span className="text-gray-700">Personalized benefits portfolio administration</span>
                   </li>
                 </ul>
               </div>
@@ -460,16 +461,16 @@ const Index = () => {
 
             {/* Why Choose Us Section */}
             <div className="mt-20">
-              <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Why Choose Us?</h2>
+              <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Strategic Advantages</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
                 <div className="bg-white rounded-xl p-6 shadow-md">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
                       <span className="text-[#2c3e74] text-2xl font-bold">1</span>
                     </div>
-                    <h3 className="text-xl font-bold text-[#2c3e74]">Expertise & Experience</h3>
+                    <h3 className="text-xl font-bold text-[#2c3e74]">Proven Excellence</h3>
                   </div>
-                  <p className="text-gray-700">Industry leaders with in-depth HR knowledge</p>
+                  <p className="text-gray-700">Industry-leading professionals with extensive expertise and strategic HR knowledge</p>
                 </div>
                 
                 <div className="bg-white rounded-xl p-6 shadow-md">
@@ -477,9 +478,9 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
                       <span className="text-[#2c3e74] text-2xl font-bold">2</span>
                     </div>
-                    <h3 className="text-xl font-bold text-[#2c3e74]">Compliance-Driven Approach</h3>
+                    <h3 className="text-xl font-bold text-[#2c3e74]">Regulatory Mastery</h3>
                   </div>
-                  <p className="text-gray-700">100% statutory compliance and risk mitigation</p>
+                  <p className="text-gray-700">Complete statutory compliance framework with proactive risk mitigation strategies</p>
                 </div>
                 
                 <div className="bg-white rounded-xl p-6 shadow-md">
@@ -487,9 +488,9 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
                       <span className="text-[#2c3e74] text-2xl font-bold">3</span>
                     </div>
-                    <h3 className="text-xl font-bold text-[#2c3e74]">Customized Solutions</h3>
+                    <h3 className="text-xl font-bold text-[#2c3e74]">Tailored Innovation</h3>
                   </div>
-                  <p className="text-gray-700">Tailored HR outsourcing for startups, SMEs, and enterprises</p>
+                  <p className="text-gray-700">Customized HR outsourcing solutions for startups, SMEs, and enterprise organizations</p>
                 </div>
                 
                 <div className="bg-white rounded-xl p-6 shadow-md">
@@ -497,9 +498,9 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
                       <span className="text-[#2c3e74] text-2xl font-bold">4</span>
                     </div>
-                    <h3 className="text-xl font-bold text-[#2c3e74]">Cost & Time Efficiency</h3>
+                    <h3 className="text-xl font-bold text-[#2c3e74]">Operational Excellence</h3>
                   </div>
-                  <p className="text-gray-700">Reduce HR overheads and administrative burdens</p>
+                  <p className="text-gray-700">Significant cost optimization and administrative efficiency improvements</p>
                 </div>
                 
                 <div className="bg-white rounded-xl p-6 shadow-md">
@@ -507,9 +508,9 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
                       <span className="text-[#2c3e74] text-2xl font-bold">5</span>
                     </div>
-                    <h3 className="text-xl font-bold text-[#2c3e74]">Technology-Enabled HR</h3>
+                    <h3 className="text-xl font-bold text-[#2c3e74]">Digital Transformation</h3>
                   </div>
-                  <p className="text-gray-700">AI, HRMS, and automation for digital transformation</p>
+                  <p className="text-gray-700">AI-powered HRMS and automation for comprehensive digital workforce evolution</p>
                 </div>
                 
                 <div className="bg-white rounded-xl p-6 shadow-md">
@@ -517,49 +518,49 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
                       <span className="text-[#2c3e74] text-2xl font-bold">6</span>
                     </div>
-                    <h3 className="text-xl font-bold text-[#2c3e74]">Scalability & Flexibility</h3>
+                    <h3 className="text-xl font-bold text-[#2c3e74]">Growth Partnership</h3>
                   </div>
-                  <p className="text-gray-700">Solutions adaptable for businesses of all sizes</p>
+                  <p className="text-gray-700">Scalable solutions adaptable for organizations across all growth stages</p>
                 </div>
               </div>
             </div>
             
             {/* Timeline and Payment Terms */}
             <div className="mt-20">
-              <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Timeline and Payment Terms</h2>
+              <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Engagement Framework & Investment Terms</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
                 <div className="bg-white rounded-xl p-8 shadow-md">
-                  <h3 className="text-2xl font-bold text-[#2c3e74] mb-6">Timeline</h3>
+                  <h3 className="text-2xl font-bold text-[#2c3e74] mb-6">Strategic Timeline</h3>
                   <ul className="space-y-4">
                     <li className="flex items-start">
                       <span className="text-[#2c3e74] mr-2">•</span>
-                      <span className="text-gray-700">Week 1: Initial consultation and planning</span>
+                      <span className="text-gray-700">Week 1: Strategic consultation and implementation planning</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#2c3e74] mr-2">•</span>
-                      <span className="text-gray-700">Week 2-4: Implementation of HR & accounting services</span>
+                      <span className="text-gray-700">Week 2-4: Comprehensive HR & financial services deployment</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#2c3e74] mr-2">•</span>
-                      <span className="text-gray-700">Ongoing: Monthly and quarterly support</span>
+                      <span className="text-gray-700">Ongoing: Continuous monthly and quarterly strategic support</span>
                     </li>
                   </ul>
                 </div>
                 
                 <div className="bg-white rounded-xl p-8 shadow-md">
-                  <h3 className="text-2xl font-bold text-[#2c3e74] mb-6">Payment Terms</h3>
+                  <h3 className="text-2xl font-bold text-[#2c3e74] mb-6">Investment Structure</h3>
                   <ul className="space-y-4">
                     <li className="flex items-start">
                       <span className="text-[#2c3e74] mr-2">•</span>
-                      <span className="text-gray-700">No advance payment required</span>
+                      <span className="text-gray-700">Zero advance payment required for engagement</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#2c3e74] mr-2">•</span>
-                      <span className="text-gray-700">100% payment upon completion of service month</span>
+                      <span className="text-gray-700">100% payment upon monthly service completion</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#2c3e74] mr-2">•</span>
-                      <span className="text-gray-700">Payment via bank transfer; monthly invoices provided</span>
+                      <span className="text-gray-700">Secure bank transfer with detailed monthly invoicing</span>
                     </li>
                   </ul>
                 </div>
@@ -573,9 +574,9 @@ const Index = () => {
       <section className="py-16 bg-white w-full" ref={addToRefs}>
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-brand-purple mb-4">Why Choose Us</h2>
+            <h2 className="text-3xl font-bold text-brand-purple mb-4">Strategic Partnership Advantages</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our commitment to excellence and client success sets us apart in the HR services and talent acquisition industry.
+              Our unwavering commitment to excellence and transformational client success distinguishes us as the premier choice in HR services and strategic talent acquisition.
             </p>
           </div>
           
@@ -584,9 +585,9 @@ const Index = () => {
               <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-purple/10 text-brand-purple">
                 <Users size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">Expertise & Experience</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">Proven Expertise</h3>
               <p className="text-gray-600">
-                Our team brings decades of combined experience across multiple industries and HR disciplines.
+                Decades of combined excellence across diverse industries and comprehensive HR excellence domains.
               </p>
             </div>
             
@@ -594,9 +595,9 @@ const Index = () => {
               <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-purple/10 text-brand-purple">
                 <Check size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">Compliance-Driven</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">Regulatory Excellence</h3>
               <p className="text-gray-600">
-                We ensure all HR processes and solutions comply with relevant regulations and standards.
+                Comprehensive compliance framework ensuring all HR processes exceed regulatory requirements and industry standards.
               </p>
             </div>
             
@@ -604,9 +605,9 @@ const Index = () => {
               <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-purple/10 text-brand-purple">
                 <Target size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">Customized Solutions</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">Strategic Customization</h3>
               <p className="text-gray-600">
-                We tailor our services to meet your specific business needs rather than offering one-size-fits-all approaches.
+                Tailored solutions designed specifically for your unique business objectives rather than standardized approaches.
               </p>
             </div>
             
@@ -614,9 +615,9 @@ const Index = () => {
               <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-purple/10 text-brand-purple">
                 <LineChart size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">Measurable Results</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">Quantifiable Impact</h3>
               <p className="text-gray-600">
-                Our focus on metrics and analytics ensures you can track the impact of our services on your business.
+                Advanced metrics and analytics capabilities enabling comprehensive tracking of service impact on business performance.
               </p>
             </div>
           </div>
@@ -627,9 +628,9 @@ const Index = () => {
       <section className="py-16 bg-gray-50 w-full" ref={addToRefs}>
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-brand-purple mb-4">What Our Clients Say</h2>
+            <h2 className="text-3xl font-bold text-brand-purple mb-4">Client Success Stories</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Hear from businesses that have transformed their workforce management with our solutions.
+              Discover how organizations have achieved transformational workforce management excellence through our strategic partnerships.
             </p>
           </div>
           
@@ -644,14 +645,14 @@ const Index = () => {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-4">Ready to Elevate Your Workforce Management?</h2>
+              <h2 className="text-3xl font-bold mb-4">Transform Your Workforce Strategy Today</h2>
               <p className="text-lg opacity-90 mb-6">
-                Partner with us to transform your talent acquisition and HR processes for better business outcomes.
+                Partner with industry leaders to revolutionize your talent acquisition and HR excellence for exceptional business outcomes.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/contact">
                   <Button className="bg-white text-brand-purple hover:bg-gray-100 button-hover">
-                    Get Started Today
+                    Begin Strategic Partnership
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -660,9 +661,9 @@ const Index = () => {
             
             <div className="flex justify-center md:justify-end">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 md:p-6 max-w-sm">
-                <h3 className="text-xl font-semibold mb-4">Quick Consultation</h3>
+                <h3 className="text-xl font-semibold mb-4">Executive Consultation</h3>
                 <p className="mb-4">
-                  Schedule a free 30-minute consultation with our HR experts to discuss your specific challenges.
+                  Schedule a complimentary 30-minute strategic consultation with our senior HR experts to explore your specific challenges.
                 </p>
                 <BookConsultation />
               </div>

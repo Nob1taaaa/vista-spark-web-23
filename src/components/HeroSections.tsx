@@ -44,7 +44,7 @@ const HeroSection = ({
               <div className="flex flex-wrap gap-4 justify-center animate-scale-in">
                 <Link to="/contact">
                   <Button className="bg-white text-[#382c74] hover:bg-gray-100 button-hover shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-3px]">
-                    <span>Get in Touch</span>
+                    <span>Begin Partnership</span>
                     <ArrowRight className="ml-2 h-4 w-4 animate-bounce-slow" />
                   </Button>
                 </Link>
@@ -60,30 +60,30 @@ const HeroSection = ({
         <div className="w-full max-w-xl mx-auto">
           <div className="bg-white/5 rounded-xl p-4 md:p-6 backdrop-blur-sm shadow-lg transform transition-all duration-300 hover:bg-white/10">
             <h2 className="text-2xl font-bold text-white mb-6 text-center animate-shine">
-              {isPurple ? "Our Workforce Solutions" : "Our HR Services"}
+              {isPurple ? "Strategic Workforce Solutions" : "Comprehensive HR Excellence"}
             </h2>
             <div className="grid grid-cols-2 gap-3 md:gap-4">
               {isPurple ? (
                 // TruTalenza Services
                 [
                   {
-                    title: 'Talent Acquisition',
-                    description: 'Strategic recruitment for top talent',
+                    title: 'Executive Search',
+                    description: 'Strategic C-suite & leadership recruitment',
                     icon: <Brain className="h-5 w-5" />
                   },
                   {
-                    title: 'Executive Search',
-                    description: 'Specialized C-suite & leadership hiring',
+                    title: 'Talent Acquisition',
+                    description: 'Premium talent identification & placement',
                     icon: <Trophy className="h-5 w-5" />
                   },
                   {
-                    title: 'Corporate Staffing',
-                    description: 'Streamlined workforce management',
+                    title: 'Workforce Solutions',
+                    description: 'Strategic workforce optimization & management',
                     icon: <Building className="h-5 w-5" />
                   },
                   {
-                    title: 'Industry Expertise',
-                    description: 'Specialized recruitment solutions',
+                    title: 'Industry Specialization',
+                    description: 'Sector-specific recruitment excellence',
                     icon: <Store className="h-5 w-5" />
                   }
                 ].map((service, index) => (
@@ -109,10 +109,10 @@ const HeroSection = ({
                         <div>
                           <h4 className="text-sm font-semibold">{service.title}</h4>
                           <p className="text-sm">
-                            {index === 0 && "Find the right talent with our comprehensive recruitment strategies tailored to your organizational needs."}
-                            {index === 1 && "Our executive search services identify and attract top leadership talent to drive your business forward."}
-                            {index === 2 && "Optimize your workforce with flexible staffing solutions designed for maximum efficiency."}
-                            {index === 3 && "Benefit from our specialized knowledge in healthcare, finance, retail, and technology sectors."}
+                            {index === 0 && "Specialized executive search services for C-suite and senior leadership positions requiring strategic vision and transformational capabilities."}
+                            {index === 1 && "Premium talent acquisition strategies designed to identify and attract exceptional professionals aligned with organizational excellence."}
+                            {index === 2 && "Comprehensive workforce optimization solutions designed for maximum operational efficiency and strategic growth acceleration."}
+                            {index === 3 && "Deep industry expertise in healthcare, financial services, technology, and specialized sectors requiring domain knowledge."}
                           </p>
                         </div>
                       </div>
@@ -123,23 +123,23 @@ const HeroSection = ({
                 // TruVisory Services
                 [
                   {
-                    title: 'Payroll Processing', 
-                    description: 'Streamlined and accurate payroll management',
+                    title: 'Strategic Payroll', 
+                    description: 'Advanced payroll & compensation management',
                     icon: <Banknote className="h-5 w-5" />
                   },
                   {
-                    title: 'Compliance Management', 
-                    description: 'Stay updated with all regulatory requirements',
+                    title: 'Compliance Excellence', 
+                    description: 'Comprehensive regulatory compliance solutions',
                     icon: <Check className="h-5 w-5" />
                   },
                   {
-                    title: 'Employee Engagement', 
-                    description: 'Boost workplace morale and productivity',
+                    title: 'Employee Excellence', 
+                    description: 'Advanced engagement & productivity solutions',
                     icon: <Heart className="h-5 w-5" />
                   },
                   {
                     title: 'Strategic HR Planning', 
-                    description: 'Align HR initiatives with business goals',
+                    description: 'Organizational alignment & growth strategies',
                     icon: <Target className="h-5 w-5" />
                   }
                 ].map((service, index) => (
@@ -165,10 +165,10 @@ const HeroSection = ({
                         <div>
                           <h4 className="text-sm font-semibold">{service.title}</h4>
                           <p className="text-sm">
-                            {index === 0 && "Our payroll processing services ensure timely and accurate payment processing while maintaining compliance with tax regulations."}
-                            {index === 1 && "We help you navigate complex regulatory landscapes to ensure your business remains fully compliant with all applicable laws."}
-                            {index === 2 && "Create a positive work environment that fosters employee satisfaction, productivity, and long-term retention."}
-                            {index === 3 && "Develop HR strategies that directly support and enhance your overall business objectives and growth plans."}
+                            {index === 0 && "Advanced payroll processing and compensation management services ensuring precision, compliance, and strategic financial optimization."}
+                            {index === 1 && "Comprehensive regulatory compliance frameworks ensuring your organization exceeds all statutory requirements and industry standards."}
+                            {index === 2 && "Strategic employee engagement initiatives designed to maximize satisfaction, productivity, and long-term organizational commitment."}
+                            {index === 3 && "Strategic HR planning that seamlessly aligns workforce initiatives with core business objectives and growth strategies."}
                           </p>
                         </div>
                       </div>

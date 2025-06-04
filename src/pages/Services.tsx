@@ -8,46 +8,46 @@ import { Link } from "react-router-dom";
 const Services = () => {
   const services = [
     {
-      title: 'Talent Acquisition',
-      description: 'We provide recruitment services across multiple industries, sourcing the best candidates for both permanent and temporary positions.',
+      title: 'Strategic Talent Acquisition',
+      description: 'Advanced recruitment services across multiple industries, sourcing exceptional candidates for both permanent and strategic temporary positions with comprehensive market intelligence.',
       features: [
-        'Executive search and headhunting',
-        'Mass recruitment for large-scale projects',
-        'Specialized talent for niche roles',
-        'Contract and temporary staffing',
+        'Executive search and strategic headhunting',
+        'Large-scale recruitment for enterprise projects',
+        'Specialized talent for niche and critical roles',
+        'Contract and strategic temporary staffing solutions',
       ],
       icon: <Shield className="h-8 w-8" />
     },
     {
-      title: 'HR Consulting',
-      description: 'Our expertise in creating tailored HR strategies helps improve workforce efficiency, compliance, and company culture.',
+      title: 'Strategic HR Consulting',
+      description: 'Comprehensive expertise in developing tailored HR strategies that enhance workforce efficiency, ensure regulatory compliance, and transform organizational culture for sustainable growth.',
       features: [
-        'HR policy development and implementation',
-        'Employee engagement programs',
-        'Performance management systems',
-        'Workplace culture transformation',
+        'Strategic HR policy development and implementation',
+        'Advanced employee engagement and retention programs',
+        'Performance management and optimization systems',
+        'Organizational culture transformation initiatives',
       ],
       icon: <Shield className="h-8 w-8" />
     },
     {
-      title: 'Workforce Management',
-      description: 'We offer comprehensive solutions for managing large-scale workforces, including contingent staffing and project-based hiring.',
+      title: 'Comprehensive Workforce Management',
+      description: 'Advanced solutions for managing large-scale workforces, including strategic contingent staffing, project-based hiring, and comprehensive workforce optimization strategies.',
       features: [
-        'Workforce planning and optimization',
-        'Contractor management systems',
-        'Payroll and benefits administration',
-        'Compliance and risk management',
+        'Strategic workforce planning and optimization',
+        'Advanced contractor management systems',
+        'Comprehensive payroll and benefits administration',
+        'Regulatory compliance and strategic risk management',
       ],
       icon: <Shield className="h-8 w-8" />
     },
     {
-      title: 'Training & Development',
-      description: 'Our customized programs help upskill employees, empowering them with industry knowledge and tools for success.',
+      title: 'Leadership Development & Training',
+      description: 'Premium customized programs designed to enhance leadership capabilities, empowering employees with advanced industry knowledge and strategic tools for organizational success.',
       features: [
-        'Leadership development programs',
-        'Technical skills training',
-        'Onboarding and orientation programs',
-        'Team building and soft skills workshops',
+        'Executive leadership development programs',
+        'Advanced technical skills and competency training',
+        'Comprehensive onboarding and orientation programs',
+        'Strategic team building and leadership workshops',
       ],
       icon: <Shield className="h-8 w-8" />
     }
@@ -61,10 +61,10 @@ const Services = () => {
       <section className="pt-28 pb-16 bg-brand-purple text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Strategic Service Portfolio</h1>
             <p className="text-lg opacity-90 mb-8">
-              Comprehensive workforce solutions tailored to your business needs.
-              We help organizations optimize their talent acquisition and management.
+              Comprehensive workforce solutions and strategic talent acquisition services designed to optimize your business objectives.
+              We partner with organizations to maximize talent potential and drive competitive advantage across diverse industries.
             </p>
           </div>
         </div>
@@ -108,15 +108,15 @@ const Services = () => {
           <div className="bg-gradient-to-r from-brand-purple to-brand-lightPurple rounded-xl p-8 md:p-12 text-white">
             <div className="md:flex md:items-center md:justify-between">
               <div className="md:max-w-2xl">
-                <h2 className="text-3xl font-bold mb-4">Ready to transform your workforce?</h2>
+                <h2 className="text-3xl font-bold mb-4">Ready to transform your strategic workforce capabilities?</h2>
                 <p className="text-lg opacity-90 mb-8 md:mb-0">
-                  Partner with TruTalenza for innovative HR solutions that drive growth and success.
+                  Partner with TruTalenza for innovative HR solutions that drive exceptional growth and sustainable competitive advantage.
                 </p>
               </div>
               <div>
                 <Link to="/contact">
                   <Button className="bg-white text-brand-purple hover:bg-gray-100">
-                    Contact Us Today
+                    Begin Strategic Partnership
                   </Button>
                 </Link>
               </div>
