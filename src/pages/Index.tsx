@@ -5,35 +5,8 @@ import Navbar from '../components/Navbar';
 import HeroSections from '../components/HeroSections';
 import TestimonialsSlider from '../components/TestimonialsSlider';
 import Footer from '../components/Footer';
-import LoginModal from '../components/LoginModal';
-import { authService } from '@/lib/utils';
 
 const Index = () => {
-  const [showLoginModal, setShowLoginModal] = useState(false);
-
-  useEffect(() => {
-    // Check if user has seen the login popup before and is not already authenticated
-    const hasSeenLoginPopup = localStorage.getItem('hasSeenLoginPopup');
-    const isAuthenticated = authService.isAuthenticated();
-    
-    if (!hasSeenLoginPopup && !isAuthenticated) {
-      // Show modal after a short delay for better UX
-      const timer = setTimeout(() => {
-        setShowLoginModal(true);
-      }, 2000);
-      
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
-  const handleLoginSuccess = () => {
-    localStorage.setItem('hasSeenLoginPopup', 'true');
-  };
-
-  const handleCloseModal = () => {
-    setShowLoginModal(false);
-  };
-
   // Mock testimonials data
   const testimonials = [
     {
@@ -62,7 +35,12 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <HeroSections />
+      <HeroSections 
+        id="trutalenza"
+        title="TruTalenza"
+        subtitle="Strategic Workforce Solutions"
+        description="Connecting exceptional talent with visionary organizations through personalized recruitment excellence and strategic workforce optimization."
+      />
       
       {/* Features Section */}
       <section className="py-20 bg-white">
@@ -144,12 +122,6 @@ const Index = () => {
 
       <TestimonialsSlider testimonials={testimonials} />
       <Footer />
-      
-      <LoginModal 
-        isOpen={showLoginModal}
-        onClose={handleCloseModal}
-        onLoginSuccess={handleLoginSuccess}
-      />
     </div>
   );
 };
