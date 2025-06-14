@@ -1,311 +1,196 @@
 
+import React, { lazy, Suspense } from 'react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { CheckCircle, Users, TrendingUp, Shield, Clock, Award, Zap, Target, Globe } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Shield, Check, Users, FileText, Calculator, TrendingUp, Lock, BarChart3, Database, Target, BookOpen, Search, Award, Zap, DollarSign, Settings, Layers, CheckCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import MobileOptimized from "@/components/MobileOptimized";
+
+// Lazy load heavy components
+const TestimonialsSlider = lazy(() => import("@/components/TestimonialsSlider"));
+
+const LoadingCard = () => (
+  <div className="animate-pulse bg-gray-200 h-32 rounded-lg"></div>
+);
 
 const Services = () => {
-  const hrServices = [
+  const services = [
     {
-      title: 'Labour Law Support',
-      description: 'Assistance with registrations, licenses, and document filing',
-      icon: <FileText className="h-6 w-6 sm:h-8 sm:w-8" />
+      icon: <Users className="w-6 h-6" />,
+      title: "Recruitment & Talent Acquisition",
+      description: "Strategic hiring solutions to find the right talent for your organization.",
+      features: ["Executive Search", "Volume Recruitment", "Talent Pipeline Development"]
     },
     {
-      title: 'Attendance & Leave Management',
-      description: 'Accurate tracking of employee attendance and leave records',
-      icon: <Users className="h-6 w-6 sm:h-8 sm:w-8" />
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: "HR Consulting",
+      description: "Comprehensive HR advisory services to optimize your people strategy.",
+      features: ["HR Strategy", "Process Optimization", "Compliance Management"]
     },
     {
-      title: 'LWF, PT Bonus, Gratuity',
-      description: 'Compliance with LWF & PT regulations, bonus calculations, and gratuity management',
-      icon: <Calculator className="h-6 w-6 sm:h-8 sm:w-8" />
+      icon: <Shield className="w-6 h-6" />,
+      title: "Payroll & Benefits",
+      description: "Complete payroll management and benefits administration services.",
+      features: ["Payroll Processing", "Benefits Management", "Tax Compliance"]
     },
     {
-      title: 'TDS Management',
-      description: 'Timely and accurate TDS deductions, remittance, and reporting',
-      icon: <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8" />
-    },
-    {
-      title: 'Acts',
-      description: 'Adherence to labour laws, including the Minimum Wages Act, Payment of Wages, Maternity & Posh',
-      icon: <Shield className="h-6 w-6 sm:h-8 sm:w-8" />
-    },
-    {
-      title: 'EPF & ESIC',
-      description: 'Manage employee registration and monthly challan submission, Periodic audit, to ensure compliance',
-      icon: <CheckCircle className="h-6 w-6 sm:h-8 sm:w-8" />
+      icon: <Globe className="w-6 h-6" />,
+      title: "Global Workforce Solutions",
+      description: "International HR solutions for expanding businesses.",
+      features: ["Global Compliance", "International Payroll", "Remote Team Management"]
     }
   ];
 
-  const technologyServices = [
+  const processSteps = [
     {
-      title: 'Secure Payroll Processing',
-      description: 'Advanced platforms ensure secure and efficient payroll processing',
-      icon: <Lock className="h-6 w-6 sm:h-8 sm:w-8" />
+      number: "1",
+      title: "Initial Consultation",
+      description: "Understanding your unique business needs and challenges."
     },
     {
-      title: 'Real-Time Reporting',
-      description: 'Real-time reporting for payroll and compliance tracking',
-      icon: <BarChart3 className="h-6 w-6 sm:h-8 sm:w-8" />
+      number: "2", 
+      title: "Strategy Development",
+      description: "Creating customized HR solutions tailored to your goals."
     },
     {
-      title: 'Data Security & Confidentiality',
-      description: 'Data security and confidentiality are paramount',
-      icon: <Database className="h-6 w-6 sm:h-8 sm:w-8" />
-    }
-  ];
-
-  const workforceServices = [
-    {
-      title: 'Workforce Management',
-      description: 'Scalable solutions for large teams and project-based hiring',
-      icon: <Users className="h-6 w-6 sm:h-8 sm:w-8" />
+      number: "3",
+      title: "Implementation",
+      description: "Executing the strategy with precision and attention to detail."
     },
     {
-      title: 'Training & Development',
-      description: 'Upskilling employees with industry-leading programs',
-      icon: <BookOpen className="h-6 w-6 sm:h-8 sm:w-8" />
-    },
-    {
-      title: 'Executive Search',
-      description: 'Recruiting top-level management and specialized roles',
-      icon: <Search className="h-6 w-6 sm:h-8 sm:w-8" />
-    }
-  ];
-
-  const whyChooseUs = [
-    {
-      title: 'Expertise & Experience',
-      icon: <Award className="h-5 w-5 sm:h-6 sm:w-6" />
-    },
-    {
-      title: 'Compliance-Driven Approach',
-      icon: <Shield className="h-5 w-5 sm:h-6 sm:w-6" />
-    },
-    {
-      title: 'Customized Solutions',
-      icon: <Settings className="h-5 w-5 sm:h-6 sm:w-6" />
-    },
-    {
-      title: 'Cost & Time Efficiency',
-      icon: <DollarSign className="h-5 w-5 sm:h-6 sm:w-6" />
-    },
-    {
-      title: 'Technology-Enabled HR',
-      icon: <Zap className="h-5 w-5 sm:h-6 sm:w-6" />
-    },
-    {
-      title: 'Scalability & Flexibility',
-      icon: <Layers className="h-5 w-5 sm:h-6 sm:w-6" />
-    }
-  ];
-
-  const additionalFeatures = [
-    {
-      title: 'Dedicated Teams',
-      icon: <Target className="h-5 w-5 sm:h-6 sm:w-6" />
-    },
-    {
-      title: 'Advanced Technology',
-      icon: <Zap className="h-5 w-5 sm:h-6 sm:w-6" />
-    },
-    {
-      title: 'Cost-Effective Solutions',
-      icon: <DollarSign className="h-5 w-5 sm:h-6 sm:w-6" />
-    },
-    {
-      title: 'Customization',
-      icon: <Settings className="h-5 w-5 sm:h-6 sm:w-6" />
-    },
-    {
-      title: 'Efficiency',
-      icon: <TrendingUp className="h-5 w-5 sm:h-6 sm:w-6" />
+      number: "4",
+      title: "Ongoing Support",
+      description: "Continuous monitoring and optimization for lasting success."
     }
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
       <Navbar />
       
-      {/* Hero Section - Mobile Optimized */}
-      <section className="mobile-hero bg-brand-purple text-white">
-        <div className="mobile-container">
-          <div className="mobile-hero-content">
-            <h1 className="font-bold mb-4 sm:mb-6 text-white drop-shadow-md animate-pulse-slow">
-              Strategic Service Portfolio
+      {/* Hero Section - Optimized for mobile */}
+      <section className="pt-20 pb-8 sm:pb-12">
+        <MobileOptimized>
+          <div className="text-center max-w-4xl mx-auto">
+            <Badge variant="outline" className="mb-4 text-brand-purple border-brand-purple">
+              Professional HR Services
+            </Badge>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+              Transform Your <span className="text-brand-purple">Workforce</span>
             </h1>
-            <p className="mobile-text opacity-90 mb-6 sm:mb-8 text-white animate-slide-in leading-relaxed">
-              Comprehensive workforce solutions and strategic talent acquisition services designed to optimize your business objectives.
-              We partner with organizations to maximize talent potential and drive competitive advantage across diverse industries.
+            <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+              Comprehensive HR solutions designed to help your business thrive in today's competitive landscape.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="mobile-button bg-brand-purple hover:bg-brand-purple/90">
+                Get Started Today
+              </Button>
+              <Button variant="outline" size="lg" className="mobile-button">
+                View Our Process
+              </Button>
+            </div>
           </div>
-        </div>
-      </section>
-      
-      {/* HR Services Section - Mobile Optimized */}
-      <section className="mobile-section bg-gray-50">
-        <div className="mobile-container">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="font-bold mb-3 sm:mb-4 text-brand-purple">HR Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mobile-text px-4 sm:px-0">
-              Comprehensive HR solutions to streamline your business operations and ensure compliance
-            </p>
-          </div>
-          <div className="mobile-grid-3">
-            {hrServices.map((service, index) => (
-              <div 
-                key={index}
-                className="service-card border-t-4 border-brand-purple"
-              >
-                <div className="mb-3 sm:mb-4 text-brand-purple flex justify-center sm:justify-start">
-                  {service.icon}
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-brand-purple text-center sm:text-left">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mobile-text text-center sm:text-left leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+        </MobileOptimized>
       </section>
 
-      {/* Technology-Driven Efficiency Section - Mobile Optimized */}
-      <section className="mobile-section">
-        <div className="mobile-container">
+      {/* Services Grid - Mobile Optimized */}
+      <section className="py-8 sm:py-12">
+        <MobileOptimized>
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="font-bold mb-3 sm:mb-4 text-brand-purple">Technology-Driven Efficiency</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mobile-text px-4 sm:px-0">
-              Leveraging cutting-edge technology to deliver efficient and secure HR solutions
-            </p>
-          </div>
-          <div className="mobile-grid-3">
-            {technologyServices.map((service, index) => (
-              <div 
-                key={index}
-                className="service-card text-center"
-              >
-                <div className="mb-3 sm:mb-4 text-brand-purple flex justify-center">
-                  {service.icon}
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-brand-purple">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mobile-text leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Workforce Solutions Section - Mobile Optimized */}
-      <section className="mobile-section bg-gray-50">
-        <div className="mobile-container">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="font-bold mb-3 sm:mb-4 text-brand-purple">Workforce Solutions</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mobile-text px-4 sm:px-0">
-              Comprehensive workforce management and talent acquisition solutions
-            </p>
-          </div>
-          <div className="mobile-grid-3">
-            {workforceServices.map((service, index) => (
-              <div 
-                key={index}
-                className="service-card text-center"
-              >
-                <div className="mb-3 sm:mb-4 text-brand-purple flex justify-center">
-                  {service.icon}
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-brand-purple">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mobile-text leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section - Mobile Optimized */}
-      <section className="mobile-section">
-        <div className="mobile-container">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="font-bold mb-3 sm:mb-4 text-brand-purple">Why Choose Us</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mobile-text px-4 sm:px-0">
-              Discover what sets us apart in delivering exceptional HR and workforce solutions
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Our Core Services
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Comprehensive HR solutions tailored to your business needs.
             </p>
           </div>
           
-          {/* Main Why Choose Us Features - Mobile Optimized */}
-          <div className="mobile-grid-3 mb-8 sm:mb-12">
-            {whyChooseUs.map((feature, index) => (
-              <div 
-                key={index}
-                className="service-card text-center border border-gray-100"
-              >
-                <div className="mb-3 sm:mb-4 text-brand-purple flex justify-center">
-                  {feature.icon}
+          <div className="mobile-grid mobile-grid-2 lg:grid-cols-2 gap-4 sm:gap-6">
+            {services.map((service, index) => (
+              <Card key={index} className="mobile-card hover:shadow-lg group">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-brand-purple/10 rounded-lg text-brand-purple group-hover:bg-brand-purple group-hover:text-white transition-colors">
+                      {service.icon}
+                    </div>
+                    <CardTitle className="text-lg sm:text-xl">{service.title}</CardTitle>
+                  </div>
+                  <CardDescription className="text-sm sm:text-base">
+                    {service.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </MobileOptimized>
+      </section>
+
+      {/* Process Section - Simplified for mobile */}
+      <section className="py-8 sm:py-12 bg-white/50">
+        <MobileOptimized>
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Our Strategic Process
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              A proven methodology that delivers results for businesses of all sizes.
+            </p>
+          </div>
+          
+          <div className="process-timeline max-w-2xl mx-auto">
+            {processSteps.map((step, index) => (
+              <div key={index} className="process-step">
+                <div className="process-number">
+                  {step.number}
                 </div>
-                <h3 className="text-base sm:text-lg font-semibold text-brand-purple">
-                  {feature.title}
-                </h3>
+                <div className="process-content">
+                  <h3 className="process-title">{step.title}</h3>
+                  <p className="process-description">{step.description}</p>
+                </div>
               </div>
             ))}
           </div>
+        </MobileOptimized>
+      </section>
 
-          {/* Additional Features - Mobile Optimized */}
-          <div className="bg-gradient-to-r from-brand-purple to-brand-lightPurple rounded-xl p-6 sm:p-8 text-white">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center">Additional Benefits</h3>
-            <div className="mobile-grid-5">
-              {additionalFeatures.map((feature, index) => (
-                <div 
-                  key={index}
-                  className="text-center p-3 sm:p-4 rounded-lg bg-white/10 backdrop-blur-sm"
-                >
-                  <div className="mb-2 flex justify-center">
-                    {feature.icon}
-                  </div>
-                  <h4 className="text-xs sm:text-sm font-medium">
-                    {feature.title}
-                  </h4>
-                </div>
-              ))}
-            </div>
+      {/* CTA Section */}
+      <section className="py-8 sm:py-12">
+        <MobileOptimized>
+          <div className="text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Ready to Transform Your HR?
+            </h2>
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+              Let's discuss how our services can help you achieve your business goals.
+            </p>
+            <Button size="lg" className="mobile-button bg-brand-purple hover:bg-brand-purple/90">
+              Schedule Consultation
+            </Button>
           </div>
-        </div>
+        </MobileOptimized>
       </section>
-      
-      {/* Call to Action - Mobile Optimized */}
-      <section className="mobile-section bg-gray-50">
-        <div className="mobile-container">
-          <div className="bg-gradient-to-r from-brand-purple to-brand-lightPurple rounded-xl p-6 sm:p-8 md:p-12 text-white">
-            <div className="text-center md:text-left md:flex md:items-center md:justify-between">
-              <div className="md:max-w-2xl mb-6 md:mb-0">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Ready to transform your strategic workforce capabilities?</h2>
-                <p className="mobile-text opacity-90 leading-relaxed">
-                  Partner with TruTalenza for innovative HR solutions that drive exceptional growth and sustainable competitive advantage.
-                </p>
-              </div>
-              <div className="flex justify-center md:justify-end">
-                <Link to="/contact">
-                  <Button className="mobile-button bg-white text-brand-purple hover:bg-gray-100 w-full sm:w-auto">
-                    Begin Strategic Partnership
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+
+      {/* Testimonials - Lazy loaded */}
+      <section className="py-8 sm:py-12 bg-white/50">
+        <MobileOptimized fallback={<LoadingCard />}>
+          <Suspense fallback={<LoadingCard />}>
+            <TestimonialsSlider />
+          </Suspense>
+        </MobileOptimized>
       </section>
-      
+
       <Footer />
     </div>
   );
