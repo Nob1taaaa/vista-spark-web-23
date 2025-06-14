@@ -97,6 +97,23 @@
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight;
   }
+
+  /* Mobile-first responsive typography */
+  h1 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+  
+  h3 {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+  
+  p {
+    @apply text-sm sm:text-base;
+  }
 }
 
 @layer components {
@@ -116,9 +133,9 @@
     @apply hover:scale-105 transition-transform duration-200;
   }
   
-  /* Enhanced card styles with better hover effects */
+  /* Mobile-optimized card styles */
   .feature-card {
-    @apply bg-white rounded-xl p-6 shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300;
+    @apply bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300;
     @apply hover:-translate-y-1 hover:shadow-xl hover:border-brand-purple/20;
     @apply md:opacity-100; /* Always visible on mobile */
     @apply relative overflow-hidden;
@@ -131,6 +148,27 @@
   
   .feature-card:hover::before {
     @apply opacity-100;
+  }
+  
+  /* Mobile-specific adjustments */
+  .mobile-optimized {
+    @apply px-4 sm:px-6 md:px-8;
+  }
+  
+  .mobile-text {
+    @apply text-sm sm:text-base leading-relaxed;
+  }
+  
+  .mobile-spacing {
+    @apply space-y-4 sm:space-y-6 md:space-y-8;
+  }
+  
+  .mobile-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8;
+  }
+  
+  .mobile-flex {
+    @apply flex flex-col sm:flex-row gap-4 sm:gap-6;
   }
   
   /* Ensure content is always visible on mobile */
@@ -160,50 +198,18 @@
     @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-brand-purple after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100;
   }
   
-  /* Improved form input styles */
+  /* Improved form input styles with mobile focus */
   .input-focus {
     @apply focus:border-brand-purple focus:ring focus:ring-brand-purple/20 focus:ring-offset-2 transition-all duration-200;
+    @apply text-base; /* Prevents zoom on iOS */
   }
   
-  /* Enhanced card styles with better hover effects and animations */
-  .feature-card {
-    @apply bg-white rounded-xl p-6 shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300;
-    @apply transform-gpu hover:-translate-y-1 hover:shadow-xl hover:border-brand-purple/20;
-    @apply relative overflow-hidden;
-  }
-  
-  .feature-card::after {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full opacity-0;
-    @apply transition-all duration-700;
-  }
-  
-  .feature-card:hover::after {
-    @apply translate-x-full opacity-100;
-  }
-  
-  /* Page transitions */
-  .page-transition-enter {
-    @apply opacity-0;
-  }
-  
-  .page-transition-enter-active {
-    @apply opacity-100 transition-opacity duration-300;
-  }
-  
-  .page-transition-exit {
-    @apply opacity-100;
-  }
-  
-  .page-transition-exit-active {
-    @apply opacity-0 transition-opacity duration-300;
-  }
-
-  /* Enhanced card styles */
+  /* Enhanced card styles with better mobile touch targets */
   .service-card {
-    @apply bg-white rounded-xl p-6 shadow-sm border border-transparent transition-all duration-300;
+    @apply bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-transparent transition-all duration-300;
     @apply hover:-translate-y-2 hover:shadow-xl hover:border-brand-purple/20;
-    @apply relative overflow-hidden;
+    @apply relative overflow-hidden min-h-[120px] sm:min-h-[140px];
+    @apply touch-manipulation; /* Better touch response */
   }
   
   .service-card::before {
@@ -226,55 +232,76 @@
     @apply translate-x-full;
   }
   
-  /* Enhanced timeline points */
+  /* Mobile-optimized timeline points */
   .timeline-point {
-    @apply w-10 h-10 rounded-full flex items-center justify-center font-bold z-10 transition-all duration-300;
-    @apply hover:scale-110 hover:shadow-lg;
+    @apply w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold z-10 transition-all duration-300;
+    @apply hover:scale-110 hover:shadow-lg text-xs sm:text-sm;
   }
   
-  /* Enhanced process steps */
+  /* Enhanced process steps for mobile */
   .process-step {
-    @apply transition-all duration-300 ease-out;
+    @apply transition-all duration-300 ease-out p-4 sm:p-6;
     @apply hover:-translate-y-1 hover:shadow-md;
   }
   
-  /* Icon hover effects */
+  /* Icon hover effects with better mobile sizing */
   .icon-hover {
     @apply transition-all duration-300;
-    @apply hover:scale-110 hover:text-brand-purple;
+    @apply hover:scale-110 hover:text-brand-purple w-5 h-5 sm:w-6 sm:h-6;
   }
   
-  /* Button pulse effect */
-  .button-pulse {
-    animation: pulse 2s infinite;
+  /* Button styles optimized for mobile touch */
+  .mobile-button {
+    @apply px-4 py-3 sm:px-6 sm:py-2 text-sm sm:text-base;
+    @apply min-h-[44px] touch-manipulation; /* iOS recommended touch target size */
   }
   
-  /* Card glow effect */
-  .card-glow {
-    @apply relative;
+  /* Mobile-specific navigation styles */
+  .mobile-nav {
+    @apply fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-md shadow-md;
   }
   
-  .card-glow::after {
-    content: '';
-    @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300;
-    box-shadow: 0 0 15px 2px rgba(56, 44, 116, 0.3);
+  /* Container classes for consistent mobile spacing */
+  .mobile-container {
+    @apply container mx-auto px-4 sm:px-6 md:px-8;
   }
   
-  .card-glow:hover::after {
-    @apply opacity-100;
+  .mobile-section {
+    @apply py-8 sm:py-12 md:py-16;
   }
   
-  /* Add 3D tilt effect */
-  .tilt-card {
-    @apply transition-transform duration-300 transform-gpu;
-    perspective: 1000px;
+  /* Hero section mobile optimization */
+  .mobile-hero {
+    @apply pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-12 md:pb-16;
   }
   
-  .tilt-card:hover {
-    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
+  .mobile-hero-content {
+    @apply max-w-full sm:max-w-2xl md:max-w-3xl mx-auto text-center px-4 sm:px-6;
+  }
+  
+  /* Grid system for mobile */
+  .mobile-grid-1 {
+    @apply grid grid-cols-1 gap-4 sm:gap-6;
+  }
+  
+  .mobile-grid-2 {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8;
+  }
+  
+  .mobile-grid-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8;
+  }
+  
+  .mobile-grid-4 {
+    @apply grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6;
+  }
+  
+  .mobile-grid-5 {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4;
   }
 }
 
+/* Existing keyframes and animations remain the same */
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
@@ -385,6 +412,19 @@
     background-size: 200% auto;
     animation: shine 3s linear infinite;
   }
+  
+  /* Mobile-specific utilities */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
 
 @keyframes fadeIn {
@@ -415,5 +455,47 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* Mobile-specific media queries for fine-tuning */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+  
+  /* Ensure buttons are touch-friendly */
+  button, .btn, [role="button"] {
+    @apply min-h-[44px] touch-manipulation;
+  }
+  
+  /* Improve readability on small screens */
+  .text-xs {
+    @apply text-sm;
+  }
+  
+  /* Better spacing for mobile */
+  .space-y-1 > * + * {
+    @apply mt-2;
+  }
+  
+  .space-y-2 > * + * {
+    @apply mt-3;
+  }
+  
+  /* Mobile-optimized cards */
+  .card, .feature-card, .service-card {
+    @apply mx-2 sm:mx-0;
+  }
+}
+
+/* Landscape mobile adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .mobile-hero {
+    @apply pt-16 pb-6;
+  }
+  
+  .mobile-section {
+    @apply py-6;
   }
 }
