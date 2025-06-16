@@ -5,9 +5,14 @@ import {
   Users, 
   LineChart, 
   Target, 
+  Clock,
   Check,
   Brain,
   Trophy,
+  Building,
+  Hospital,
+  Banknote,
+  Store,
   Zap,
   Heart
 } from 'lucide-react';
@@ -19,7 +24,9 @@ import BookConsultation from '@/components/BookConsultation';
 import HeroSection from '@/components/HeroSections';
 
 const Index = () => {
+  // References for scroll animations
   const sectionsRef = useRef<HTMLElement[]>([]);
+  // Track if page has been mounted to prevent refresh issues
   const [isMounted, setIsMounted] = useState(false);
   
   const addToRefs = (el: HTMLElement | null) => {
@@ -47,6 +54,7 @@ const Index = () => {
       });
     }, observerOptions);
     
+    // Only add observers if page is mounted
     if (isMounted) {
       sectionsRef.current.forEach((section) => {
         section.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
@@ -63,19 +71,47 @@ const Index = () => {
     };
   }, [isMounted]);
 
+  // Show all content immediately on mobile to avoid hover dependency
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        // Make all cards visible on mobile without needing hover
+        document.querySelectorAll('.card-hover').forEach(card => {
+          card.classList.add('mobile-visible');
+        });
+      }
+    };
+    
+    // Run once on mount and on resize
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col w-full overflow-x-hidden">
       <Navbar />
       
-      {/* Single Hero Section */}
-      <HeroSection
-        id="trutalenza"
-        title="TruTalenza Workforce Solutions"
-        subtitle="Strategic Talent Solutions & HR Excellence"
-        description="Comprehensive workforce solutions and strategic talent acquisition services designed to optimize organizational growth, ensure regulatory compliance, and drive competitive advantage across diverse industries."
-      />
+      {/* Split Hero Sections */}
+      <div className="flex flex-col md:flex-row w-full">
+        <HeroSection
+          id="trutalenza"
+          title="TruTalenza Workforce Solutions"
+          subtitle="Strategic Talent Solutions"
+          description="Innovative workforce solutions and strategic talent acquisition services tailored to drive organizational growth and competitive advantage across diverse industries."
+        />
+        
+        <HeroSection
+          id="truvisory"
+          title="TruVisory HR Excellence"
+          subtitle="Complete HR Outsourcing"
+          description="Comprehensive HR outsourcing solutions designed to optimize workforce management, ensure regulatory compliance, and enhance operational efficiency for sustainable business growth."
+        />
+      </div>
       
-      {/* Why Partner with TruTalenza Section */}
+      {/* TruTalenza detailed content sections */}
       <section className="py-16 bg-white w-full" ref={addToRefs}>
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
@@ -243,6 +279,7 @@ const Index = () => {
             </div>
           </div>
           
+          {/* ... keep existing code (methodology and values sections) */}
           <div className="mt-16">
             <h2 className="text-3xl font-bold text-[#2c3e74] mb-8 text-center">Our Strategic Methodology</h2>
             
@@ -326,7 +363,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Features Section */}
+      {/* Features Section - visible regardless of active section */}
       <section className="py-16 bg-white w-full" ref={addToRefs}>
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
