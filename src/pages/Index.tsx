@@ -196,7 +196,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* TruVisory detailed content sections */}
+      {/* TruVisory detailed content sections - Updated with horizontal timeline */}
       <section className="py-16 bg-[#F5F7FF] w-full" ref={addToRefs}>
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
@@ -235,65 +235,68 @@ const Index = () => {
             </div>
           </div>
           
+          {/* Horizontal Strategic Engagement Process */}
           <div className="mt-20">
             <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Strategic Engagement Process</h2>
-            <div className="relative max-w-4xl mx-auto">
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#7E69AB]/30"></div>
+            <div className="relative">
+              {/* Horizontal line */}
+              <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-[#7E69AB]/30 transform -translate-y-1/2"></div>
               
-              <div className="relative z-10">
-                <div className="flex flex-col md:flex-row items-center mb-16">
-                  <div className="md:w-1/2 px-4 mb-4 md:mb-0 md:text-right">
-                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Strategic Discovery</h3>
-                    <p className="text-gray-600">
-                      Comprehensive analysis of organizational requirements and strategic talent profile development for optimal alignment.
-                    </p>
+              {/* Process steps in horizontal layout */}
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4">
+                {/* Step 1 */}
+                <div className="text-center relative">
+                  <div className="w-16 h-16 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold text-xl z-10 mx-auto mb-4 relative">
+                    1
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold z-10 mx-4">1</div>
-                  <div className="md:w-1/2 px-4 md:text-left"></div>
+                  <h3 className="text-lg font-semibold mb-2 text-[#2c3e74]">Strategic Discovery</h3>
+                  <p className="text-sm text-gray-600">
+                    Comprehensive analysis of organizational requirements and strategic talent profile development.
+                  </p>
                 </div>
                 
-                <div className="flex flex-col md:flex-row items-center mb-16">
-                  <div className="md:w-1/2 px-4 mb-4 md:mb-0 md:text-right"></div>
-                  <div className="w-10 h-10 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold z-10 mx-4">2</div>
-                  <div className="md:w-1/2 px-4 md:text-left">
-                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Advanced Talent Intelligence</h3>
-                    <p className="text-gray-600">
-                      Multi-channel talent acquisition utilizing proprietary networks, AI-powered search algorithms, and strategic market intelligence.
-                    </p>
+                {/* Step 2 */}
+                <div className="text-center relative">
+                  <div className="w-16 h-16 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold text-xl z-10 mx-auto mb-4 relative">
+                    2
                   </div>
+                  <h3 className="text-lg font-semibold mb-2 text-[#2c3e74]">Advanced Talent Intelligence</h3>
+                  <p className="text-sm text-gray-600">
+                    Multi-channel talent acquisition utilizing proprietary networks and AI-powered search algorithms.
+                  </p>
                 </div>
                 
-                <div className="flex flex-col md:flex-row items-center mb-16">
-                  <div className="md:w-1/2 px-4 mb-4 md:mb-0 md:text-right">
-                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Rigorous Assessment</h3>
-                    <p className="text-gray-600">
-                      Comprehensive candidate evaluation through structured interviews, competency assessments, and cultural fit analysis.
-                    </p>
+                {/* Step 3 */}
+                <div className="text-center relative">
+                  <div className="w-16 h-16 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold text-xl z-10 mx-auto mb-4 relative">
+                    3
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold z-10 mx-4">3</div>
-                  <div className="md:w-1/2 px-4 md:text-left"></div>
+                  <h3 className="text-lg font-semibold mb-2 text-[#2c3e74]">Rigorous Assessment</h3>
+                  <p className="text-sm text-gray-600">
+                    Comprehensive candidate evaluation through structured interviews and competency assessments.
+                  </p>
                 </div>
                 
-                <div className="flex flex-col md:flex-row items-center mb-16">
-                  <div className="md:w-1/2 px-4 mb-4 md:mb-0 md:text-right"></div>
-                  <div className="w-10 h-10 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold z-10 mx-4">4</div>
-                  <div className="md:w-1/2 px-4 md:text-left">
-                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Strategic Presentation</h3>
-                    <p className="text-gray-600">
-                      Curated presentation of premium candidates with detailed profiles and strategic recommendations for informed decision-making.
-                    </p>
+                {/* Step 4 */}
+                <div className="text-center relative">
+                  <div className="w-16 h-16 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold text-xl z-10 mx-auto mb-4 relative">
+                    4
                   </div>
+                  <h3 className="text-lg font-semibold mb-2 text-[#2c3e74]">Strategic Presentation</h3>
+                  <p className="text-sm text-gray-600">
+                    Curated presentation of premium candidates with detailed profiles and strategic recommendations.
+                  </p>
                 </div>
                 
-                <div className="flex flex-col md:flex-row items-center">
-                  <div className="md:w-1/2 px-4 mb-4 md:mb-0 md:text-right">
-                    <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Seamless Integration</h3>
-                    <p className="text-gray-600">
-                      Comprehensive onboarding support and transition management ensuring successful integration and immediate productivity.
-                    </p>
+                {/* Step 5 */}
+                <div className="text-center relative">
+                  <div className="w-16 h-16 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold text-xl z-10 mx-auto mb-4 relative">
+                    5
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold z-10 mx-4">5</div>
-                  <div className="md:w-1/2 px-4 md:text-left"></div>
+                  <h3 className="text-lg font-semibold mb-2 text-[#2c3e74]">Seamless Integration</h3>
+                  <p className="text-sm text-gray-600">
+                    Comprehensive onboarding support and transition management ensuring successful integration.
+                  </p>
                 </div>
               </div>
             </div>
@@ -339,230 +342,6 @@ const Index = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-[#2c3e74]">Purposeful Innovation</h3>
                   <p className="text-gray-600">Passionate dedication to transforming careers and organizations through strategic talent solutions.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* New TruVisory HR Services Sections */}
-          <div className="mt-20">
-            <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">TruVisory HR Excellence Portfolio</h2>
-            
-            {/* Services Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-16">
-              {/* Training & Development */}
-              <div className="bg-white rounded-xl p-6 shadow-md">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
-                    <span className="text-[#2c3e74] text-2xl font-bold">5</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-[#2c3e74]">Leadership Development</h3>
-                </div>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Executive leadership & strategic skills enhancement</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Regulatory compliance & risk management training</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Customized organizational development programs</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Strategic HR workshops & excellence frameworks</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Digital learning platforms & virtual excellence</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Performance optimization & strategic mentoring</span>
-                  </li>
-                </ul>
-              </div>
-              
-              {/* HR Technology Solutions */}
-              <div className="bg-white rounded-xl p-6 shadow-md">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
-                    <span className="text-[#2c3e74] text-2xl font-bold">6</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-[#2c3e74]">Digital HR Innovation</h3>
-                </div>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Advanced HRMS & intelligent workforce analytics</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Automated payroll & comprehensive leave management</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Employee self-service & engagement platforms</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Predictive analytics & strategic HR dashboards</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">AI-powered workforce optimization solutions</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Cloud-native HR ecosystem integrations</span>
-                  </li>
-                </ul>
-              </div>
-              
-              {/* Benefits Administration */}
-              <div className="bg-white rounded-xl p-6 shadow-md">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
-                    <span className="text-[#2c3e74] text-2xl font-bold">7</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-[#2c3e74]">Comprehensive Benefits</h3>
-                </div>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Strategic retirement & wealth management solutions</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Premium health insurance & wellness facilitation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Holistic employee wellness & engagement programs</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Flexible leave & progressive policy management</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Strategic employee assistance & support programs</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#2c3e74] mr-2">•</span>
-                    <span className="text-gray-700">Personalized benefits portfolio administration</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Why Choose Us Section */}
-            <div className="mt-20">
-              <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Strategic Advantages</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-                <div className="bg-white rounded-xl p-6 shadow-md">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
-                      <span className="text-[#2c3e74] text-2xl font-bold">1</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-[#2c3e74]">Proven Excellence</h3>
-                  </div>
-                  <p className="text-gray-700">Industry-leading professionals with extensive expertise and strategic HR knowledge</p>
-                </div>
-                
-                <div className="bg-white rounded-xl p-6 shadow-md">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
-                      <span className="text-[#2c3e74] text-2xl font-bold">2</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-[#2c3e74]">Regulatory Mastery</h3>
-                  </div>
-                  <p className="text-gray-700">Complete statutory compliance framework with proactive risk mitigation strategies</p>
-                </div>
-                
-                <div className="bg-white rounded-xl p-6 shadow-md">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
-                      <span className="text-[#2c3e74] text-2xl font-bold">3</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-[#2c3e74]">Tailored Innovation</h3>
-                  </div>
-                  <p className="text-gray-700">Customized HR outsourcing solutions for startups, SMEs, and enterprise organizations</p>
-                </div>
-                
-                <div className="bg-white rounded-xl p-6 shadow-md">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
-                      <span className="text-[#2c3e74] text-2xl font-bold">4</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-[#2c3e74]">Operational Excellence</h3>
-                  </div>
-                  <p className="text-gray-700">Significant cost optimization and administrative efficiency improvements</p>
-                </div>
-                
-                <div className="bg-white rounded-xl p-6 shadow-md">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
-                      <span className="text-[#2c3e74] text-2xl font-bold">5</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-[#2c3e74]">Digital Transformation</h3>
-                  </div>
-                  <p className="text-gray-700">AI-powered HRMS and automation for comprehensive digital workforce evolution</p>
-                </div>
-                
-                <div className="bg-white rounded-xl p-6 shadow-md">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full bg-[#e9f5f2] flex items-center justify-center mr-3">
-                      <span className="text-[#2c3e74] text-2xl font-bold">6</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-[#2c3e74]">Growth Partnership</h3>
-                  </div>
-                  <p className="text-gray-700">Scalable solutions adaptable for organizations across all growth stages</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Timeline and Payment Terms */}
-            <div className="mt-20">
-              <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Engagement Framework & Investment Terms</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
-                <div className="bg-white rounded-xl p-8 shadow-md">
-                  <h3 className="text-2xl font-bold text-[#2c3e74] mb-6">Strategic Timeline</h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start">
-                      <span className="text-[#2c3e74] mr-2">•</span>
-                      <span className="text-gray-700">Week 1: Strategic consultation and implementation planning</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#2c3e74] mr-2">•</span>
-                      <span className="text-gray-700">Week 2-4: Comprehensive HR & financial services deployment</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#2c3e74] mr-2">•</span>
-                      <span className="text-gray-700">Ongoing: Continuous monthly and quarterly strategic support</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className="bg-white rounded-xl p-8 shadow-md">
-                  <h3 className="text-2xl font-bold text-[#2c3e74] mb-6">Investment Structure</h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start">
-                      <span className="text-[#2c3e74] mr-2">•</span>
-                      <span className="text-gray-700">Zero advance payment required for engagement</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#2c3e74] mr-2">•</span>
-                      <span className="text-gray-700">100% payment upon monthly service completion</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#2c3e74] mr-2">•</span>
-                      <span className="text-gray-700">Secure bank transfer with detailed monthly invoicing</span>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
