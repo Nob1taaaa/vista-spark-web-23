@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -196,108 +195,123 @@ const Index = () => {
         </div>
       </section>
       
-      {/* TruVisory detailed content sections - Updated with horizontal timeline */}
+      {/* Strategic Engagement Process - Mobile Optimized Horizontal Timeline */}
       <section className="py-16 bg-[#F5F7FF] w-full" ref={addToRefs}>
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#2c3e74] mb-4">Our Strategic Methodology</h2>
+            <h2 className="text-3xl font-bold text-[#2c3e74] mb-4">Strategic Engagement Process</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Our proven methodology for delivering exceptional talent solutions
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-            <div className="bg-white rounded-lg p-6 shadow-sm">
-              <div className="flex justify-center mb-4">
-                <Brain size={48} className="text-[#7E69AB]" />
+          {/* Mobile-First Horizontal Timeline */}
+          <div className="relative overflow-x-auto pb-4">
+            {/* Horizontal scrolling container for mobile */}
+            <div className="flex gap-4 min-w-max md:grid md:grid-cols-5 md:gap-6 md:min-w-0">
+              {/* Step 1 */}
+              <div className="flex-shrink-0 w-64 md:w-auto text-center bg-white rounded-2xl p-6 shadow-lg border-2 border-[#2c3e74]/10 hover:border-[#2c3e74]/30 transition-all duration-300 hover:shadow-xl">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#2c3e74] to-[#7E69AB] text-white flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-lg">
+                  1
+                </div>
+                <h3 className="text-lg font-bold mb-3 text-[#2c3e74]">Strategic Discovery</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Comprehensive analysis of organizational requirements and strategic talent profile development.
+                </p>
+                <div className="mt-4 w-full h-1 bg-gradient-to-r from-[#2c3e74] to-[#7E69AB] rounded-full"></div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-center text-[#2c3e74]">Intelligent Sourcing</h3>
-              <p className="text-gray-600">
-                Advanced AI-driven talent identification beyond traditional job portals. Our proprietary database and industry expertise ensure precision matching for optimal organizational fit.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-lg p-6 shadow-sm">
-              <div className="flex justify-center mb-4">
-                <Target size={48} className="text-[#7E69AB]" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-center text-[#2c3e74]">Relentless Pursuit</h3>
-              <p className="text-gray-600">
-                Unwavering commitment to excellence with focused approach to identifying exceptional talent. We persist until we deliver the perfect match for your organization's success.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-lg p-6 shadow-sm">
-              <div className="flex justify-center mb-4">
-                <Trophy size={48} className="text-[#7E69AB]" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-center text-[#2c3e74]">Outcome Excellence</h3>
-              <p className="text-gray-600">
-                Multi-channel talent acquisition leveraging cutting-edge technology, social media intelligence, and strategic partnerships to deliver superior results efficiently.
-              </p>
-            </div>
-          </div>
-          
-          {/* Horizontal Strategic Engagement Process */}
-          <div className="mt-20">
-            <h2 className="text-3xl font-bold text-[#2c3e74] mb-12 text-center">Strategic Engagement Process</h2>
-            <div className="relative">
-              {/* Horizontal line */}
-              <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-[#7E69AB]/30 transform -translate-y-1/2"></div>
               
-              {/* Process steps in horizontal layout */}
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4">
-                {/* Step 1 */}
-                <div className="text-center relative">
-                  <div className="w-16 h-16 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold text-xl z-10 mx-auto mb-4 relative">
-                    1
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-[#2c3e74]">Strategic Discovery</h3>
-                  <p className="text-sm text-gray-600">
-                    Comprehensive analysis of organizational requirements and strategic talent profile development.
-                  </p>
+              {/* Step 2 */}
+              <div className="flex-shrink-0 w-64 md:w-auto text-center bg-white rounded-2xl p-6 shadow-lg border-2 border-[#2c3e74]/10 hover:border-[#2c3e74]/30 transition-all duration-300 hover:shadow-xl">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#2c3e74] to-[#7E69AB] text-white flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-lg">
+                  2
                 </div>
-                
-                {/* Step 2 */}
-                <div className="text-center relative">
-                  <div className="w-16 h-16 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold text-xl z-10 mx-auto mb-4 relative">
-                    2
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-[#2c3e74]">Advanced Talent Intelligence</h3>
-                  <p className="text-sm text-gray-600">
-                    Multi-channel talent acquisition utilizing proprietary networks and AI-powered search algorithms.
-                  </p>
+                <h3 className="text-lg font-bold mb-3 text-[#2c3e74]">Advanced Intelligence</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Multi-channel talent acquisition utilizing proprietary networks and AI-powered search algorithms.
+                </p>
+                <div className="mt-4 w-full h-1 bg-gradient-to-r from-[#2c3e74] to-[#7E69AB] rounded-full"></div>
+              </div>
+              
+              {/* Step 3 */}
+              <div className="flex-shrink-0 w-64 md:w-auto text-center bg-white rounded-2xl p-6 shadow-lg border-2 border-[#2c3e74]/10 hover:border-[#2c3e74]/30 transition-all duration-300 hover:shadow-xl">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#2c3e74] to-[#7E69AB] text-white flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-lg">
+                  3
                 </div>
-                
-                {/* Step 3 */}
-                <div className="text-center relative">
-                  <div className="w-16 h-16 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold text-xl z-10 mx-auto mb-4 relative">
-                    3
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-[#2c3e74]">Rigorous Assessment</h3>
-                  <p className="text-sm text-gray-600">
-                    Comprehensive candidate evaluation through structured interviews and competency assessments.
-                  </p>
+                <h3 className="text-lg font-bold mb-3 text-[#2c3e74]">Rigorous Assessment</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Comprehensive candidate evaluation through structured interviews and competency assessments.
+                </p>
+                <div className="mt-4 w-full h-1 bg-gradient-to-r from-[#2c3e74] to-[#7E69AB] rounded-full"></div>
+              </div>
+              
+              {/* Step 4 */}
+              <div className="flex-shrink-0 w-64 md:w-auto text-center bg-white rounded-2xl p-6 shadow-lg border-2 border-[#2c3e74]/10 hover:border-[#2c3e74]/30 transition-all duration-300 hover:shadow-xl">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#2c3e74] to-[#7E69AB] text-white flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-lg">
+                  4
                 </div>
-                
-                {/* Step 4 */}
-                <div className="text-center relative">
-                  <div className="w-16 h-16 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold text-xl z-10 mx-auto mb-4 relative">
-                    4
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-[#2c3e74]">Strategic Presentation</h3>
-                  <p className="text-sm text-gray-600">
-                    Curated presentation of premium candidates with detailed profiles and strategic recommendations.
-                  </p>
+                <h3 className="text-lg font-bold mb-3 text-[#2c3e74]">Strategic Presentation</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Curated presentation of premium candidates with detailed profiles and strategic recommendations.
+                </p>
+                <div className="mt-4 w-full h-1 bg-gradient-to-r from-[#2c3e74] to-[#7E69AB] rounded-full"></div>
+              </div>
+              
+              {/* Step 5 */}
+              <div className="flex-shrink-0 w-64 md:w-auto text-center bg-white rounded-2xl p-6 shadow-lg border-2 border-[#2c3e74]/10 hover:border-[#2c3e74]/30 transition-all duration-300 hover:shadow-xl">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#2c3e74] to-[#7E69AB] text-white flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-lg">
+                  5
                 </div>
-                
-                {/* Step 5 */}
-                <div className="text-center relative">
-                  <div className="w-16 h-16 rounded-full bg-[#2c3e74] text-white flex items-center justify-center font-bold text-xl z-10 mx-auto mb-4 relative">
-                    5
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-[#2c3e74]">Seamless Integration</h3>
-                  <p className="text-sm text-gray-600">
-                    Comprehensive onboarding support and transition management ensuring successful integration.
-                  </p>
+                <h3 className="text-lg font-bold mb-3 text-[#2c3e74]">Seamless Integration</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Comprehensive onboarding support and transition management ensuring successful integration.
+                </p>
+                <div className="mt-4 w-full h-1 bg-gradient-to-r from-[#2c3e74] to-[#7E69AB] rounded-full"></div>
+              </div>
+            </div>
+            
+            {/* Mobile scroll indicator */}
+            <div className="flex justify-center mt-6 md:hidden">
+              <p className="text-xs text-gray-500 flex items-center gap-2">
+                <ArrowRight className="w-4 h-4" />
+                Scroll horizontally to see all steps
+              </p>
+            </div>
+          </div>
+          
+          {/* ... keep existing code (methodology and values sections) */}
+          <div className="mt-16">
+            <h2 className="text-3xl font-bold text-[#2c3e74] mb-8 text-center">Our Strategic Methodology</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex justify-center mb-4">
+                  <Brain size={48} className="text-[#7E69AB]" />
                 </div>
+                <h3 className="text-xl font-semibold mb-4 text-center text-[#2c3e74]">Intelligent Sourcing</h3>
+                <p className="text-gray-600">
+                  Advanced AI-driven talent identification beyond traditional job portals. Our proprietary database and industry expertise ensure precision matching for optimal organizational fit.
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex justify-center mb-4">
+                  <Target size={48} className="text-[#7E69AB]" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4 text-center text-[#2c3e74]">Relentless Pursuit</h3>
+                <p className="text-gray-600">
+                  Unwavering commitment to excellence with focused approach to identifying exceptional talent. We persist until we deliver the perfect match for your organization's success.
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex justify-center mb-4">
+                  <Trophy size={48} className="text-[#7E69AB]" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4 text-center text-[#2c3e74]">Outcome Excellence</h3>
+                <p className="text-gray-600">
+                  Multi-channel talent acquisition leveraging cutting-edge technology, social media intelligence, and strategic partnerships to deliver superior results efficiently.
+                </p>
               </div>
             </div>
           </div>
