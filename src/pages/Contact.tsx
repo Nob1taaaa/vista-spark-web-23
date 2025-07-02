@@ -27,6 +27,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { sendContactEmail } from '@/lib/utils/emailjsService';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -54,25 +55,47 @@ const Contact = () => {
     },
   });
 
-  const onSubmit = (data: FormValues) => {
+  const onSubmit = async (data: FormValues) => {
     setIsLoading(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsSubmitted(true);
-      
-      toast({
-        title: 'Message sent!',
-        description: 'We will get back to you as soon as possible.',
+    try {
+      const emailSent = await sendContactEmail({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        subject: data.subject,
+        message: data.message,
       });
       
-      // Reset form after 2 seconds
-      setTimeout(() => {
-        form.reset();
-        setIsSubmitted(false);
-      }, 2000);
-    }, 1500);
+      if (emailSent) {
+        setIsSubmitted(true);
+        toast({
+          title: 'Message sent!',
+          description: 'We will get back to you as soon as possible.',
+        });
+        
+        // Reset form after 2 seconds
+        setTimeout(() => {
+          form.reset();
+          setIsSubmitted(false);
+        }, 2000);
+      } else {
+        toast({
+          title: 'Error sending message',
+          description: 'Please try again or contact us directly.',
+          variant: 'destructive',
+        });
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      toast({
+        title: 'Error sending message',
+        description: 'Please try again or contact us directly.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
   
   const handleWhatsAppContact = () => {
