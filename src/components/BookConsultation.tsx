@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Calendar, Phone, User } from 'lucide-react';
-import { sendConsultationEmail } from '@/lib/utils/emailjsService';
 
 const BookConsultation = ({ className = '' }: { className?: string }) => {
   const { toast } = useToast();
@@ -25,43 +24,27 @@ const BookConsultation = ({ className = '' }: { className?: string }) => {
     });
   };
   
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    try {
-      const emailSent = await sendConsultationEmail(formData);
-      
-      if (emailSent) {
-        toast({
-          title: "Consultation Booked!",
-          description: "We'll contact you shortly to confirm your appointment.",
-        });
-        
-        // Reset form and close it
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          date: '',
-          time: '',
-          message: '',
-        });
-        setIsFormOpen(false);
-      } else {
-        toast({
-          title: "Error booking consultation",
-          description: "Please try again or contact us directly.",
-          variant: 'destructive',
-        });
-      }
-    } catch (error) {
-      console.error('Consultation booking error:', error);
-      toast({
-        title: "Error booking consultation",
-        description: "Please try again or contact us directly.",
-        variant: 'destructive',
-      });
-    }
+    // Here you would normally send the data to your backend
+    console.log('Form submitted:', formData);
+    
+    toast({
+      title: "Consultation Booked!",
+      description: "We'll contact you shortly to confirm your appointment.",
+    });
+    
+    // Reset form and close it
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      date: '',
+      time: '',
+      message: '',
+    });
+    setIsFormOpen(false);
   };
   
   return (
