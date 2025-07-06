@@ -33,7 +33,7 @@ class GmailService {
 
   constructor() {
     this.config = {
-      clientId: '357086491878-2ntpe7o8sosf0nur9r4u9bkqv71ivhrs.apps.googleusercontent.com',
+      clientId: '173770438701-j2i9odcd5ujd9pc50klbbjvmthsj8a1k.apps.googleusercontent.com',
       redirectUri: window.location.origin,
       scopes: [
         'https://www.googleapis.com/auth/gmail.readonly',
