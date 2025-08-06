@@ -28,9 +28,12 @@ const BookConsultation = ({ className = '' }: { className?: string }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    console.log('BookConsultation: Form submitted with data:', formData);
+    
     try {
       // Send consultation email via EmailJS
       const success = await sendConsultationEmail(formData);
+      console.log('BookConsultation: Email send result:', success);
       
       if (success) {
         toast({
