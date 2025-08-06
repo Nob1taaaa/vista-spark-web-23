@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Calendar, Phone, User } from 'lucide-react';
-import { sendConsultationEmail } from '@/lib/utils/emailjsService';
+import { sendConsultationConfirmation } from '@/lib/utils/emailService';
 
 const BookConsultation = ({ className = '' }: { className?: string }) => {
   const { toast } = useToast();
@@ -31,8 +31,8 @@ const BookConsultation = ({ className = '' }: { className?: string }) => {
     console.log('BookConsultation: Form submitted with data:', formData);
     
     try {
-      // Send consultation email via EmailJS
-      const success = await sendConsultationEmail(formData);
+      // Send consultation email via Supabase Edge Function
+      const success = await sendConsultationConfirmation(formData);
       console.log('BookConsultation: Email send result:', success);
       
       if (success) {

@@ -27,7 +27,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { sendContactEmail } from '@/lib/utils/emailjsService';
+import { sendContactFormEmail } from '@/lib/utils/emailService';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -59,8 +59,8 @@ const Contact = () => {
     setIsLoading(true);
     
     try {
-      // Send email using EmailJS
-      const success = await sendContactEmail({
+      // Send email using Supabase Edge Function
+      const success = await sendContactFormEmail({
         name: data.name,
         email: data.email,
         phone: data.phone,
