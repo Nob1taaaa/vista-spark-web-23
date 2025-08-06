@@ -27,7 +27,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { gmailService } from '@/lib/utils/gmailService';
+import { sendContactEmail } from '@/lib/utils/emailjsService';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -59,57 +59,32 @@ const Contact = () => {
     setIsLoading(true);
     
     try {
-      // Check if Gmail is authenticated
-      if (!gmailService.isAuthenticated()) {
-        // Try to authenticate
-        const authenticated = await gmailService.authenticate();
-        if (!authenticated) {
-          toast({
-            title: 'Authentication Required',
-            description: 'Please visit the Gmail page to authenticate first, then try again.',
-            variant: 'destructive',
-          });
-          setIsLoading(false);
-          return;
-        }
+      // Send email using EmailJS
+      const success = await sendContactEmail({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        subject: data.subject,
+        message: data.message
+      });
+      
+      if (success) {
+        setIsLoading(false);
+        setIsSubmitted(true);
+        
+        toast({
+          title: 'Message sent!',
+          description: 'We will get back to you as soon as possible.',
+        });
+        
+        // Reset form after 2 seconds
+        setTimeout(() => {
+          form.reset();
+          setIsSubmitted(false);
+        }, 2000);
+      } else {
+        throw new Error('Failed to send email via EmailJS');
       }
-
-      // Send email using Gmail API
-      const emailBody = `
-New Contact Form Submission from TruTalenza Website
-
-Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone}
-Subject: ${data.subject}
-
-Message:
-${data.message}
-
----
-This message was sent from the TruTalenza contact form.
-      `;
-
-      await gmailService.sendEmail({
-        to: 'truvisory@gmail.com', // Your email address
-        subject: `Contact Form: ${data.subject}`,
-        body: emailBody,
-        isHtml: false
-      });
-
-      setIsLoading(false);
-      setIsSubmitted(true);
-      
-      toast({
-        title: 'Message sent!',
-        description: 'We will get back to you as soon as possible.',
-      });
-      
-      // Reset form after 2 seconds
-      setTimeout(() => {
-        form.reset();
-        setIsSubmitted(false);
-      }, 2000);
 
     } catch (error) {
       console.error('Failed to send email:', error);

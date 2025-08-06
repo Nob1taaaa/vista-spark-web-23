@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Calendar, Phone, User } from 'lucide-react';
+import { sendConsultationEmail } from '@/lib/utils/emailjsService';
 
 const BookConsultation = ({ className = '' }: { className?: string }) => {
   const { toast } = useToast();
@@ -24,27 +25,40 @@ const BookConsultation = ({ className = '' }: { className?: string }) => {
     });
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Here you would normally send the data to your backend
-    console.log('Form submitted:', formData);
-    
-    toast({
-      title: "Consultation Booked!",
-      description: "We'll contact you shortly to confirm your appointment.",
-    });
-    
-    // Reset form and close it
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      date: '',
-      time: '',
-      message: '',
-    });
-    setIsFormOpen(false);
+    try {
+      // Send consultation email via EmailJS
+      const success = await sendConsultationEmail(formData);
+      
+      if (success) {
+        toast({
+          title: "Consultation Booked!",
+          description: "We'll contact you shortly to confirm your appointment.",
+        });
+        
+        // Reset form and close it
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          date: '',
+          time: '',
+          message: '',
+        });
+        setIsFormOpen(false);
+      } else {
+        throw new Error('Failed to send consultation request');
+      }
+    } catch (error) {
+      console.error('Failed to book consultation:', error);
+      toast({
+        title: "Error",
+        description: "Failed to book consultation. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    }
   };
   
   return (
