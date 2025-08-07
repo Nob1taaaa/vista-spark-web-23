@@ -144,7 +144,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "TruTalenza Website <trutalenza.api@gmail.com>",
-      to: ["truvisory@gmail.com"],
+      to: ["trutalenza.api@gmail.com"],
       subject: emailSubject,
       html: emailContent,
       replyTo: email
