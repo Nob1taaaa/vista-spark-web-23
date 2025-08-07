@@ -143,7 +143,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log('Attempting to send email with subject:', emailSubject);
 
     const emailResponse = await resend.emails.send({
-      from: "TruTalenza Website <onboarding@resend.dev>",
+      from: "TruTalenza Website <trutalenza.api@gmail.com>",
       to: ["truvisory@gmail.com"],
       subject: emailSubject,
       html: emailContent,
