@@ -142,7 +142,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log('Attempting to send email with subject:', emailSubject);
 
-    const emailResponse = await resend.emails.send({
+    const sendPromise = resend.emails.send({
       from: "TruTalenza Website <onboarding@resend.dev>",
       to: ["trutalenza.api@gmail.com"],
       subject: emailSubject,
@@ -150,10 +150,18 @@ const handler = async (req: Request): Promise<Response> => {
       replyTo: email
     });
 
-    console.log("Email sent successfully:", emailResponse);
+    // Run email send in background to reduce user-facing latency
+    // EdgeRuntime.waitUntil keeps the function alive until the promise resolves
+    // without blocking the HTTP response.
+    // @ts-ignore - EdgeRuntime is available in Supabase Edge environment
+    EdgeRuntime.waitUntil(
+      sendPromise
+        .then((res) => console.log("Background email send success:", res))
+        .catch((err) => console.error("Background email send failed:", err))
+    );
 
-    return new Response(JSON.stringify({ success: true, data: emailResponse }), {
-      status: 200,
+    return new Response(JSON.stringify({ success: true, queued: true }), {
+      status: 202,
       headers: {
         "Content-Type": "application/json",
         ...corsHeaders,
