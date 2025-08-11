@@ -14,11 +14,21 @@ interface EmailRequest {
 
 export const sendEmail = async (data: EmailRequest): Promise<boolean> => {
   try {
-    console.log('Email sending temporarily disabled. Would have sent:', data);
-    // Email sending is temporarily disabled
-    return true; // Return success without actually sending
+    console.log('Sending email via Supabase Edge Function:', data);
+
+    const { data: response, error } = await supabase.functions.invoke('send-contact-email', {
+      body: data
+    });
+
+    if (error) {
+      console.error('Supabase function error:', error);
+      return false;
+    }
+
+    console.log('Email sent successfully:', response);
+    return response?.success || false;
   } catch (error) {
-    console.error('Error in email service:', error);
+    console.error('Error sending email:', error);
     return false;
   }
 };
