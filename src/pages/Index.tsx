@@ -20,7 +20,7 @@ import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
-import BeautifulCTA from '@/components/BeautifulCTA';
+import WhatsAppCTA from '@/components/WhatsAppCTA';
 import HeroSection from '@/components/HeroSections';
 
 const Index = () => {
@@ -112,49 +112,50 @@ const Index = () => {
       </div>
       
       {/* TruTalenza detailed content sections */}
-      <section className="py-16 bg-white w-full" ref={addToRefs}>
+      <section className="py-16 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 w-full" ref={addToRefs}>
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#382c74] mb-4">Why Partner with TruTalenza?</h2>
+            <h2 className="text-4xl font-bold gradient-text mb-6 animate-float">Why Partner with TruTalenza?</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-brand-purple to-brand-blue mx-auto mb-4"></div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-            <div className="text-center p-4 md:p-6 bg-gray-50 rounded-lg shadow-sm">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#382c74]/10 text-[#382c74] mb-4">
-                <h2 className="text-3xl font-bold">1</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="text-center p-6 md:p-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-glow">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-brand-purple to-brand-blue text-white mb-6 shadow-lg">
+                <h2 className="text-2xl font-bold">1</h2>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Industry Expertise</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold mb-3 text-brand-darkPurple">Industry Expertise</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Specialized recruitment professionals with deep sector knowledge and proven track records in strategic talent acquisition.
               </p>
             </div>
             
-            <div className="text-center p-4 md:p-6 bg-gray-50 rounded-lg shadow-sm">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#382c74]/10 text-[#382c74] mb-4">
-                <h2 className="text-3xl font-bold">2</h2>
+            <div className="text-center p-6 md:p-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-glow">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-brand-blue to-brand-emerald text-white mb-6 shadow-lg">
+                <h2 className="text-2xl font-bold">2</h2>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Tailored Solutions</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold mb-3 text-brand-darkPurple">Tailored Solutions</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Customized workforce strategies designed to align with your unique business objectives and organizational culture.
               </p>
             </div>
             
-            <div className="text-center p-4 md:p-6 bg-gray-50 rounded-lg shadow-sm">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#382c74]/10 text-[#382c74] mb-4">
-                <h2 className="text-3xl font-bold">3</h2>
+            <div className="text-center p-6 md:p-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-glow">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-brand-emerald to-brand-lightBlue text-white mb-6 shadow-lg">
+                <h2 className="text-2xl font-bold">3</h2>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Advanced Technology</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold mb-3 text-brand-darkPurple">Advanced Technology</h3>
+              <p className="text-gray-600 leading-relaxed">
                 AI-powered talent matching platform with comprehensive candidate databases and streamlined recruitment processes.
               </p>
             </div>
             
-            <div className="text-center p-4 md:p-6 bg-gray-50 rounded-lg shadow-sm">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#382c74]/10 text-[#382c74] mb-4">
-                <h2 className="text-3xl font-bold">4</h2>
+            <div className="text-center p-6 md:p-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-glow">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-brand-lightBlue to-brand-rose text-white mb-6 shadow-lg">
+                <h2 className="text-2xl font-bold">4</h2>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Inclusive Excellence</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold mb-3 text-brand-darkPurple">Inclusive Excellence</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Committed to building diverse, inclusive workforces that drive innovation and sustainable business success.
               </p>
             </div>
@@ -434,31 +435,38 @@ const Index = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 bg-brand-purple text-white w-full" ref={addToRefs}>
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-4">Transform Your Workforce Strategy Today</h2>
-              <p className="text-lg opacity-90 mb-6">
+      <section className="py-20 bg-gradient-to-br from-brand-purple via-brand-blue to-brand-darkPurple text-white w-full relative overflow-hidden" ref={addToRefs}>
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-white/10 rounded-full animate-float"></div>
+          <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-white/5 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+        </div>
+        
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="animate-slide-in">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Transform Your Workforce Strategy Today</h2>
+              <p className="text-xl opacity-95 mb-8 leading-relaxed">
                 Partner with industry leaders to revolutionize your talent acquisition and HR excellence for exceptional business outcomes.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/contact">
-                  <Button className="bg-white text-brand-purple hover:bg-gray-100 button-hover">
+                  <Button className="bg-white text-brand-purple hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl px-8 py-3 text-lg font-semibold">
                     Begin Strategic Partnership
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
               </div>
             </div>
             
             <div className="flex justify-center md:justify-end">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 md:p-6 max-w-sm">
-                <h3 className="text-xl font-semibold mb-4">Executive Consultation</h3>
-                <p className="mb-4">
-                  Schedule a complimentary 30-minute strategic consultation with our senior HR experts to explore your specific challenges.
+              <div className="glass-effect rounded-2xl p-6 md:p-8 max-w-sm">
+                <h3 className="text-2xl font-semibold mb-4 text-white">Ready to Transform?</h3>
+                <p className="mb-6 text-white/90">
+                  Connect with our HR strategists instantly via WhatsApp for personalized solutions.
                 </p>
-                <BeautifulCTA />
+                <WhatsAppCTA />
               </div>
             </div>
           </div>

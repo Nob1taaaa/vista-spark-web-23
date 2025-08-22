@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Brain, Target, Trophy, Building, Hospital, Banknote, Store, Check, Zap, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import BookConsultation from '@/components/BookConsultation';
+import WhatsAppCTA from '@/components/WhatsAppCTA';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -49,7 +49,7 @@ const HeroSection = ({
                   </Button>
                 </Link>
                 <div className="w-full sm:w-auto">
-                  <BookConsultation className="inline-block transform transition-transform hover:scale-105 w-full sm:w-auto" />
+                  <WhatsAppCTA className="inline-block transform transition-transform hover:scale-105 w-full sm:w-auto" />
                 </div>
               </div>
             </div>

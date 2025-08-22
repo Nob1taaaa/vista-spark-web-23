@@ -1,112 +1,23 @@
 
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
 import { 
   Phone, 
-  Mail, 
   MapPin, 
   Clock, 
-  Send, 
-  Loader2,
-  CheckCircle,
-  MessageSquare
+  MessageSquare,
+  Star,
+  Users,
+  Target,
+  CheckCircle
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { sendContactFormEmail } from '@/lib/utils/emailService';
-
-const formSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email address'),
-  phone: z.string().min(10, 'Please enter a valid phone number'),
-  subject: z.string().min(5, 'Subject must be at least 5 characters'),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
-});
-
-type FormValues = z.infer<typeof formSchema>;
 
 const Contact = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const { toast } = useToast();
-  
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-    },
-  });
-
-  const onSubmit = async (data: FormValues) => {
-    setIsLoading(true);
-    
-    try {
-      // Send email using Supabase Edge Function
-      const success = await sendContactFormEmail({
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        subject: data.subject,
-        message: data.message
-      });
-      
-      if (success) {
-        setIsLoading(false);
-        setIsSubmitted(true);
-        
-        toast({
-          title: 'Message sent!',
-          description: 'We will get back to you as soon as possible.',
-        });
-        
-        // Reset form after 2 seconds
-        setTimeout(() => {
-          form.reset();
-          setIsSubmitted(false);
-        }, 2000);
-      } else {
-        throw new Error('Failed to send email via EmailJS');
-      }
-
-    } catch (error) {
-      console.error('Failed to send email:', error);
-      setIsLoading(false);
-      
-      toast({
-        title: 'Error sending message',
-        description: 'Please try again or contact us directly via email.',
-        variant: 'destructive',
-      });
-    }
-  };
-  
   const handleWhatsAppContact = () => {
-    // Format: https://wa.me/phoneNumber?text=urlencodedtext
     const phoneNumber = '916398807772'; // Include country code without +
-    const message = encodeURIComponent("Hello TruTalenza, I'd like to discuss your services.");
+    const message = encodeURIComponent("Hello TruTalenza! I'm interested in learning more about your workforce solutions. Let's discuss how you can help my organization achieve its goals.");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-  };
-  
-  const handleEmailContact = () => {
-    window.location.href = 'mailto:truvisory@gmail.com?subject=Inquiry about TruTalenza Services';
   };
 
   return (
@@ -115,268 +26,160 @@ const Contact = () => {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <div className="bg-brand-purple text-white py-20">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Contact Us</h1>
-            <p className="text-lg opacity-90 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              Have questions or ready to elevate your workforce management? 
-              We're here to help you every step of the way.
+        <div className="bg-gradient-to-br from-brand-purple via-brand-blue to-brand-darkPurple text-white py-24 relative overflow-hidden">
+          {/* Background decoration */}
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-white/10 rounded-full animate-float"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-white/5 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+          </div>
+          
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">Let's Connect</h1>
+            <div className="w-24 h-1 bg-gradient-to-r from-white/50 to-white/80 mx-auto mb-6"></div>
+            <p className="text-xl opacity-95 max-w-3xl mx-auto animate-fade-in leading-relaxed" style={{ animationDelay: '0.1s' }}>
+              Ready to revolutionize your workforce management? Connect with our expert team instantly through WhatsApp for personalized solutions.
             </p>
           </div>
         </div>
         
-        {/* Contact Info + Form Section */}
-        <div className="container mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            {/* Contact Information */}
-            <div className="lg:col-span-4 space-y-8">
-              <div className="animate-slide-in" style={{ animationDelay: '0.2s' }}>
-                <h2 className="text-2xl font-bold text-brand-purple mb-6">
-                  Get in Touch
-                </h2>
+        {/* Main Contact Section */}
+        <div className="gradient-bg py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              {/* WhatsApp CTA Card */}
+              <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 mb-12 text-center animate-scale-in">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-green-400 to-green-500 mb-6 shadow-lg animate-glow">
+                  <MessageSquare className="w-10 h-10 text-white" />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Start Your Journey Today</h2>
+                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                  Get instant responses and personalized workforce solutions. Our experts are ready to help you succeed.
+                </p>
                 
-                <ul className="space-y-6">
-                  <li className="flex items-start gap-4">
-                    <div className="bg-brand-purple/10 rounded-full p-3 text-brand-purple">
-                      <Phone size={20} />
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  <div className="flex flex-col items-center p-4">
+                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-3">
+                      <CheckCircle className="w-6 h-6 text-green-600" />
                     </div>
-                    <div>
-                      <h3 className="text-lg font-medium text-gray-800">Phone</h3>
-                      <p className="text-gray-600">+91 6398807772</p>
-                      <Button 
-                        onClick={handleWhatsAppContact} 
-                        variant="outline" 
-                        size="sm"
-                        className="mt-2 text-green-600 border-green-600 hover:bg-green-50 button-hover"
-                      >
-                        <MessageSquare size={16} className="mr-2" />
-                        Contact via WhatsApp
-                      </Button>
-                    </div>
-                  </li>
-                  
-                  <li className="flex items-start gap-4">
-                    <div className="bg-brand-purple/10 rounded-full p-3 text-brand-purple">
-                      <Mail size={20} />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-medium text-gray-800">Email</h3>
-                      <p className="text-gray-600 mb-1">truvisory@gmail.com</p>
-                      <p className="text-gray-600">trutalenza@gmail.com</p>
-                      <Button 
-                        onClick={handleEmailContact} 
-                        variant="outline" 
-                        size="sm"
-                        className="mt-2 hover-effect"
-                      >
-                        <Mail size={16} className="mr-2" />
-                        Send Email
-                      </Button>
-                    </div>
-                  </li>
-                  
-                  <li className="flex items-start gap-4">
-                    <div className="bg-brand-purple/10 rounded-full p-3 text-brand-purple">
-                      <MapPin size={20} />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-medium text-gray-800">Location</h3>
-                      <p className="text-gray-600">New Delhi, India</p>
-                    </div>
-                  </li>
-                  
-                  <li className="flex items-start gap-4">
-                    <div className="bg-brand-purple/10 rounded-full p-3 text-brand-purple">
-                      <Clock size={20} />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-medium text-gray-800">Office Hours</h3>
-                      <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                      <p className="text-gray-600">Saturday - Sunday: Closed</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            
-            {/* Contact Form */}
-            <div className="lg:col-span-8 animate-slide-in" style={{ animationDelay: '0.3s' }}>
-              <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
-                <h2 className="text-2xl font-bold text-brand-purple mb-6">
-                  Send Us a Message
-                </h2>
-                
-                {isSubmitted ? (
-                  <div className="flex flex-col items-center justify-center py-12 text-center space-y-4 animate-scale-in">
-                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-                      <CheckCircle size={40} />
-                    </div>
-                    <h3 className="text-xl font-medium">Message Sent!</h3>
-                    <p className="text-gray-600 max-w-md">
-                      Thank you for contacting us. We've received your message and will respond as soon as possible.
-                    </p>
+                    <span className="text-sm font-medium text-gray-700">Instant Response</span>
                   </div>
-                ) : (
-                  <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <FormField
-                          control={form.control}
-                          name="name"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Full Name</FormLabel>
-                              <FormControl>
-                                <Input 
-                                  placeholder="John Doe" 
-                                  {...field} 
-                                  className="hover-effect focus:border-brand-purple"
-                                  disabled={isLoading}
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        
-                        <FormField
-                          control={form.control}
-                          name="email"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Email address</FormLabel>
-                              <FormControl>
-                                <Input 
-                                  placeholder="name@example.com" 
-                                  {...field} 
-                                  type="email"
-                                  className="hover-effect focus:border-brand-purple"
-                                  disabled={isLoading}
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                      </div>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <FormField
-                          control={form.control}
-                          name="phone"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Phone Number</FormLabel>
-                              <FormControl>
-                                <Input 
-                                  placeholder="+91 98765 43210" 
-                                  {...field} 
-                                  className="hover-effect focus:border-brand-purple"
-                                  disabled={isLoading}
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        
-                        <FormField
-                          control={form.control}
-                          name="subject"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Subject</FormLabel>
-                              <FormControl>
-                                <Input 
-                                  placeholder="How can we help you?" 
-                                  {...field} 
-                                  className="hover-effect focus:border-brand-purple"
-                                  disabled={isLoading}
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                      </div>
-                      
-                      <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Message</FormLabel>
-                            <FormControl>
-                              <Textarea 
-                                placeholder="Please provide details about your inquiry..." 
-                                {...field} 
-                                className="resize-none min-h-[120px] hover-effect focus:border-brand-purple"
-                                disabled={isLoading}
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <Button 
-                        type="submit" 
-                        className="w-full md:w-auto bg-brand-purple hover:bg-brand-lightPurple button-hover"
-                        disabled={isLoading}
-                      >
-                        {isLoading ? (
-                          <span className="flex items-center justify-center gap-2">
-                            <Loader2 size={18} className="animate-spin" />
-                            Sending...
-                          </span>
-                        ) : (
-                          <span className="flex items-center justify-center gap-2">
-                            <Send size={18} />
-                            Send Message
-                          </span>
-                        )}
-                      </Button>
-                    </form>
-                  </Form>
-                )}
+                  <div className="flex flex-col items-center p-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                      <Users className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">Expert Guidance</span>
+                  </div>
+                  <div className="flex flex-col items-center p-4">
+                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-3">
+                      <Target className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">Custom Solutions</span>
+                  </div>
+                </div>
+                
+                <Button 
+                  onClick={handleWhatsAppContact}
+                  className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-12 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                >
+                  <MessageSquare className="mr-3 h-5 w-5" />
+                  Connect on WhatsApp Now
+                </Button>
+              </div>
+              
+              {/* Contact Information */}
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="bg-white rounded-2xl shadow-lg p-8 text-center animate-slide-in">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 mb-6 shadow-lg">
+                    <Phone className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Phone</h3>
+                  <p className="text-gray-600 font-medium mb-4">+91 6398807772</p>
+                  <p className="text-sm text-gray-500">Available 24/7</p>
+                </div>
+                
+                <div className="bg-white rounded-2xl shadow-lg p-8 text-center animate-slide-in" style={{ animationDelay: '0.1s' }}>
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 mb-6 shadow-lg">
+                    <MapPin className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Location</h3>
+                  <p className="text-gray-600 font-medium mb-4">New Delhi, India</p>
+                  <p className="text-sm text-gray-500">Serving globally</p>
+                </div>
+                
+                <div className="bg-white rounded-2xl shadow-lg p-8 text-center animate-slide-in" style={{ animationDelay: '0.2s' }}>
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 mb-6 shadow-lg">
+                    <Clock className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Business Hours</h3>
+                  <p className="text-gray-600 font-medium mb-2">Mon - Fri: 9AM - 6PM</p>
+                  <p className="text-sm text-gray-500">Weekend support available</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Map or Additional Info Section */}
-        <div className="bg-gray-50 py-16">
+        {/* Success Stories */}
+        <div className="bg-white py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold text-brand-purple mb-8 text-center animate-fade-in">
-              Frequently Asked Questions
+            <h2 className="text-3xl font-bold text-center text-brand-darkPurple mb-12">
+              Why Choose TruTalenza?
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div className="bg-white p-6 rounded-lg shadow-sm animate-slide-in" style={{ animationDelay: '0.2s' }}>
-                <h3 className="font-medium text-lg mb-2">How quickly can you provide candidates?</h3>
+              <div className="bg-gradient-to-br from-purple-50 to-blue-50 p-6 rounded-2xl shadow-lg animate-slide-in">
+                <div className="flex items-center mb-4">
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500" />
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-gray-800">Lightning Fast Response</h3>
                 <p className="text-gray-600">
-                  Depending on the position and requirements, we typically present qualified candidates within 5-10 business days after finalizing the role details.
+                  Get instant responses to your queries and personalized solutions within hours, not days.
                 </p>
               </div>
               
-              <div className="bg-white p-6 rounded-lg shadow-sm animate-slide-in" style={{ animationDelay: '0.3s' }}>
-                <h3 className="font-medium text-lg mb-2">Do you offer remote workforce solutions?</h3>
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-2xl shadow-lg animate-slide-in" style={{ animationDelay: '0.1s' }}>
+                <div className="flex items-center mb-4">
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500" />
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-gray-800">Expert Guidance</h3>
                 <p className="text-gray-600">
-                  Yes, we specialize in both on-site and remote workforce solutions, helping companies build effective distributed teams.
+                  Work directly with senior HR strategists who understand your industry's unique challenges.
                 </p>
               </div>
               
-              <div className="bg-white p-6 rounded-lg shadow-sm animate-slide-in" style={{ animationDelay: '0.4s' }}>
-                <h3 className="font-medium text-lg mb-2">What industries do you specialize in?</h3>
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl shadow-lg animate-slide-in" style={{ animationDelay: '0.2s' }}>
+                <div className="flex items-center mb-4">
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500" />
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-gray-800">Proven Results</h3>
                 <p className="text-gray-600">
-                  We serve multiple sectors including IT, Healthcare, Finance, Retail, Manufacturing, Education, and more with specialized expertise in each.
+                  Join hundreds of satisfied clients who've transformed their workforce with our solutions.
                 </p>
               </div>
               
-              <div className="bg-white p-6 rounded-lg shadow-sm animate-slide-in" style={{ animationDelay: '0.5s' }}>
-                <h3 className="font-medium text-lg mb-2">How do you ensure candidate quality?</h3>
+              <div className="bg-gradient-to-br from-rose-50 to-pink-50 p-6 rounded-2xl shadow-lg animate-slide-in" style={{ animationDelay: '0.3s' }}>
+                <div className="flex items-center mb-4">
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500 mr-2" />
+                  <Star className="w-6 h-6 text-yellow-500" />
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-gray-800">Custom Solutions</h3>
                 <p className="text-gray-600">
-                  Our rigorous screening process includes skills assessments, background verification, and multi-stage interviews to ensure only qualified candidates are presented.
+                  Every solution is tailored specifically to your organization's goals and requirements.
                 </p>
               </div>
             </div>

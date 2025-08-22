@@ -4,13 +4,38 @@
 
 @layer utilities {
   .animate-fade-in {
-    @apply transition-all duration-300 ease-in-out;
-    animation: fadeIn 0.3s ease-in-out;
+    @apply transition-all duration-500 ease-out;
+    animation: fadeIn 0.5s ease-out;
   }
 
   .animate-slide-in {
-    @apply transition-all duration-300 ease-in-out;
-    animation: slideIn 0.3s ease-in-out;
+    @apply transition-all duration-500 ease-out;
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  .animate-scale-in {
+    @apply transition-all duration-300 ease-out;
+    animation: scaleIn 0.3s ease-out;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-600 via-blue-600 to-purple-800 bg-clip-text text-transparent;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100;
+  }
+  
+  .glass-effect {
+    @apply bg-white/20 backdrop-blur-md border border-white/30 shadow-xl;
   }
   
   .touch-target {
@@ -19,17 +44,44 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateX(-20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+  100% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); }
 }

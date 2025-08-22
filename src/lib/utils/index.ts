@@ -8,7 +8,6 @@
 
 import { cn } from '../utils';
 import * as authService from './authService';
-import * as emailService from './emailService';
 import * as bookingService from './bookingService';
 import * as contentService from './contentService';
 import * as apiService from './apiService';
@@ -17,7 +16,6 @@ import * as apiService from './apiService';
 export {
   cn,
   authService,
-  emailService,
   bookingService,
   contentService,
   apiService
@@ -25,11 +23,11 @@ export {
 
 // Example of how to use these utilities in your components:
 /*
-import { emailService } from '@/lib/utils';
+import { authService } from '@/lib/utils';
 
-const handleFormSubmit = async (formData) => {
-  const sent = await emailService.sendContactFormEmail(formData);
-  if (sent) {
+const handleLogin = async (credentials) => {
+  const success = await authService.login(credentials);
+  if (success) {
     // Show success message
   } else {
     // Show error message
