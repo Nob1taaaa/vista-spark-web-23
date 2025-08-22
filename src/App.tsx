@@ -14,7 +14,6 @@ import FAQ from "./pages/FAQ";
 import Services from "./pages/Services";
 import Industries from "./pages/Industries";
 import NotFound from "./pages/NotFound";
-import Gmail from "./pages/Gmail";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { ScrollToTop } from "./components/ScrollToTop";
 
@@ -36,8 +35,7 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
           <Route path="/services" element={<Services />} />
           <Route path="/industries" element={<Industries />} />
-          <Route path="/gmail" element={<Gmail />} />
-          <Route 
+          <Route
             path="/dashboard" 
             element={
               <ProtectedRoute>

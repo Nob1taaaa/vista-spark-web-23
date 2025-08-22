@@ -20,7 +20,7 @@ import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
-import BookConsultation from '@/components/BookConsultation';
+import BeautifulCTA from '@/components/BeautifulCTA';
 import HeroSection from '@/components/HeroSections';
 
 const Index = () => {
@@ -458,7 +458,7 @@ const Index = () => {
                 <p className="mb-4">
                   Schedule a complimentary 30-minute strategic consultation with our senior HR experts to explore your specific challenges.
                 </p>
-                <BookConsultation />
+                <BeautifulCTA />
               </div>
             </div>
           </div>
