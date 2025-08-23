@@ -120,74 +120,113 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            <div className="text-center p-6 md:p-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-glow">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-brand-purple to-brand-blue text-white mb-6 shadow-lg">
-                <h2 className="text-2xl font-bold">1</h2>
+            <div className="elevated-card text-center p-8 rounded-3xl group premium-border">
+              <div className="relative">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-[#382c74] to-[#2c3e74] text-white mb-6 shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
+                  <h2 className="text-2xl font-bold">1</h2>
+                </div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-[#382c74]/20 to-[#2c3e74]/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-brand-darkPurple">Industry Expertise</h3>
+              <h3 className="text-xl font-bold mb-4 text-[#382c74] group-hover:text-[#2c3e74] transition-colors">Industry Expertise</h3>
               <p className="text-gray-600 leading-relaxed">
                 Specialized recruitment professionals with deep sector knowledge and proven track records in strategic talent acquisition.
               </p>
+              <div className="section-divider mt-6"></div>
             </div>
             
-            <div className="text-center p-6 md:p-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-glow">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-brand-blue to-brand-emerald text-white mb-6 shadow-lg">
-                <h2 className="text-2xl font-bold">2</h2>
+            <div className="elevated-card text-center p-8 rounded-3xl group premium-border">
+              <div className="relative">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-[#2c3e74] to-[#382c74] text-white mb-6 shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
+                  <h2 className="text-2xl font-bold">2</h2>
+                </div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-[#2c3e74]/20 to-[#382c74]/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-brand-darkPurple">Tailored Solutions</h3>
+              <h3 className="text-xl font-bold mb-4 text-[#382c74] group-hover:text-[#2c3e74] transition-colors">Tailored Solutions</h3>
               <p className="text-gray-600 leading-relaxed">
                 Customized workforce strategies designed to align with your unique business objectives and organizational culture.
               </p>
+              <div className="section-divider mt-6"></div>
             </div>
             
-            <div className="text-center p-6 md:p-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-glow">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-brand-emerald to-brand-lightBlue text-white mb-6 shadow-lg">
-                <h2 className="text-2xl font-bold">3</h2>
+            <div className="elevated-card text-center p-8 rounded-3xl group premium-border">
+              <div className="relative">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-[#382c74] via-[#2c3e74] to-[#7E69AB] text-white mb-6 shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
+                  <h2 className="text-2xl font-bold">3</h2>
+                </div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-[#382c74]/20 via-[#2c3e74]/20 to-[#7E69AB]/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-brand-darkPurple">Advanced Technology</h3>
+              <h3 className="text-xl font-bold mb-4 text-[#382c74] group-hover:text-[#2c3e74] transition-colors">Advanced Technology</h3>
               <p className="text-gray-600 leading-relaxed">
                 AI-powered talent matching platform with comprehensive candidate databases and streamlined recruitment processes.
               </p>
+              <div className="section-divider mt-6"></div>
             </div>
             
-            <div className="text-center p-6 md:p-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-glow">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-brand-lightBlue to-brand-rose text-white mb-6 shadow-lg">
-                <h2 className="text-2xl font-bold">4</h2>
+            <div className="elevated-card text-center p-8 rounded-3xl group premium-border">
+              <div className="relative">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-[#7E69AB] to-[#382c74] text-white mb-6 shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
+                  <h2 className="text-2xl font-bold">4</h2>
+                </div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-[#7E69AB]/20 to-[#382c74]/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-brand-darkPurple">Inclusive Excellence</h3>
+              <h3 className="text-xl font-bold mb-4 text-[#382c74] group-hover:text-[#2c3e74] transition-colors">Inclusive Excellence</h3>
               <p className="text-gray-600 leading-relaxed">
                 Committed to building diverse, inclusive workforces that drive innovation and sustainable business success.
               </p>
+              <div className="section-divider mt-6"></div>
             </div>
           </div>
           
-          <div className="mt-16">
-            <h2 className="text-3xl font-bold text-[#382c74] mb-8 text-center">Core Specializations</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-              <div className="p-4 md:p-6 bg-[#F5F7FF] rounded-lg">
-                <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Executive Leadership</h3>
-                <p className="text-gray-600">
+          <div className="mt-20">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#382c74] mb-4 animate-shine">Core Specializations</h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-[#382c74] to-[#2c3e74] mx-auto rounded-full"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              <div className="elevated-card p-8 rounded-2xl group border-l-4 border-[#382c74]">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#382c74] to-[#2c3e74] flex items-center justify-center mr-4">
+                    <Brain className="text-white w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#382c74] group-hover:text-[#2c3e74] transition-colors">Executive Leadership</h3>
+                </div>
+                <p className="text-gray-600 leading-relaxed pl-16">
                   Strategic executive search and C-suite recruitment for transformational leadership roles.
                 </p>
               </div>
               
-              <div className="p-4 md:p-6 bg-[#F5F7FF] rounded-lg">
-                <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Healthcare & Life Sciences</h3>
-                <p className="text-gray-600">
+              <div className="elevated-card p-8 rounded-2xl group border-l-4 border-[#2c3e74]">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2c3e74] to-[#382c74] flex items-center justify-center mr-4">
+                    <Hospital className="text-white w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#382c74] group-hover:text-[#2c3e74] transition-colors">Healthcare & Life Sciences</h3>
+                </div>
+                <p className="text-gray-600 leading-relaxed pl-16">
                   Specialized talent acquisition in healthcare, pharmaceuticals, and biotechnology sectors.
                 </p>
               </div>
               
-              <div className="p-4 md:p-6 bg-[#F5F7FF] rounded-lg">
-                <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Financial Services</h3>
-                <p className="text-gray-600">
+              <div className="elevated-card p-8 rounded-2xl group border-l-4 border-[#7E69AB]">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#7E69AB] to-[#382c74] flex items-center justify-center mr-4">
+                    <Banknote className="text-white w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#382c74] group-hover:text-[#2c3e74] transition-colors">Financial Services</h3>
+                </div>
+                <p className="text-gray-600 leading-relaxed pl-16">
                   Expert recruitment solutions for banking, financial services, and insurance organizations.
                 </p>
               </div>
               
-              <div className="p-4 md:p-6 bg-[#F5F7FF] rounded-lg">
-                <h3 className="text-xl font-semibold mb-2 text-[#382c74]">Technology & Innovation</h3>
-                <p className="text-gray-600">
+              <div className="elevated-card p-8 rounded-2xl group border-l-4 border-[#382c74]">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#382c74] via-[#2c3e74] to-[#7E69AB] flex items-center justify-center mr-4">
+                    <Zap className="text-white w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#382c74] group-hover:text-[#2c3e74] transition-colors">Technology & Innovation</h3>
+                </div>
+                <p className="text-gray-600 leading-relaxed pl-16">
                   Advanced talent solutions for technology companies and digital transformation initiatives.
                 </p>
               </div>
