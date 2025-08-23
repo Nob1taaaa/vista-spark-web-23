@@ -23,12 +23,11 @@ const HeroSection = ({
   
   return (
     <div 
-      className="min-h-[100vh] w-full flex flex-col pt-16 sm:pt-20"
+      className="min-h-[100vh] w-full flex flex-col pt-16 sm:pt-20 relative overflow-hidden"
       style={{ 
-        background: isPurple ? '#382c74' : '#2c3e74',
-        backgroundImage: isPurple ? 
-          'linear-gradient(135deg, #382c74 0%, #4a3c8a 100%)' : 
-          'linear-gradient(135deg, #2c3e74 0%, #3c508a 100%)'
+        background: isPurple ? 
+          'linear-gradient(135deg, #1a1b3a 0%, #2c2947 25%, #3d3766 50%, #4a4085 75%, #5749a3 100%)' : 
+          'linear-gradient(135deg, #0f1629 0%, #1e2b47 25%, #2d4065 50%, #3c5583 75%, #4b6aa1 100%)'
       }}
     >
       <div className="mobile-section flex-grow flex items-center justify-center">
@@ -43,8 +42,8 @@ const HeroSection = ({
               </p>
               <div className="mobile-flex justify-center animate-scale-in">
                 <Link to="/contact" className="w-full sm:w-auto">
-                  <Button className="mobile-button bg-white text-[#382c74] hover:bg-gray-100 button-hover shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-3px] w-full sm:w-auto">
-                    <span>Begin Partnership</span>
+                  <Button className="mobile-button bg-white/95 text-[#1a1b3a] hover:bg-white hover:text-[#2c2947] shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-3px] w-full sm:w-auto font-semibold">
+                    <span>Begin Strategic Partnership</span>
                     <ArrowRight className="ml-2 h-4 w-4 animate-bounce-slow" />
                   </Button>
                 </Link>
