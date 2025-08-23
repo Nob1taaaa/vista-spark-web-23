@@ -26,8 +26,8 @@ const HeroSection = ({
       className="min-h-[100vh] w-full flex flex-col pt-16 sm:pt-20 relative overflow-hidden"
       style={{ 
         background: isPurple ? 
-          'linear-gradient(135deg, #1a1b3a 0%, #2c2947 25%, #3d3766 50%, #4a4085 75%, #5749a3 100%)' : 
-          'linear-gradient(135deg, #0f1629 0%, #1e2b47 25%, #2d4065 50%, #3c5583 75%, #4b6aa1 100%)'
+          'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)' : 
+          'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)'
       }}
     >
       <div className="mobile-section flex-grow flex items-center justify-center">

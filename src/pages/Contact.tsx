@@ -102,7 +102,7 @@ const Contact = () => {
                     <MapPin className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Location</h3>
-                  <p className="text-gray-600 font-medium mb-4">New Delhi, India</p>
+                  <p className="text-gray-600 font-medium mb-4">Yamuna Expy, Sector 17A, Uttar Pradesh 203201</p>
                   <p className="text-sm text-gray-500">Serving globally</p>
                 </div>
                 
