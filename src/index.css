@@ -60,7 +60,7 @@
   
   .premium-border::before {
     content: '';
-    @apply absolute inset-0 rounded-inherit;
+    @apply absolute inset-0 rounded-lg;
     background: linear-gradient(135deg, #382c74, #2c3e74, #7E69AB);
     @apply opacity-20 hover:opacity-40 transition-opacity duration-300;
   }
