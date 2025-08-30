@@ -169,32 +169,6 @@ const Navbar = () => {
             <span>Contact</span>
           </Link>
           
-          {isAuthenticated ? (
-            <div className="flex items-center space-x-2">
-              <Link to="/dashboard">
-                <Button 
-                  variant="ghost" 
-                  className="flex items-center gap-2 text-white hover:bg-brand-purple/10 transition-all duration-300 transform hover:scale-105 group"
-                >
-                  <User size={18} className="group-hover:text-brand-purple transition-colors" />
-                  <span className="group-hover:text-brand-purple">Dashboard</span>
-                </Button>
-              </Link>
-              <Button 
-                onClick={handleLogout} 
-                variant="outline" 
-                className="text-white border-white hover:bg-brand-purple/10 hover:text-brand-purple transition-all duration-300 transform hover:scale-105"
-              >
-                Logout
-              </Button>
-            </div>
-          ) : (
-            <Link to="/login">
-              <Button className="bg-brand-purple hover:bg-brand-lightPurple transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                Login
-              </Button>
-            </Link>
-          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -258,37 +232,6 @@ const Navbar = () => {
               Contact
             </Link>
             
-            {isAuthenticated ? (
-              <div className="space-y-2 pt-2 border-t">
-                <Link 
-                  to="/dashboard" 
-                  className="block py-2 hover:text-brand-purple transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Dashboard
-                </Link>
-                <button 
-                  onClick={() => {
-                    handleLogout();
-                    setIsMenuOpen(false);
-                  }} 
-                  className="w-full text-left py-2 text-red-600 hover:text-red-800 transition-colors"
-                >
-                  Logout
-                </button>
-              </div>
-            ) : (
-              <div className="pt-2">
-                <Link 
-                  to="/login"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <Button className="w-full bg-brand-purple hover:bg-brand-lightPurple transition-colors">
-                    Login
-                  </Button>
-                </Link>
-              </div>
-            )}
           </div>
         </div>
       )}

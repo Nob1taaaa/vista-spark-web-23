@@ -40,17 +40,6 @@ const HeroSection = ({
               <p className="mobile-text opacity-90 mb-6 sm:mb-8 text-white animate-slide-in leading-relaxed px-2 sm:px-0">
                 {description}
               </p>
-              <div className="mobile-flex justify-center animate-scale-in">
-                <Link to="/contact" className="w-full sm:w-auto">
-                  <Button className="mobile-button bg-white/95 text-[#1a1b3a] hover:bg-white hover:text-[#2c2947] shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-3px] w-full sm:w-auto font-semibold">
-                    <span>Begin Strategic Partnership</span>
-                    <ArrowRight className="ml-2 h-4 w-4 animate-bounce-slow" />
-                  </Button>
-                </Link>
-                <div className="w-full sm:w-auto">
-                  <WhatsAppCTA className="inline-block transform transition-transform hover:scale-105 w-full sm:w-auto" />
-                </div>
-              </div>
             </div>
           </div>
         </div>
