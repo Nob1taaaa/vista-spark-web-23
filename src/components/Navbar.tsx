@@ -72,8 +72,12 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center space-x-2 group">
-          <Shield className="h-6 w-6 text-brand-purple group-hover:text-brand-lightPurple transition-colors" />
+        <Link to="/" className="flex items-center space-x-3 group">
+          <img 
+            src="/lovable-uploads/27878fb9-f9de-4350-ba89-ae4d1c23ddf3.png" 
+            alt="TruTalenza Logo" 
+            className="h-8 w-8 md:h-10 md:w-10 group-hover:scale-105 transition-transform duration-300"
+          />
           <h1 className="text-xl md:text-2xl font-bold text-brand-purple group-hover:text-brand-lightPurple transition-colors">
             TruTalenza
           </h1>
