@@ -38,19 +38,19 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-600 dark:text-gray-300 hover:text-brand-purple dark:hover:text-white transition-colors">Home</Link>
+                <Link to="/" className="text-white/80 hover:text-white transition-colors">Home</Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-600 dark:text-gray-300 hover:text-brand-purple dark:hover:text-white transition-colors">Services</Link>
+                <Link to="/services" className="text-white/80 hover:text-white transition-colors">Services</Link>
               </li>
               <li>
-                <Link to="/industries" className="text-gray-600 dark:text-gray-300 hover:text-brand-purple dark:hover:text-white transition-colors">Industries</Link>
+                <Link to="/industries" className="text-white/80 hover:text-white transition-colors">Industries</Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-600 dark:text-gray-300 hover:text-brand-purple dark:hover:text-white transition-colors">Contact Us</Link>
+                <Link to="/contact" className="text-white/80 hover:text-white transition-colors">Contact Us</Link>
               </li>
               <li>
-                <Link to="/login" className="text-gray-600 dark:text-gray-300 hover:text-brand-purple dark:hover:text-white transition-colors">Login</Link>
+                <Link to="/login" className="text-white/80 hover:text-white transition-colors">Login</Link>
               </li>
             </ul>
           </div>
