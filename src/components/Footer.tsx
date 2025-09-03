@@ -77,8 +77,8 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin size={16} className="text-brand-purple dark:text-white opacity-70 mt-1" />
-                <span className="text-gray-600 dark:text-gray-300">New Delhi, India</span>
+                <MapPin size={16} className="text-white/70 mt-1" />
+                <span className="text-white/80">New Delhi, India</span>
               </li>
               <li className="flex items-center gap-2">
                 <Clock size={16} className="text-brand-purple dark:text-white opacity-70" />
