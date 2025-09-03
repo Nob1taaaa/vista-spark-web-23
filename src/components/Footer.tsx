@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
           
           <div className="space-y-4 animate-slide-in" style={{ animationDelay: '0.3s' }}>
-            <h3 className="text-lg font-semibold text-brand-purple dark:text-white">Contact Information</h3>
+            <h3 className="text-lg font-semibold text-white">Contact Information</h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
                 <Phone size={16} className="text-brand-purple dark:text-white opacity-70" />
