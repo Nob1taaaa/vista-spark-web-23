@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4 animate-slide-in" style={{ animationDelay: '0.1s' }}>
-            <h3 className="text-xl font-bold text-brand-purple dark:text-white">TruTalenza</h3>
+            <h3 className="text-xl font-bold text-white">TruTalenza</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">
               A dynamic and comprehensive talent management and workforce solutions firm.
             </p>
