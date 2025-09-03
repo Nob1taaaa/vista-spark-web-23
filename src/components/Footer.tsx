@@ -1,4 +1,3 @@
-
 import { Mail, Phone, Clock, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +5,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-white dark:bg-dark-background text-brand-purple dark:text-white border-t border-gray-200 dark:border-gray-700">
+    <footer
+      className="text-white border-t border-white/10"
+      style={{
+        background: 'linear-gradient(135deg, #1a1b3a 0%, #2c2947 25%, #3d3766 50%, #4a4085 75%, #5749a3 100%)'
+      }}
+    >
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4 animate-slide-in" style={{ animationDelay: '0.1s' }}>
