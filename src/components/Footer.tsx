@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4 animate-slide-in" style={{ animationDelay: '0.1s' }}>
             <h3 className="text-xl font-bold text-white">TruTalenza</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
+            <p className="text-sm text-white/80">
               A dynamic and comprehensive talent management and workforce solutions firm.
             </p>
             <div className="flex space-x-4 pt-2">
