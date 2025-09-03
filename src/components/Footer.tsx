@@ -88,7 +88,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-6 text-center text-sm text-gray-600 dark:text-gray-300">
+        <div className="border-t border-white/10 mt-8 pt-6 text-center text-sm text-white/80">
           <p>© {currentYear} TruVision HR Services. All rights reserved.</p>
         </div>
       </div>
