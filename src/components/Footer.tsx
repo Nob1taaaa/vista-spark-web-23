@@ -81,8 +81,8 @@ const Footer = () => {
                 <span className="text-white/80">New Delhi, India</span>
               </li>
               <li className="flex items-center gap-2">
-                <Clock size={16} className="text-brand-purple dark:text-white opacity-70" />
-                <span className="text-gray-600 dark:text-gray-300">Mon-Fri: 9AM - 6PM</span>
+                <Clock size={16} className="text-white/70" />
+                <span className="text-white/80">Mon-Fri: 9AM - 6PM</span>
               </li>
             </ul>
           </div>
