@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
           
           <div className="space-y-4 animate-slide-in" style={{ animationDelay: '0.2s' }}>
-            <h3 className="text-lg font-semibold text-brand-purple dark:text-white">Quick Links</h3>
+            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-gray-600 dark:text-gray-300 hover:text-brand-purple dark:hover:text-white transition-colors">Home</Link>
