@@ -19,7 +19,7 @@ const Footer = () => {
               A dynamic and comprehensive talent management and workforce solutions firm.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="#" className="text-brand-purple dark:text-white hover:opacity-80 transition-opacity">
+              <a href="#" className="text-white/90 hover:text-white transition-colors">
                 <span className="sr-only">LinkedIn</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.3c-1 0-1.8-0.8-1.8-1.7s0.8-1.7 1.8-1.7 1.8 0.8 1.8 1.7-0.8 1.7-1.8 1.7zm12.5 12.3h-3v-5.6c0-3.4-4-3.1-4 0v5.6h-3v-11h3v1.9c1.4-2.6 7-2.8 7 2.5v6.6z"/>
