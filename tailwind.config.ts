@@ -53,6 +53,7 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        highlight: "hsl(var(--highlight))",
         brand: {
           purple: "#8B5CF6",
           lightPurple: "#A78BFA", 
