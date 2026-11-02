@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button";
 import { CONTACT, NAV, whatsappLink } from "@/data/site";
 
 export const Logo = ({ light = false }: { light?: boolean }) => (
-  <Link to="/" className="flex items-center gap-2.5" aria-label="TruVisory HR Services home">
-    <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent-gradient font-display text-lg font-bold text-accent-foreground shadow-card">tv</span>
+  <Link to="/" className="flex items-center gap-3" aria-label="TruVisory HR Services home">
+    <span className={`grid h-9 w-9 place-items-center rounded-lg font-display text-base font-extrabold ${light ? "bg-primary-foreground text-primary" : "bg-primary text-primary-foreground"}`}>T</span>
     <span className="leading-none">
-      <span className={`block font-display text-xl font-semibold ${light ? "text-primary-foreground" : "text-primary"}`}>TruVisory</span>
-      <span className={`block text-[10px] font-bold tracking-[0.25em] ${light ? "text-primary-foreground/70" : "text-accent"}`}>HR SERVICES</span>
+      <span className={`block font-display text-[17px] font-extrabold tracking-tight ${light ? "text-primary-foreground" : "text-primary"}`}>TRUVISORY</span>
+      <span className={`mt-1 block text-[9px] font-semibold tracking-[0.2em] ${light ? "text-primary-foreground/60" : "text-muted-foreground"}`}>HR SERVICES · ADVISORY & COMPLIANCE</span>
     </span>
   </Link>
 );

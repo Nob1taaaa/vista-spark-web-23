@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,34 +6,38 @@
 
 @layer base {
   :root {
-    --background: 210 33% 98%;
-    --foreground: 215 55% 12%;
+    --background: 216 45% 98.5%;
+    --foreground: 180 37% 8%;
     --card: 0 0% 100%;
-    --card-foreground: 215 55% 12%;
+    --card-foreground: 180 37% 8%;
     --popover: 0 0% 100%;
-    --popover-foreground: 215 55% 12%;
-    --primary: 215 62% 18%;
+    --popover-foreground: 180 37% 8%;
+    --primary: 180 37% 8%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 30% 94%;
-    --secondary-foreground: 215 55% 15%;
-    --muted: 210 25% 94%;
-    --muted-foreground: 215 15% 42%;
-    --accent: 174 72% 34%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 180 37% 10%;
+    --muted: 210 30% 95%;
+    --muted-foreground: 215 14% 38%;
+    --accent: 175 59% 19%;
     --accent-foreground: 0 0% 100%;
-    --accent-soft: 172 55% 92%;
-    --highlight: 152 60% 42%;
+    --accent-soft: 168 40% 94%;
+    --highlight: 173 70% 52%;
+    --success: 137 72% 26%;
+    --success-soft: 133 41% 93%;
+    --warning: 35 100% 35%;
+    --warning-soft: 46 91% 93%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214 25% 88%;
-    --input: 214 25% 86%;
-    --ring: 174 72% 34%;
-    --radius: 0.85rem;
-    --navy-deep: 216 65% 10%;
+    --border: 214 28% 90%;
+    --input: 214 28% 88%;
+    --ring: 175 59% 30%;
+    --radius: 1rem;
+    --navy-deep: 180 37% 7%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(216 65% 10%) 0%, hsl(215 62% 18%) 55%, hsl(186 70% 22%) 100%);
-    --gradient-accent: linear-gradient(120deg, hsl(174 72% 34%), hsl(152 60% 42%));
-    --shadow-card: 0 1px 2px hsl(215 55% 12% / 0.04), 0 8px 24px -12px hsl(215 55% 12% / 0.12);
-    --shadow-elevated: 0 24px 48px -20px hsl(215 62% 18% / 0.35);
+    --gradient-hero: linear-gradient(160deg, hsl(180 37% 7%) 0%, hsl(178 40% 11%) 60%, hsl(175 45% 15%) 100%);
+    --gradient-accent: linear-gradient(120deg, hsl(175 59% 19%), hsl(175 84% 32%));
+    --shadow-card: 0 1px 2px hsl(180 37% 8% / 0.04), 0 1px 3px hsl(180 37% 8% / 0.04);
+    --shadow-elevated: 0 1px 2px hsl(180 37% 8% / 0.05), 0 16px 40px -16px hsl(180 37% 8% / 0.18);
   }
 }
 
@@ -44,24 +48,31 @@
     @apply bg-background text-foreground antialiased;
     font-family: 'Manrope', system-ui, sans-serif;
   }
-  h1, h2, h3, .font-display { font-family: 'Fraunces', Georgia, serif; letter-spacing: -0.015em; }
+  h1, h2, h3, h4, .font-display { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; letter-spacing: -0.025em; }
 }
 
 @layer utilities {
   .bg-hero { background: var(--gradient-hero); }
-  .bg-accent-gradient { background: var(--gradient-accent); }
-  .text-accent-gradient { background: var(--gradient-accent); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .bg-accent-gradient { background: hsl(var(--accent)); }
+  .text-accent-gradient { color: hsl(var(--highlight)); }
   .shadow-card { box-shadow: var(--shadow-card); }
   .shadow-elevated { box-shadow: var(--shadow-elevated); }
   .bg-accent-soft { background-color: hsl(var(--accent-soft)); }
   .bg-navy-deep { background-color: hsl(var(--navy-deep)); }
-  .grid-pattern {
-    background-image: linear-gradient(hsl(0 0% 100% / 0.05) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100% / 0.05) 1px, transparent 1px);
-    background-size: 48px 48px;
-  }
-  .reveal { animation: reveal 0.7s cubic-bezier(.2,.7,.2,1) both; }
+  .bg-success-soft { background-color: hsl(var(--success-soft)); }
+  .text-success { color: hsl(var(--success)); }
+  .bg-warning-soft { background-color: hsl(var(--warning-soft)); }
+  .text-warning { color: hsl(var(--warning)); }
+  .grid-pattern { display: none; }
+  .reveal { animation: reveal 0.8s cubic-bezier(.2,.7,.2,1) both; }
   .marquee { animation: marquee 40s linear infinite; }
+  .lift { transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s; }
+  .lift:hover { transform: translateY(-2px); box-shadow: var(--shadow-elevated); }
+  .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+  .bar-grow { animation: bar-grow 1.4s cubic-bezier(.2,.7,.2,1) both; transform-origin: left; }
 }
 
-@keyframes reveal { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes reveal { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+@keyframes bar-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
