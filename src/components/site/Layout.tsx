@@ -36,7 +36,7 @@ const Navbar = () => {
           ))}
         </nav>
         <div className="hidden lg:block">
-          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90"><a href={whatsappLink()} target="_blank" rel="noreferrer"><MessageCircle className="mr-2 h-4 w-4" />Get a Consultation</a></Button>
+          <Button asChild className="bg-accent text-accent-foreground shadow-elevated hover:bg-accent/90"><a href={whatsappLink()} target="_blank" rel="noreferrer">Book a free consultation →</a></Button>
         </div>
         <button className="rounded-lg p-2 lg:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">{open ? <X /> : <Menu />}</button>
       </div>
@@ -93,33 +93,56 @@ const Footer = () => (
   </footer>
 );
 
-export const Layout = ({ children }: { children: ReactNode }) => (
+const useScrollReveal = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const els = document.querySelectorAll(".on-scroll:not(.in)");
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [pathname]);
+};
+
+export const Layout = ({ children }: { children: ReactNode }) => {
+  useScrollReveal();
+  return (
   <div className="flex min-h-screen flex-col">
     <Navbar />
     <main className="flex-1 pt-16 md:pt-20">{children}</main>
     <Footer />
     <a href={whatsappLink()} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"
-      className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-highlight text-accent-foreground shadow-elevated transition-transform hover:scale-110">
+      className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-accent text-accent-foreground shadow-elevated transition-transform hover:scale-110">
       <MessageCircle className="h-7 w-7" />
     </a>
   </div>
+  );
+};
+
+export const Waves = ({ className = "" }: { className?: string }) => (
+  <svg className={`pointer-events-none absolute inset-x-0 bottom-0 h-56 w-[115%] text-accent/[0.07] ${className}`} viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden>
+    <path className="wave" fill="currentColor" d="M0 220 C 240 120, 420 120, 640 190 S 1060 260, 1440 140 L1440 200 C 1080 320, 860 260, 640 250 S 240 180, 0 280 Z" />
+    <path className="wave" style={{ animationDelay: "-5s" }} fill="currentColor" d="M0 290 C 260 200, 460 210, 700 270 S 1120 300, 1440 230 L1440 320 L0 320 Z" />
+  </svg>
 );
 
 export const PageHero = ({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) => (
-  <section className="relative overflow-hidden bg-hero text-primary-foreground">
+  <section className="relative overflow-hidden bg-soft">
     <div className="grid-pattern absolute inset-0" />
+    <Waves />
     <div className="container relative py-20 md:py-28">
-      <p className="reveal mb-4 text-xs font-bold uppercase tracking-[0.3em] text-highlight">{eyebrow}</p>
-      <h1 className="reveal max-w-3xl text-4xl font-semibold md:text-6xl">{title}</h1>
-      <p className="reveal mt-5 max-w-2xl text-lg text-primary-foreground/75">{text}</p>
+      <p className="reveal mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">{eyebrow}</p>
+      <h1 className="reveal max-w-3xl text-4xl font-bold text-primary md:text-6xl">{title}</h1>
+      <p className="reveal mt-5 max-w-2xl text-lg text-muted-foreground">{text}</p>
     </div>
   </section>
 );
 
 export const SectionHead = ({ eyebrow, title, text, center }: { eyebrow: string; title: string; text?: string; center?: boolean }) => (
-  <div className={`mb-12 max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
-    <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-accent">{eyebrow}</p>
-    <h2 className="text-3xl font-semibold text-primary md:text-5xl">{title}</h2>
+  <div className={`on-scroll mb-12 max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
+    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">{eyebrow}</p>
+    <h2 className="text-3xl font-bold text-primary md:text-5xl">{title}</h2>
     {text && <p className="mt-4 text-lg text-muted-foreground">{text}</p>}
   </div>
 );
