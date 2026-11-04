@@ -1,0 +1,1 @@
+- [x] Add TruVisory logo to header/footer/favicon
