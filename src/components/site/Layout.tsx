@@ -3,13 +3,16 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail, MapPin, MessageCircle, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACT, NAV, whatsappLink } from "@/data/site";
+import logoAsset from "@/assets/truvisory_logo.jpg.asset.json";
 
 export const Logo = ({ light = false }: { light?: boolean }) => (
   <Link to="/" className="flex items-center gap-3" aria-label="TruVisory HR Services home">
-    <span className={`grid h-9 w-9 place-items-center rounded-lg font-display text-base font-extrabold ${light ? "bg-primary-foreground text-primary" : "bg-primary text-primary-foreground"}`}>T</span>
+    <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-xl bg-card shadow-card ring-1 ring-border transition-transform duration-300 hover:scale-105">
+      <img src={logoAsset.url} alt="TruVisory logo" className="h-10 w-10 object-contain" />
+    </span>
     <span className="leading-none">
-      <span className={`block font-display text-[17px] font-extrabold tracking-tight ${light ? "text-primary-foreground" : "text-primary"}`}>TRUVISORY</span>
-      <span className={`mt-1 block text-[9px] font-semibold tracking-[0.2em] ${light ? "text-primary-foreground/60" : "text-muted-foreground"}`}>HR SERVICES · ADVISORY & COMPLIANCE</span>
+      <span className={`block font-display text-[18px] font-bold tracking-tight ${light ? "text-primary-foreground" : "text-primary"}`}>TruVisory <span className={light ? "text-highlight" : "text-accent"}>HR Services</span></span>
+      <span className={`mt-1.5 block text-[10px] font-medium tracking-[0.12em] ${light ? "text-primary-foreground/60" : "text-muted-foreground"}`}>PAYROLL · COMPLIANCE · RECRUITMENT</span>
     </span>
   </Link>
 );

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Wallet, ShieldCheck, Users, FileText, Scale, Check, ChevronDown, CalendarClock, LayoutGrid } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout, Waves } from "@/components/site/Layout";
+import logoAsset from "@/assets/truvisory_logo.jpg.asset.json";
 import { CALENDAR, FAQS, INDUSTRIES, LABOUR_CODES, SERVICES, whatsappLink } from "@/data/site";
 
 const MODULES = [
@@ -239,8 +240,8 @@ const FinalCta = () => (
       <div className="relative mx-auto aspect-square w-full max-w-[460px]">
         <div className="absolute inset-0 rounded-full border border-primary-foreground/10" />
         <div className="absolute inset-[18%] rounded-full border border-primary-foreground/10" />
-        <div className="absolute inset-[36%] grid place-items-center rounded-full bg-accent/40 shadow-elevated">
-          <span className="font-display text-3xl font-extrabold">T</span>
+        <div className="float absolute inset-[36%] grid place-items-center overflow-hidden rounded-full bg-card shadow-elevated ring-8 ring-primary-foreground/10">
+          <img src={logoAsset.url} alt="TruVisory logo" className="h-4/5 w-4/5 object-contain" />
         </div>
         <div className="orbit absolute inset-0">
           {ORBIT.map((t, i) => {
