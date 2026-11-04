@@ -43,11 +43,14 @@
 
 @layer base {
   * { @apply border-border; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Geist', system-ui, sans-serif;
+    overflow-x: clip;
   }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  ::selection { background: hsl(var(--accent) / 0.18); }
   h1, h2, h3, h4, .font-display { font-family: 'Geist', system-ui, sans-serif; letter-spacing: -0.045em; }
 }
 
@@ -84,6 +87,17 @@
   .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
   .bar-grow { animation: bar-grow 1.4s cubic-bezier(.2,.7,.2,1) both; transform-origin: left; }
   .fade-mask { mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent); }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .shine { position: relative; overflow: hidden; }
+  .shine::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(105deg, transparent 42%, rgb(255 255 255 / 0.28) 50%, transparent 58%);
+    transform: translateX(-130%); transition: transform 0.8s ease;
+  }
+  .shine:hover::after { transform: translateX(130%); }
+  .blob { animation: blob 20s ease-in-out infinite alternate; }
+  .pop-in { animation: reveal 0.7s cubic-bezier(.2,.7,.2,1) both; }
 }
 
 @keyframes reveal { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
@@ -93,8 +107,16 @@
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
 @keyframes bar-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes blob { 0% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-30px, 22px) scale(1.08); } 100% { transform: translate(24px, -16px) scale(0.96); } }
+
+.fade-mask:hover .marquee { animation-play-state: paused; }
+
+@media (max-width: 767px) {
+  .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal, .marquee, .wave, .orbit, .orbit-rev, .float, .bar-grow { animation: none; }
+  .reveal, .marquee, .wave, .orbit, .orbit-rev, .float, .bar-grow, .blob, .pop-in { animation: none; }
   .on-scroll { opacity: 1; transform: none; }
+  .shine::after { display: none; }
 }

@@ -21,22 +21,22 @@ const MODULES = [
 const Hero = () => (
   <section className="relative overflow-hidden">
     <div className="grid-pattern absolute inset-0" />
-    <div className="absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-accent/[0.06] blur-3xl" />
+    <div className="absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-accent/[0.06] blur-3xl blob" />
     <Waves />
-    <div className="container relative grid gap-14 pb-36 pt-14 md:pt-24 lg:grid-cols-[1.25fr_1fr] lg:items-center">
+    <div className="container relative grid gap-10 pb-24 pt-10 sm:gap-14 sm:pb-36 sm:pt-14 md:pt-24 lg:grid-cols-[1.25fr_1fr] lg:items-center">
       <div>
         <span className="reveal inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent-soft px-3 py-1.5 text-xs font-semibold text-accent">
           <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-accent" />Payroll · Compliance · Recruitment
         </span>
-        <h1 className="reveal mt-7 text-[2.6rem] font-bold leading-[1.02] text-primary md:text-7xl" style={{ animationDelay: ".05s" }}>
+        <h1 className="reveal mt-6 text-[2.1rem] font-bold leading-[1.06] text-primary sm:mt-7 sm:text-[2.6rem] sm:leading-[1.02] md:text-7xl" style={{ animationDelay: ".05s" }}>
           Complete HR, payroll & compliance <span className="text-accent">handled for you.</span>
         </h1>
         <p className="reveal mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground" style={{ animationDelay: ".12s" }}>
           From hire to full & final — TruVisory runs payroll, statutory filings and hiring for growing businesses across India.
         </p>
         <p className="reveal mt-5 text-sm font-semibold text-accent" style={{ animationDelay: ".18s" }}>Built for Indian employers · Labour Code ready</p>
-        <div className="reveal mt-9 flex flex-wrap gap-3 lg:hidden" style={{ animationDelay: ".22s" }}>
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90"><a href={whatsappLink()} target="_blank" rel="noreferrer">Book a free consultation <ArrowRight className="ml-2 h-4 w-4" /></a></Button>
+        <div className="reveal mt-7 flex flex-wrap gap-3 lg:hidden" style={{ animationDelay: ".22s" }}>
+          <Button asChild size="lg" className="shine bg-accent text-accent-foreground hover:bg-accent/90"><a href={whatsappLink()} target="_blank" rel="noreferrer">Book a free consultation <ArrowRight className="ml-2 h-4 w-4" /></a></Button>
         </div>
       </div>
       <EnquiryCard />
@@ -97,15 +97,15 @@ const Platform = () => {
   const [id, setId] = useState(MODULES[0].id);
   const m = MODULES.find((x) => x.id === id)!;
   return (
-    <section className="relative overflow-hidden bg-soft py-24 md:py-32">
+    <section className="relative overflow-hidden bg-soft py-16 sm:py-24 md:py-32">
       <div className="container">
         <div className="on-scroll mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Services</p>
-          <h2 className="mt-4 text-4xl font-bold text-primary md:text-6xl">Everything HR. <span className="text-accent">One partner.</span></h2>
+          <h2 className="mt-4 text-3xl font-bold text-primary sm:text-4xl md:text-6xl">Everything HR. <span className="text-accent">One partner.</span></h2>
           <p className="mt-5 text-lg text-muted-foreground">Every service your HR team needs — deeply connected, carefully managed, easy to work with.</p>
         </div>
         <div className="on-scroll mt-16 grid gap-8 lg:grid-cols-[220px_1fr_280px] lg:items-center">
-          <div className="flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0">
+          <div className="no-scrollbar flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0">
             {MODULES.map((x) => (
               <button key={x.id} onClick={() => setId(x.id)}
                 className={`flex shrink-0 items-center gap-2.5 rounded-full border px-5 py-3 text-sm font-semibold transition-all lg:justify-center ${id === x.id ? "border-transparent bg-accent text-accent-foreground shadow-elevated" : "bg-card text-muted-foreground hover:border-accent/30 hover:text-primary"}`}>
@@ -155,10 +155,10 @@ const Platform = () => {
 };
 
 const Pillars = () => (
-  <section className="container py-24 md:py-32">
+  <section className="container py-16 sm:py-24 md:py-32">
     <div className="on-scroll max-w-2xl">
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">What we do</p>
-      <h2 className="mt-4 text-4xl font-bold text-primary md:text-5xl">Four services. One accountable team.</h2>
+      <h2 className="mt-4 text-3xl font-bold text-primary sm:text-4xl md:text-5xl">Four services. One accountable team.</h2>
     </div>
     <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border bg-border md:grid-cols-2 lg:grid-cols-4">
       {SERVICES.map((s, i) => (
@@ -174,11 +174,11 @@ const Pillars = () => (
 );
 
 const Codes = () => (
-  <section className="border-y bg-secondary/60 py-24 md:py-32">
+  <section className="border-y bg-secondary/60 py-16 sm:py-24 md:py-32">
     <div className="container">
       <div className="on-scroll mx-auto max-w-2xl text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Labour Codes</p>
-        <h2 className="mt-4 text-4xl font-bold text-primary md:text-5xl">29 laws. Four Codes. Zero confusion.</h2>
+        <h2 className="mt-4 text-3xl font-bold text-primary sm:text-4xl md:text-5xl">29 laws. Four Codes. Zero confusion.</h2>
         <p className="mt-5 text-muted-foreground">We align your salary structures, policies and records with India's new Labour Codes.</p>
       </div>
       <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -201,10 +201,10 @@ const Codes = () => (
 const Faq = () => {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-16 sm:py-24 md:py-32">
       <div className="container max-w-3xl">
         <p className="on-scroll text-xs font-semibold uppercase tracking-[0.2em] text-accent">FAQ</p>
-        <h2 className="on-scroll mt-4 text-4xl font-bold text-primary md:text-5xl">Frequently asked questions</h2>
+        <h2 className="on-scroll mt-4 text-3xl font-bold text-primary sm:text-4xl md:text-5xl">Frequently asked questions</h2>
         <div className="mt-12 border-t">
           {FAQS.slice(0, 6).map((f, i) => (
             <div key={f.q} className="border-b">
@@ -226,17 +226,17 @@ const ORBIT = ["Payroll", "PF / EPFO", "ESIC", "Professional Tax", "LWF", "Gratu
 
 const FinalCta = () => (
   <section className="relative overflow-hidden bg-hero text-primary-foreground">
-    <div className="container relative grid gap-12 py-24 md:py-28 lg:grid-cols-2 lg:items-center">
+    <div className="container relative grid gap-10 py-16 sm:gap-12 sm:py-24 md:py-28 lg:grid-cols-2 lg:items-center">
       <div className="on-scroll">
         <span className="inline-flex rounded-full border border-primary-foreground/15 bg-primary-foreground/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-primary-foreground/80">Pan-India HR partner</span>
-        <h2 className="mt-6 text-4xl font-bold leading-[1.05] md:text-6xl">Run your HR and compliance <span className="block text-highlight">on autopilot.</span></h2>
+        <h2 className="mt-6 text-3xl font-bold leading-[1.05] sm:text-4xl md:text-6xl">Run your HR and compliance <span className="block text-highlight">on autopilot.</span></h2>
         <p className="mt-6 max-w-md text-primary-foreground/65">See why growing Indian employers trust TruVisory with payroll, compliance and hiring.</p>
         <div className="mt-9 flex flex-wrap gap-3">
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90"><a href={whatsappLink()} target="_blank" rel="noreferrer">Chat on WhatsApp <ArrowRight className="ml-2 h-4 w-4" /></a></Button>
+          <Button asChild size="lg" className="shine bg-accent text-accent-foreground hover:bg-accent/90"><a href={whatsappLink()} target="_blank" rel="noreferrer">Chat on WhatsApp <ArrowRight className="ml-2 h-4 w-4" /></a></Button>
           <Button asChild size="lg" variant="outline" className="border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"><Link to="/contact">Contact us</Link></Button>
         </div>
       </div>
-      <div className="relative mx-auto aspect-square w-full max-w-[460px]">
+      <div className="relative mx-auto aspect-square w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[460px]">
         <div className="absolute inset-0 rounded-full border border-primary-foreground/10" />
         <div className="absolute inset-[18%] rounded-full border border-primary-foreground/10" />
         <div className="float absolute inset-[36%] grid place-items-center overflow-hidden rounded-full bg-card shadow-elevated ring-8 ring-primary-foreground/10">
@@ -248,7 +248,7 @@ const FinalCta = () => (
             const r = i % 2 ? 41 : 30;
             return (
               <div key={t} className="absolute" style={{ left: `${50 + Math.cos(a) * r}%`, top: `${50 + Math.sin(a) * r}%`, transform: "translate(-50%,-50%)" }}>
-                <span className="orbit-rev block whitespace-nowrap rounded-full border border-primary-foreground/15 bg-navy-deep/80 px-3 py-1.5 text-xs font-semibold text-primary-foreground/85 backdrop-blur">{t}</span>
+                <span className="orbit-rev block whitespace-nowrap rounded-full border border-primary-foreground/15 bg-navy-deep/80 px-2.5 py-1.5 text-[10px] font-semibold text-primary-foreground/85 backdrop-blur sm:px-3 sm:text-xs">{t}</span>
               </div>
             );
           })}
