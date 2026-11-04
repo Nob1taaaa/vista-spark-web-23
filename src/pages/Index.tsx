@@ -117,7 +117,7 @@ const Platform = () => {
 
           <div key={id} className="reveal overflow-hidden rounded-2xl border bg-card shadow-elevated">
             <div className="flex items-center gap-2 border-b bg-secondary/60 px-4 py-3">
-              <span className="h-2.5 w-2.5 rounded-full bg-destructive/60" /><span className="h-2.5 w-2.5 rounded-full bg-warning/60" /><span className="h-2.5 w-2.5 rounded-full bg-success/60" />
+              <span className="h-2.5 w-2.5 rounded-full bg-destructive/60" /><span className="h-2.5 w-2.5 rounded-full bg-warning-soft ring-1 ring-border" /><span className="h-2.5 w-2.5 rounded-full bg-success-soft ring-1 ring-border" />
               <span className="ml-3 flex-1 truncate rounded-md bg-card px-3 py-1 text-xs text-muted-foreground">truvisory.in/{m.url}</span>
             </div>
             <div className="p-5 md:p-6">
