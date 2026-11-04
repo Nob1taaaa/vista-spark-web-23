@@ -117,7 +117,7 @@ const Platform = () => {
 
           <div key={id} className="reveal overflow-hidden rounded-2xl border bg-card shadow-elevated">
             <div className="flex items-center gap-2 border-b bg-secondary/60 px-4 py-3">
-              <span className="h-2.5 w-2.5 rounded-full bg-destructive/60" /><span className="h-2.5 w-2.5 rounded-full bg-warning/60" /><span className="h-2.5 w-2.5 rounded-full bg-success/60" />
+              <span className="h-2.5 w-2.5 rounded-full bg-destructive/60" /><span className="h-2.5 w-2.5 rounded-full bg-warning-soft ring-1 ring-border" /><span className="h-2.5 w-2.5 rounded-full bg-success-soft ring-1 ring-border" />
               <span className="ml-3 flex-1 truncate rounded-md bg-card px-3 py-1 text-xs text-muted-foreground">truvisory.in/{m.url}</span>
             </div>
             <div className="p-5 md:p-6">
@@ -239,8 +239,8 @@ const FinalCta = () => (
       <div className="relative mx-auto aspect-square w-full max-w-[460px]">
         <div className="absolute inset-0 rounded-full border border-primary-foreground/10" />
         <div className="absolute inset-[18%] rounded-full border border-primary-foreground/10" />
-        <div className="absolute inset-[36%] grid place-items-center rounded-full bg-accent/40 shadow-elevated">
-          <span className="font-display text-3xl font-extrabold">T</span>
+        <div className="float absolute inset-[36%] grid place-items-center overflow-hidden rounded-full bg-card shadow-elevated ring-8 ring-primary-foreground/10">
+          <img src="/truvisory-logo.jpg" alt="TruVisory logo" className="h-4/5 w-4/5 object-contain" />
         </div>
         <div className="orbit absolute inset-0">
           {ORBIT.map((t, i) => {
