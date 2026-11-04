@@ -3,12 +3,11 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail, MapPin, MessageCircle, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACT, NAV, whatsappLink } from "@/data/site";
-import logoAsset from "@/assets/truvisory_logo.jpg.asset.json";
 
 export const Logo = ({ light = false }: { light?: boolean }) => (
   <Link to="/" className="flex items-center gap-3" aria-label="TruVisory HR Services home">
     <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-xl bg-card shadow-card ring-1 ring-border transition-transform duration-300 hover:scale-105">
-      <img src={logoAsset.url} alt="TruVisory logo" className="h-10 w-10 object-contain" />
+      <img src="/truvisory-logo.jpg" alt="TruVisory logo" className="h-10 w-10 object-contain" />
     </span>
     <span className="leading-none">
       <span className={`block font-display text-[18px] font-bold tracking-tight ${light ? "text-primary-foreground" : "text-primary"}`}>TruVisory <span className={light ? "text-highlight" : "text-accent"}>HR Services</span></span>
