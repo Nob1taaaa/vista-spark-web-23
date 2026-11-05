@@ -115,7 +115,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
     <main className="flex-1 pt-16 md:pt-20">{children}</main>
     <Footer />
     <a href={whatsappLink()} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"
-      className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-accent text-accent-foreground shadow-elevated transition-transform hover:scale-110">
+      className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-accent text-accent-foreground shadow-elevated transition-transform hover:scale-110 active:scale-95">
       <MessageCircle className="h-7 w-7" />
     </a>
   </div>
@@ -133,9 +133,9 @@ export const PageHero = ({ eyebrow, title, text }: { eyebrow: string; title: str
   <section className="relative overflow-hidden bg-soft">
     <div className="grid-pattern absolute inset-0" />
     <Waves />
-    <div className="container relative py-20 md:py-28">
+    <div className="container relative py-14 sm:py-20 md:py-28">
       <p className="reveal mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">{eyebrow}</p>
-      <h1 className="reveal max-w-3xl text-4xl font-bold text-primary md:text-6xl">{title}</h1>
+      <h1 className="reveal max-w-3xl text-3xl font-bold text-primary sm:text-4xl md:text-6xl">{title}</h1>
       <p className="reveal mt-5 max-w-2xl text-lg text-muted-foreground">{text}</p>
     </div>
   </section>
